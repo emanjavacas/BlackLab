@@ -119,6 +119,7 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 
 	addHandler("div", new InlineTagHandler() {
 
+		private String textType;
 		@Override
 		public void startElement(String uri, String localName, String qName,
 					 Attributes attributes) {
@@ -129,6 +130,11 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		    // see InlineTagHandler implementation for why this works
 		    else super.startElement(uri, textType, qName, attributes);
 		    // textType = attributes.getValue("type");
+		}
+		@Override
+		public void endElement(String uri, String localName, String qName) {
+		    if (textType == null) return;
+		    else super.endElement(uri, localName, qName);
 		}
 	    });
 	// structural attributes
