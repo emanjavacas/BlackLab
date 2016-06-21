@@ -48,14 +48,14 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 					 Attributes attributes) {
 		    if (!inCorpusFileHeader) return;
 		    super.startElement(uri, localName, qName, attributes);
-		    System.out.println("author:" + attributes.getValue("id"));
+		    // System.out.println("author:" + attributes.getValue("id"));
 		    addMetadataField("authorId", attributes.getValue("id"));
 		}
 		@Override
 		public void endElement(String uri, String localName, String qName) {
 		    if (!inCorpusFileHeader) return;
 		    super.endElement(uri, localName, qName);
-		    System.out.println("author:" + getElementContent());
+		    // System.out.println("author:" + getElementContent());
 		    addMetadataField("author", getElementContent());
 		}
 	    });
@@ -94,7 +94,7 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		}
 		@Override
 		public void endElement(String uri, String localName, String qName) {
-		    propPunct.addValue(StringUtil.normalizeWhitespace(consumeCharacterContent()));
+		    propPunct.addValue(StringUtil.normalizeWhitespace(consumeCharacterContent().trim()));
 		    super.endElement(uri, localName, qName);
 		}
 	    });
@@ -123,7 +123,7 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		public void startElement(String uri, String localName, String qName,
 					 Attributes attributes) {
 		    String textType = attributes.getValue("type");
-		    System.out.println("textType:" + textType);
+		    // System.out.println("textType:" + textType);
 		    if (textType==null) return;
 		    // hack: treat type attribute as if it were an xml tag
 		    // see InlineTagHandler implementation for why this works
