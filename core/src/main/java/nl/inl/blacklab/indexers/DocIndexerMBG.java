@@ -19,64 +19,37 @@ import org.xml.sax.Attributes;
  */
 public class DocIndexerMBG extends DocIndexerXmlHandlers {
 
-    private boolean inCorpusFileHeader;
-
     public DocIndexerMBG(Indexer indexer, String fileName, Reader reader) {
 	super(indexer, fileName, reader);
 
 	addHandler("mbg", new DocumentElementHandler());
-
-	addHandler("corpusFile", new ElementHandler() {
-		@Override
-		public void startElement(String uri, String localName, String qName,
-					 Attributes attributes) {
-		    inCorpusFileHeader = true;
-		}
-		@Override
-		public void endElement(String uri, String localName, String qName) {
-		    inCorpusFileHeader = false;
-		}
-	    });
-
+	
 	// Header metadata
-	addHandler("author", new MetadataElementHandler() {
+	addHandler("/mbg/corpusFile/author", new MetadataElementHandler() {
 		@Override
 		public void startElement(String uri, String localName, String qName,
 					 Attributes attributes) {
-		    if (!inCorpusFileHeader) return;
 		    super.startElement(uri, localName, qName, attributes);
-		    // System.out.println("author:" + attributes.getValue("id"));
-		    addMetadataField("authorId", attributes.getValue("id"));
+		    String authorId = attributes.getValue("id");
+		    if (authorId == null) {
+			System.out.println("Author id is missing from document");
+			return;
+		    }
+		    addMetadataField("authorId", authorId);
 		}
 		@Override
 		public void endElement(String uri, String localName, String qName) {
-		    if (!inCorpusFileHeader) return;
 		    super.endElement(uri, localName, qName);
 		    // System.out.println("author:" + getElementContent());
 		    addMetadataField("author", getElementContent());
 		}
 	    });
 	
-	addHandler("date", new MetadataElementHandler() {
-		@Override
-		public void startElement(String uri, String localName, String qName,
-					 Attributes attributes) {
-		    if(!inCorpusFileHeader) return; // make sure we only index date from header
-		    super.startElement(uri, localName, qName, attributes);
-		}
-
-		@Override
-		public void endElement(String uri, String localName, String qName) {
-		    if(!inCorpusFileHeader) return;
-		    super.endElement(uri, localName, qName);
-		}
-	    });
-	
-	addHandler("translation", new MetadataElementHandler());
-	
-	addHandler("genre", new MetadataElementHandler());
-	addHandler("PTC", new MetadataElementHandler());
-	addHandler("textForm", new MetadataElementHandler());
+	addHandler("/mbg/corpusFile/date", new MetadataElementHandler());	
+	addHandler("/mbg/corpusFile/translation", new MetadataElementHandler());	
+	addHandler("/mbg/corpusFile/genre", new MetadataElementHandler());
+	addHandler("/mbg/corpusFile/PTC", new MetadataElementHandler());
+	addHandler("/mbg/corpusFile/textForm", new MetadataElementHandler());
 
 	// Corpus
 	// main properties
