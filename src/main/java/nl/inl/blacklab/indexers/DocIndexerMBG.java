@@ -24,9 +24,6 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
     public DocIndexerMBG(Indexer indexer, String fileName, Reader reader) {
 	super(indexer, fileName, reader);
 
-	// Document Handler:
-	// (The default DocumentElementHandler will make sure BlackLab knows where our
-	// documents start and end and get added to the index in the correct way.)
 	addHandler("mbg", new DocumentElementHandler());
 
 	addHandler("corpusFile", new ElementHandler() {
@@ -76,7 +73,8 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 	    });
 	addHandler("translation", new MetadataElementHandler());
 	addHandler("genre", new MetadataElementHandler());
-	addHandler("domain", new MetadataElementHandler());
+	addHandler("PTC", new MetadataElementHandler());
+	addHandler("textForm", new MetadataElementHandler());
 
 	// Corpus
 	// main properties
@@ -117,26 +115,6 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		}
 	    });
 
-	addHandler("div", new InlineTagHandler() {
-
-		private String textType;
-		@Override
-		public void startElement(String uri, String localName, String qName,
-					 Attributes attributes) {
-		    String textType = attributes.getValue("type");
-		    // System.out.println("textType:" + textType);
-		    if (textType==null) return;
-		    // hack: treat type attribute as if it were an xml tag
-		    // see InlineTagHandler implementation for why this works
-		    else super.startElement(uri, textType, qName, attributes);
-		    // textType = attributes.getValue("type");
-		}
-		@Override
-		public void endElement(String uri, String localName, String qName) {
-		    if (textType == null) return;
-		    else super.endElement(uri, localName, qName);
-		}
-	    });
 	// structural attributes
 	addHandler("div", new InlineTagHandler());
 	addHandler("head", new InlineTagHandler());
