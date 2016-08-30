@@ -71,7 +71,9 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		    super.endElement(uri, localName, qName);
 		}
 	    });
+	
 	addHandler("translation", new MetadataElementHandler());
+	
 	addHandler("genre", new MetadataElementHandler());
 	addHandler("PTC", new MetadataElementHandler());
 	addHandler("textForm", new MetadataElementHandler());
