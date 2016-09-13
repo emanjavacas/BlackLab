@@ -23,8 +23,8 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 	super(indexer, fileName, reader);
 
 	addHandler("mbg", new DocumentElementHandler());
-	
-	// Header metadata
+
+        // header metadata
 	addHandler("/mbg/corpusFile/author", new MetadataElementHandler() {
 		@Override
 		public void startElement(String uri, String localName, String qName,
@@ -40,23 +40,32 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		@Override
 		public void endElement(String uri, String localName, String qName) {
 		    super.endElement(uri, localName, qName);
-		    // System.out.println("author:" + getElementContent());
 		    addMetadataField("author", getElementContent());
 		}
 	    });
 	
-	addHandler("/mbg/corpusFile/date", new MetadataElementHandler());	
+	addHandler("/mbg/corpusFile/date", new MetadataElementHandler() {
+		@Override
+		public void startElement(String uri, String localName, String qName,
+					 Attributes attributes) {
+		    super.startElement(uri, localName, qName, attributes);
+		}
+		@Override
+		public void endElement(String uri, String localName, String qName) {
+		    super.endElement(uri, localName, qName);
+		    addMetadataField("date", getElementContent());
+                    System.out.println("date", getElementContent());
+		}
+	    });	
 	addHandler("/mbg/corpusFile/translation", new MetadataElementHandler());	
 	addHandler("/mbg/corpusFile/genre", new MetadataElementHandler());
 	addHandler("/mbg/corpusFile/PTC", new MetadataElementHandler());
 	addHandler("/mbg/corpusFile/textForm", new MetadataElementHandler());
 
-	// Corpus
+        // extra properties
 	// main properties
 	final ComplexFieldProperty propMain = getMainProperty();
 	final ComplexFieldProperty propPunct = getPropPunct();
-	// extra properties
-	final ComplexFieldProperty propId = addProperty("id");
 
 	// Doc handler
 	final ElementHandler doc = addHandler("doc", new ElementHandler() {
@@ -78,7 +87,6 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 					 Attributes attributes) {
 		    if (!doc.insideElement()) return;
 		    super.startElement(uri, localName, qName, attributes);
-		    propId.addValue(attributes.getValue("id"));
 		}
 
 		@Override
