@@ -25,7 +25,7 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 	addHandler("mbg", new DocumentElementHandler());
 
         // header metadata
-	addHandler("/mbg/corpusFile/author", new MetadataElementHandler() {
+	addHandler("/mbg/header/corpusFile/author", new MetadataElementHandler() {
 		@Override
 		public void startElement(String uri, String localName, String qName,
 					 Attributes attributes) {
@@ -44,23 +44,11 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		}
 	    });
 	
-	addHandler("/mbg/corpusFile/date", new MetadataElementHandler() {
-		@Override
-		public void startElement(String uri, String localName, String qName,
-					 Attributes attributes) {
-		    super.startElement(uri, localName, qName, attributes);
-		}
-		@Override
-		public void endElement(String uri, String localName, String qName) {
-		    super.endElement(uri, localName, qName);
-		    addMetadataField("date", getElementContent());
-                    System.out.println("date", getElementContent());
-		}
-	    });	
-	addHandler("/mbg/corpusFile/translation", new MetadataElementHandler());	
-	addHandler("/mbg/corpusFile/genre", new MetadataElementHandler());
-	addHandler("/mbg/corpusFile/PTC", new MetadataElementHandler());
-	addHandler("/mbg/corpusFile/textForm", new MetadataElementHandler());
+	addHandler("/mbg/header/corpusFile/date", new MetadataElementHandler());
+	addHandler("/mbg/header/corpusFile/translation", new MetadataElementHandler());	
+	addHandler("/mbg/header/corpusFile/genre", new MetadataElementHandler());
+	addHandler("/mbg/header/corpusFile/PTC", new MetadataElementHandler());
+	addHandler("/mbg/header/corpusFile/textForm", new MetadataElementHandler());
 
         // extra properties
 	// main properties
