@@ -17,12 +17,12 @@ import org.xml.sax.Attributes;
  * Index a MBG file
  *
  */
-public class DocIndexerMBG extends DocIndexerXmlHandlers {
+public class DocIndexerMBGNotes extends DocIndexerXmlHandlers {
 
-    public DocIndexerMBG(Indexer indexer, String fileName, Reader reader) {
+    public DocIndexerMBGNotes(Indexer indexer, String fileName, Reader reader) {
 	super(indexer, fileName, reader);
 
-	addHandler("mbg", new DocumentElementHandler());
+	addHandler("mbgNotes", new DocumentElementHandler());
         addHandler("/mbg/header/sourceFile/title", new MetadataElementHandler());
         // header metadata
 	addHandler("/mbg/header/corpusFile/author", new MetadataElementHandler() {
@@ -51,7 +51,7 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 	final ComplexFieldProperty propPunct = getPropPunct();
 
 	// Doc handler
-	final ElementHandler doc = addHandler("doc", new ElementHandler() {
+	final ElementHandler body = addHandler("body", new ElementHandler() {
 		@Override
 		public void startElement(String uri, String localName, String qName,
 					 Attributes attributes) {
@@ -68,30 +68,19 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 		@Override
 		public void startElement(String uri, String localName, String qName,
 					 Attributes attributes) {
-		    if (!doc.insideElement()) return;
+		    if (!body.insideElement()) return;
 		    super.startElement(uri, localName, qName, attributes);
 		}
 
 		@Override
 		public void endElement(String uri, String localName, String qName) {
-		    if (!doc.insideElement()) return;
+		    if (!body.insideElement()) return;
 		    super.endElement(uri, localName, qName);
 		    propMain.addValue(StringUtil.normalizeWhitespace(consumeCharacterContent().trim()));
 		    propPunct.addValue(" ");
 		}
 	    });
-
 	// structural attributes
-	addHandler("div", new InlineTagHandler());
-	addHandler("head", new InlineTagHandler());
-	addHandler("hi", new InlineTagHandler());
-	addHandler("l", new InlineTagHandler());
-	addHandler("lg", new InlineTagHandler());
 	addHandler("note", new InlineTagHandler());
-	addHandler("opener", new InlineTagHandler());
-	addHandler("postscript", new InlineTagHandler());
-	addHandler("q", new InlineTagHandler());
-	addHandler("sp", new InlineTagHandler());
-	addHandler("opener", new InlineTagHandler());
     }
 }
