@@ -23,9 +23,9 @@ public class DocIndexerMBGNotes extends DocIndexerXmlHandlers {
 	super(indexer, fileName, reader);
 
 	addHandler("mbgNotes", new DocumentElementHandler());
-        addHandler("/mbg/header/sourceFile/title", new MetadataElementHandler());
+        addHandler("/mbgNotes/header/sourceFile/title", new MetadataElementHandler());
         // header metadata
-	addHandler("/mbg/header/corpusFile/author", new MetadataElementHandler() {
+	addHandler("/mbgNotes/header/corpusFile/author", new MetadataElementHandler() {
 		@Override
 		public void startElement(String uri, String localName, String qName,
 					 Attributes attributes) {
@@ -40,11 +40,11 @@ public class DocIndexerMBGNotes extends DocIndexerXmlHandlers {
 		}
 	    });
 	
-	addHandler("/mbg/header/corpusFile/date", new MetadataElementHandler());
-	addHandler("/mbg/header/corpusFile/translation", new MetadataElementHandler());	
-	addHandler("/mbg/header/corpusFile/genre", new MetadataElementHandler());
-	addHandler("/mbg/header/corpusFile/PTC", new MetadataElementHandler());
-	addHandler("/mbg/header/corpusFile/textForm", new MetadataElementHandler());
+	addHandler("/mbgNotes/header/corpusFile/date", new MetadataElementHandler());
+	addHandler("/mbgNotes/header/corpusFile/translation", new MetadataElementHandler());	
+	addHandler("/mbgNotes/header/corpusFile/genre", new MetadataElementHandler());
+	addHandler("/mbgNotes/header/corpusFile/PTC", new MetadataElementHandler());
+	addHandler("/mbgNotes/header/corpusFile/textForm", new MetadataElementHandler());
 
 	// main properties
 	final ComplexFieldProperty propMain = getMainProperty();
