@@ -13,19 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package nl.inl.blacklab.search.grouping;
+package nl.inl.blacklab.search.lucene;
 
-import nl.inl.blacklab.search.Searcher;
+import org.apache.lucene.search.spans.SpanQuery;
 
 /**
- * A group of results, with its group identity and the results themselves, that you can access
- * randomly (i.e. you can obtain a list of Hit objects)
- * @deprecated renamed to HitGroup
+ * A base class for a BlackLab SpanQuery. All our queries must be
+ * derived from this so we know they will produce BLSpans (which
+ * contains extra methods for optimization).
  */
-@Deprecated
-public class RandomAccessGroup extends HitGroup {
+public abstract class BLSpanQuery extends SpanQuery {
 
-	public RandomAccessGroup(Searcher searcher, HitPropValue groupIdentity, String defaultConcField) {
-		super(searcher, groupIdentity, defaultConcField);
-	}
+	@Override
+	public abstract String toString(String field);
+
+	@Override
+	public abstract int hashCode();
+
+	@Override
+	public abstract boolean equals(Object obj);
+
 }

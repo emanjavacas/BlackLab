@@ -16,15 +16,11 @@
 package nl.inl.blacklab.search.lucene;
 
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.Collection;
-import java.util.Set;
 
 import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.index.Term;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.spans.SpanQuery;
-import org.apache.lucene.util.ToStringUtils;
 
 import nl.inl.blacklab.index.complex.ComplexFieldUtil;
 
@@ -33,7 +29,7 @@ import nl.inl.blacklab.index.complex.ComplexFieldUtil;
  * abstract methods in SpanQuery.
  */
 
-public abstract class SpanQueryBase extends SpanQuery {
+public abstract class SpanQueryBase extends BLSpanQuery {
 	/**
 	 * The field name for this query. The "base" part is only applicable when dealing with complex
 	 * fields: the base field name of "contents" and "contents%pos" would both be "contents".
@@ -97,7 +93,14 @@ public abstract class SpanQueryBase extends SpanQuery {
 		if (!clauses.equals(that.clauses))
 			return false;
 
-		return (getBoost() == that.getBoost());
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		int h = clauses.hashCode();
+		h ^= (h << 10) | (h >>> 23);
+		return h;
 	}
 
 	/**
@@ -112,56 +115,19 @@ public abstract class SpanQueryBase extends SpanQuery {
 		return baseFieldName;
 	}
 
-	/**
-	 * Add all terms to the supplied set
-	 *
-	 * @param terms
-	 *            the set the terms should be added to
-	 */
-	@Override
-	public void extractTerms(Set<Term> terms) {
-		try {
-			// FIXME: temporary extractTerms hack
-			Method methodExtractTerms = SpanQuery.class.
-			        getDeclaredMethod("extractTerms", Set.class);
-			methodExtractTerms.setAccessible(true);
+	public abstract Query rewrite(IndexReader reader) throws IOException;
 
-			for (final SpanQuery clause : clauses) {
-				if (clause != null) { // <-- happens when searching for []
-					methodExtractTerms.invoke(clause, terms);
-					//clause.extractTerms(terms);
-				}
-			}
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	@Override
-	public int hashCode() {
-		int h = clauses.hashCode();
-		h ^= (h << 10) | (h >>> 23);
-		h ^= Float.floatToRawIntBits(getBoost());
-		return h;
-	}
-
-	@Override
-	public Query rewrite(IndexReader reader) throws IOException {
-		SpanQueryBase clone = null;
+	protected SpanQuery[] rewriteClauses(IndexReader reader) throws IOException {
+		SpanQuery[] rewritten = new SpanQuery[clauses.length];
+		boolean someRewritten = false;
 		for (int i = 0; i < clauses.length; i++) {
 			SpanQuery c = clauses[i];
 			SpanQuery query = c == null ? null : (SpanQuery) c.rewrite(reader);
-			if (query != c) {
-				// clause rewritten: must clone
-				if (clone == null)
-					clone = (SpanQueryBase) clone();
-				clone.clauses[i] = query;
-			}
+			rewritten[i] = query;
+			if (query != c)
+				someRewritten = true;
 		}
-		if (clone != null) {
-			return clone; // some clauses rewritten
-		}
-		return this; // no clauses rewritten
+		return someRewritten ? rewritten : null;
 	}
 
 	public String clausesToString(String field) {
@@ -173,7 +139,6 @@ public abstract class SpanQueryBase extends SpanQuery {
 				buffer.append(", ");
 			}
 		}
-		buffer.append(ToStringUtils.boost(getBoost()));
 		return buffer.toString();
 	}
 }

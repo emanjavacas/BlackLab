@@ -14,12 +14,12 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
-import org.apache.lucene.index.LeafReader;
 import org.apache.lucene.index.LeafReaderContext;
 import org.apache.lucene.index.LogMergePolicy;
 import org.apache.lucene.index.MergePolicy;
 import org.apache.lucene.index.PostingsEnum;
 import org.apache.lucene.index.Term;
+import org.apache.lucene.index.Terms;
 import org.apache.lucene.index.TermsEnum;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
@@ -75,11 +75,12 @@ public class LuceneUtil {
 			return result;
 		}
 
-		BooleanQuery q = new BooleanQuery();
+		BooleanQuery.Builder bb = new BooleanQuery.Builder();
 		for (String s: searchTerms) {
 			FuzzyQuery fq = new FuzzyQuery(new Term(luceneName, s), maxEdits);
-			q.add(fq, Occur.SHOULD);
+			bb.add(fq, Occur.SHOULD);
 		}
+		BooleanQuery q = bb.build();
 
 		try {
 			Query rewritten = q.rewrite(reader);
@@ -173,7 +174,7 @@ public class LuceneUtil {
 			int numFound = 0;
 			String[] concordanceWords = new String[end - start + 1];
 			while (termsEnum.next() != null) {
-				docPosEnum = termsEnum.postings(null, docPosEnum, PostingsEnum.POSITIONS);
+				docPosEnum = termsEnum.postings(docPosEnum, PostingsEnum.POSITIONS);
 				while (docPosEnum.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
 					// NOTE: .docId() will always return 0 in this case
 					//if (docPosEnum.docID() != doc)
@@ -235,7 +236,7 @@ public class LuceneUtil {
 			// Verzamel concordantiewoorden uit term vector
 			PostingsEnum postingsEnum = null;
 			while (termsEnum.next() != null) {
-				postingsEnum = termsEnum.postings(null, postingsEnum, PostingsEnum.FREQS);
+				postingsEnum = termsEnum.postings(postingsEnum, PostingsEnum.FREQS);
 				String term = termsEnum.term().utf8ToString();
 				Integer n = freq.get(term);
 				if (n == null) {
@@ -257,7 +258,7 @@ public class LuceneUtil {
 	 * @param fieldName the field
 	 * @return the matching terms
 	 */
-	public static List<String> getFieldTerms(LeafReader index, String fieldName) {
+	public static List<String> getFieldTerms(IndexReader index, String fieldName) {
 		return findTermsByPrefix(index, fieldName, null, true, -1);
 	}
 
@@ -268,7 +269,7 @@ public class LuceneUtil {
 	 * @param maxResults maximum number to return (or -1 for no limit)
 	 * @return the matching terms
 	 */
-	public static List<String> getFieldTerms(LeafReader index, String fieldName, int maxResults) {
+	public static List<String> getFieldTerms(IndexReader index, String fieldName, int maxResults) {
 		return findTermsByPrefix(index, fieldName, null, true, maxResults);
 	}
 
@@ -280,7 +281,7 @@ public class LuceneUtil {
 	 * @param sensitive match case-sensitively or not?
 	 * @return the matching terms
 	 */
-	public static List<String> findTermsByPrefix(LeafReader index, String fieldName,
+	public static List<String> findTermsByPrefix(IndexReader index, String fieldName,
 			String prefix, boolean sensitive) {
 		return findTermsByPrefix(index, fieldName, prefix, sensitive, -1);
 	}
@@ -294,7 +295,7 @@ public class LuceneUtil {
 	 * @param maxResults max. number of results to return (or -1 for all)
 	 * @return the matching terms
 	 */
-	public static List<String> findTermsByPrefix(LeafReader index, String fieldName,
+	public static List<String> findTermsByPrefix(IndexReader index, String fieldName,
 			String prefix, boolean sensitive, int maxResults) {
 		boolean allTerms = prefix == null || prefix.length() == 0;
 		if (allTerms) {
@@ -304,25 +305,27 @@ public class LuceneUtil {
 		try {
 			if (!sensitive)
 				prefix = StringUtil.removeAccents(prefix).toLowerCase();
-			org.apache.lucene.index.Terms terms = index.terms(fieldName);
 			List<String> results = new ArrayList<>();
-			TermsEnum termsEnum = terms.iterator();
-			BytesRef brPrefix = new BytesRef(prefix.getBytes(LUCENE_DEFAULT_CHARSET));
-			termsEnum.seekCeil(brPrefix); // find the prefix in the terms list
-			while (maxResults < 0 || results.size() < maxResults) {
-				BytesRef term = termsEnum.next();
-				if (term == null)
-					break;
-				String termText = term.utf8ToString();
-				String optDesensitized = termText;
-				if (!sensitive)
-					optDesensitized = StringUtil.removeAccents(termText).toLowerCase();
-				if (!allTerms && !optDesensitized.substring(0, prefix.length()).equalsIgnoreCase(prefix)) {
-					// Doesn't match prefix or different field; no more matches
-					break;
+			for (LeafReaderContext leafReader: index.leaves()) {
+				Terms terms = leafReader.reader().terms(fieldName);
+				TermsEnum termsEnum = terms.iterator();
+				BytesRef brPrefix = new BytesRef(prefix.getBytes(LUCENE_DEFAULT_CHARSET));
+				termsEnum.seekCeil(brPrefix); // find the prefix in the terms list
+				while (maxResults < 0 || results.size() < maxResults) {
+					BytesRef term = termsEnum.next();
+					if (term == null)
+						break;
+					String termText = term.utf8ToString();
+					String optDesensitized = termText;
+					if (!sensitive)
+						optDesensitized = StringUtil.removeAccents(termText).toLowerCase();
+					if (!allTerms && !optDesensitized.substring(0, prefix.length()).equalsIgnoreCase(prefix)) {
+						// Doesn't match prefix or different field; no more matches
+						break;
+					}
+					// Match, add term
+					results.add(termText);
 				}
-				// Match, add term
-				results.add(termText);
 			}
 			return results;
 		} catch (IOException e) {
@@ -343,10 +346,11 @@ public class LuceneUtil {
 					throw new RuntimeException("arc == null");
 				if (arc.reader() == null)
 					throw new RuntimeException("arc.reader() == null");
-				Scorer scorer = weight.scorer(arc, arc.reader().getLiveDocs());
+				Scorer scorer = weight.scorer(arc);
 				if (scorer != null) {
-					while (scorer.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
-						getFrequenciesFromTermVector(indexReader, scorer.docID() + arc.docBase, luceneField, freq);
+					DocIdSetIterator it = scorer.iterator();
+					while (it.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
+						getFrequenciesFromTermVector(indexReader, it.docID() + arc.docBase, luceneField, freq);
 					}
 				}
 			}

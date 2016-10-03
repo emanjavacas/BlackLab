@@ -17,13 +17,17 @@ package nl.inl.blacklab.search.sequences;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.LeafReaderContext;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.index.TermContext;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
 import org.apache.lucene.search.spans.SpanQuery;
+import org.apache.lucene.search.spans.SpanWeight;
 import org.apache.lucene.search.spans.Spans;
-import org.apache.lucene.util.Bits;
 
 import nl.inl.blacklab.search.lucene.SpanQueryBase;
 
@@ -62,11 +66,44 @@ public class SpanQueryRepetition extends SpanQueryBase {
 	}
 
 	@Override
-	public Spans getSpans(LeafReaderContext context, Bits acceptDocs, Map<Term,TermContext> termContexts) throws IOException {
-		Spans spans = clauses[0].getSpans(context, acceptDocs, termContexts);
-		if (spans == null)
-			return null;
-		return new SpansRepetition(spans, min, max);
+	public Query rewrite(IndexReader reader) throws IOException {
+		SpanQuery[] rewritten = rewriteClauses(reader);
+		return rewritten == null ? this : new SpanQueryRepetition(rewritten[0], min, max);
+	}
+
+	@Override
+	public SpanWeight createWeight(IndexSearcher searcher, boolean needsScores) throws IOException {
+		SpanWeight weight = clauses[0].createWeight(searcher, needsScores);
+		return new SpanWeightRepetition(weight, searcher, needsScores ? getTermContexts(weight) : null);
+	}
+
+	public class SpanWeightRepetition extends SpanWeight {
+
+		final SpanWeight weight;
+
+		public SpanWeightRepetition(SpanWeight weight, IndexSearcher searcher, Map<Term, TermContext> terms) throws IOException {
+			super(SpanQueryRepetition.this, searcher, terms);
+			this.weight = weight;
+		}
+
+		@Override
+		public void extractTerms(Set<Term> terms) {
+			weight.extractTerms(terms);
+		}
+
+		@Override
+		public void extractTermContexts(Map<Term, TermContext> contexts) {
+			weight.extractTermContexts(contexts);
+		}
+
+		@Override
+		public Spans getSpans(final LeafReaderContext context, Postings requiredPostings) throws IOException {
+			Spans spans = weight.getSpans(context, requiredPostings);
+			if (spans == null)
+				return null;
+			return new SpansRepetition(spans, min, max);
+		}
+
 	}
 
 	@Override
@@ -75,7 +112,6 @@ public class SpanQueryRepetition extends SpanQueryBase {
 		h ^= (h << 10) | (h >>> 23);
 		h ^= min << 10;
 		h ^= max << 5;
-		h ^= Float.floatToRawIntBits(getBoost());
 		return h;
 	}
 

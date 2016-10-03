@@ -41,6 +41,8 @@ For example, if you have TEI data in /tmp/my-tei/ and want to create an index as
 
 Your data is indexed and placed in a new BlackLab index in the "test-index" directory.
 
+NOTE: if you don't specify a glob, IndexTool will index \*.xml by default. You can specify a glob (like "\*.txt" or "\*" for all files) to change this.
+
 To delete documents from an index:
 
     java -cp BLACKLAB_JAR nl.inl.blacklab.tools.IndexTool delete INDEX_DIR FILTER_QUERY
@@ -96,6 +98,8 @@ If you don't configure these, BlackLab will pick (hopefully) sane defaults (i.e.
 What we call the "index structure" consists of some top-level index information (name, description, etc.), what word-level annotations ("properties") you want to index, what metadata fields there are and how they should be indexed, and more.
 
 By default, a default index structure is determined by BlackLab and the DocIndexer you're using. However, you can influence exactly how your index is created using a customized index structure file. If you specify such an index structure file when creating the index, it will be used as a template for the index metadata file, and so you won't have to specify the index structure file again when updating your index later; all the information is now in the index metadata file. It is possible to edit the index metadata file manually as well, but use caution, because it might break something.
+
+To use a custom indextemplate.json when creating an index, make sure the file is present either in the input directory, or in the parent directory of the input directory. IndexTool will automatically detect and use it. The resulting indexstructure.json will be saved in the index directory. 
 
 Here's a commented example of indextemplate.json (double-slash comments in JSON files are allowed by BlackLab):
 

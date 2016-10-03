@@ -14,7 +14,6 @@ import nl.inl.blacklab.search.TextPatternRegex;
 import nl.inl.blacklab.search.TextPatternWildcard;
 import nl.inl.blacklab.server.exceptions.BadRequest;
 import nl.inl.blacklab.server.exceptions.BlsException;
-import nl.inl.blacklab.testutil.MockSearcher;
 
 public class TestBlsUtils {
 

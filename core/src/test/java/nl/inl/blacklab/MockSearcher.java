@@ -1,9 +1,8 @@
-package nl.inl.blacklab.testutil;
+package nl.inl.blacklab;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -11,12 +10,11 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.search.Collector;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.search.Scorer;
-import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.similarities.BM25Similarity;
 import org.apache.lucene.store.LockObtainFailedException;
+import org.mockito.Mockito;
 
 import nl.inl.blacklab.externalstorage.ContentStore;
 import nl.inl.blacklab.forwardindex.ForwardIndex;
@@ -59,20 +57,6 @@ public class MockSearcher extends Searcher {
 	public int maxDoc() {
 		//
 		return 0;
-	}
-
-	@Override
-	@Deprecated
-	public Scorer findDocScores(Query q) {
-		//
-		return null;
-	}
-
-	@Override
-	@Deprecated
-	public TopDocs findTopDocs(Query q, int n) {
-		//
-		return null;
 	}
 
 	@Override
@@ -132,25 +116,15 @@ public class MockSearcher extends Searcher {
 	}
 
 	@Override
-	@Deprecated
-	public Map<String, Integer> termFrequencies(Query documentFilterQuery, String fieldName, String propName, String altName) {
-		return null;
-	}
-
-	@Override
-	@Deprecated
-	public void collectDocuments(Query query, Collector collector) {
-		//
-	}
-
-	@Override
 	public List<String> getFieldTerms(String fieldName, int maxResults) {
 		return null;
 	}
 
 	@Override
 	public IndexSearcher getIndexSearcher() {
-		return null;
+		IndexSearcher searcher = Mockito.mock(IndexSearcher.class);
+		Mockito.when(searcher.getSimilarity(Mockito.anyBoolean())).thenReturn(new BM25Similarity());
+		return searcher;
 	}
 
 	public void setForwardIndex(String fieldPropName, ForwardIndex forwardIndex) {
