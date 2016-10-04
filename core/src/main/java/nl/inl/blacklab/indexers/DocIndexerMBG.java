@@ -24,6 +24,7 @@ public class DocIndexerMBG extends DocIndexerXmlHandlers {
 
 	addHandler("mbg", new DocumentElementHandler());
         addHandler("/mbg/header/sourceFile/title", new MetadataElementHandler());
+        addHandler("/mbg/header/corpusFile/docId", new MetadataElementHandler());
         // header metadata
 	addHandler("/mbg/header/corpusFile/author", new MetadataElementHandler() {
 		@Override
