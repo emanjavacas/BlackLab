@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Serialized Form (BlackLab 1.3.3 API)</title>
+<title>Serialized Form (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Serialized Form (BlackLab 1.3.3 API)";
+        parent.document.title="Serialized Form (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -67,22 +67,17 @@
 <div class="serializedFormContainer">
 <ul class="blockList">
 <li class="blockList">
-<h2 title="Package">Package&nbsp;nl.inl.blacklab.exceptions</h2>
-<ul class="blockList">
-<li class="blockList"><a name="nl.inl.blacklab.exceptions.DocumentFormatException">
-<!--   -->
-</a>
-<h3>Class <a href="nl/inl/blacklab/exceptions/DocumentFormatException.html" title="class in nl.inl.blacklab.exceptions">nl.inl.blacklab.exceptions.DocumentFormatException</a> extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a> implements Serializable</h3>
-</li>
-</ul>
-</li>
-<li class="blockList">
 <h2 title="Package">Package&nbsp;nl.inl.blacklab.index</h2>
 <ul class="blockList">
 <li class="blockList"><a name="nl.inl.blacklab.index.DocIndexer.MaxDocsReachedException">
 <!--   -->
 </a>
 <h3>Class <a href="nl/inl/blacklab/index/DocIndexer.MaxDocsReachedException.html" title="class in nl.inl.blacklab.index">nl.inl.blacklab.index.DocIndexer.MaxDocsReachedException</a> extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="nl.inl.blacklab.index.DocumentFormatException">
+<!--   -->
+</a>
+<h3>Class <a href="nl/inl/blacklab/index/DocumentFormatException.html" title="class in nl.inl.blacklab.index">nl.inl.blacklab.index.DocumentFormatException</a> extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a> implements Serializable</h3>
 </li>
 <li class="blockList"><a name="nl.inl.blacklab.index.InputFormatException">
 <!--   -->
@@ -122,17 +117,12 @@
  of integers represents a sequence of tokens (by their ordinal
  values) that is expected at this point of the parse.</div>
 </li>
-<li class="blockList">
+<li class="blockListLast">
 <h4>tokenImage</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] tokenImage</pre>
 <div class="block">This is a reference to the "tokenImage" array of the generated
  parser within which the parse error occurred.  This array is
  defined in the generated ...Constants interface.</div>
-</li>
-<li class="blockListLast">
-<h4>eol</h4>
-<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> eol</pre>
-<div class="block">The end of line string for this machine.</div>
 </li>
 </ul>
 </li>
@@ -274,17 +264,12 @@
  of integers represents a sequence of tokens (by their ordinal
  values) that is expected at this point of the parse.</div>
 </li>
-<li class="blockList">
+<li class="blockListLast">
 <h4>tokenImage</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] tokenImage</pre>
 <div class="block">This is a reference to the "tokenImage" array of the generated
  parser within which the parse error occurred.  This array is
  defined in the generated ...Constants interface.</div>
-</li>
-<li class="blockListLast">
-<h4>eol</h4>
-<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> eol</pre>
-<div class="block">The end of line string for this machine.</div>
 </li>
 </ul>
 </li>
@@ -396,29 +381,22 @@
 </ul>
 </li>
 <li class="blockList">
-<h2 title="Package">Package&nbsp;nl.inl.util.json</h2>
+<h2 title="Package">Package&nbsp;nl.inl.blacklab.search</h2>
 <ul class="blockList">
-<li class="blockList"><a name="nl.inl.util.json.JSONException">
+<li class="blockList"><a name="nl.inl.blacklab.search.BLRuntimeException">
 <!--   -->
 </a>
-<h3>Class <a href="nl/inl/util/json/JSONException.html" title="class in nl.inl.util.json">nl.inl.util.json.JSONException</a> extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</a> implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>0L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList"><a name="serializedForm">
+<h3>Class <a href="nl/inl/blacklab/search/BLRuntimeException.html" title="class in nl.inl.blacklab.search">nl.inl.blacklab.search.BLRuntimeException</a> extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="nl.inl.blacklab.search.InvalidQueryException">
 <!--   -->
 </a>
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockListLast">
-<h4>cause</h4>
-<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a> cause</pre>
+<h3>Class <a href="nl/inl/blacklab/search/InvalidQueryException.html" title="class in nl.inl.blacklab.search">nl.inl.blacklab.search.InvalidQueryException</a> extends <a href="nl/inl/blacklab/search/BLRuntimeException.html" title="class in nl.inl.blacklab.search">BLRuntimeException</a> implements Serializable</h3>
 </li>
-</ul>
-</li>
-</ul>
+<li class="blockList"><a name="nl.inl.blacklab.search.RegexpTooLargeException">
+<!--   -->
+</a>
+<h3>Class <a href="nl/inl/blacklab/search/RegexpTooLargeException.html" title="class in nl.inl.blacklab.search">nl.inl.blacklab.search.RegexpTooLargeException</a> extends <a href="nl/inl/blacklab/search/InvalidQueryException.html" title="class in nl.inl.blacklab.search">InvalidQueryException</a> implements Serializable</h3>
 </li>
 </ul>
 </li>

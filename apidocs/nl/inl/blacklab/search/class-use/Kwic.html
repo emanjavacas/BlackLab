@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class nl.inl.blacklab.search.Kwic (BlackLab 1.3.3 API)</title>
+<title>Uses of Class nl.inl.blacklab.search.Kwic (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class nl.inl.blacklab.search.Kwic (BlackLab 1.3.3 API)";
+        parent.document.title="Uses of Class nl.inl.blacklab.search.Kwic (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -98,7 +98,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>,<a href="../../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a>&gt;</code></td>
-<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#kwics">kwics</a></strong></code>
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#kwics">kwics</a></strong></code>
 <div class="block">The KWIC data, if it has been retrieved.</div>
 </td>
 </tr>
@@ -119,13 +119,28 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
-<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getKwic(nl.inl.blacklab.search.Hit,%20int)">getKwic</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#getKwic(nl.inl.blacklab.search.Hit,%20int)">getKwic</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
        int&nbsp;contextSize)</code>
 <div class="block">Get a KWIC with a custom context size.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getKwic(nl.inl.blacklab.search.Hit,%20int)">getKwic</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
+       int&nbsp;contextSize)</code>
+<div class="block">Get a KWIC with a custom context size.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#getKwic(java.lang.String,%20nl.inl.blacklab.search.Hit,%20int)">getKwic</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+       <a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
+       int&nbsp;contextSize)</code>
+<div class="block">Retrieve a single KWIC (KeyWord In Context).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
 <td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getKwic(java.lang.String,%20nl.inl.blacklab.search.Hit,%20int)">getKwic</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
        <a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
        int&nbsp;contextSize)</code>

@@ -149,12 +149,18 @@
 <a class="jxr_linenumber" name="L141" href="#L141">141</a> 		<strong class="jxr_keyword">return</strong> false;
 <a class="jxr_linenumber" name="L142" href="#L142">142</a> 	}
 <a class="jxr_linenumber" name="L143" href="#L143">143</a> 
-<a class="jxr_linenumber" name="L144" href="#L144">144</a> 	@Override
-<a class="jxr_linenumber" name="L145" href="#L145">145</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
-<a class="jxr_linenumber" name="L146" href="#L146">146</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"REGEX("</span> + context.luceneField() + <span class="jxr_string">", "</span> + context.optDesensitize(value) + <span class="jxr_string">")"</span>;
-<a class="jxr_linenumber" name="L147" href="#L147">147</a> 	}
-<a class="jxr_linenumber" name="L148" href="#L148">148</a> 
-<a class="jxr_linenumber" name="L149" href="#L149">149</a> }
+<a class="jxr_linenumber" name="L144" href="#L144">144</a> 	@Deprecated
+<a class="jxr_linenumber" name="L145" href="#L145">145</a> 	@Override
+<a class="jxr_linenumber" name="L146" href="#L146">146</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
+<a class="jxr_linenumber" name="L147" href="#L147">147</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"REGEX("</span> + context.luceneField() + <span class="jxr_string">", "</span> + context.optDesensitize(value) + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L148" href="#L148">148</a> 	}
+<a class="jxr_linenumber" name="L149" href="#L149">149</a> 
+<a class="jxr_linenumber" name="L150" href="#L150">150</a> 	@Override
+<a class="jxr_linenumber" name="L151" href="#L151">151</a> 	<strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="L152" href="#L152">152</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"REGEX("</span> + value + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L153" href="#L153">153</a> 	}
+<a class="jxr_linenumber" name="L154" href="#L154">154</a> 
+<a class="jxr_linenumber" name="L155" href="#L155">155</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

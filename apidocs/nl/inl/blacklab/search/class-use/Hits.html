@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class nl.inl.blacklab.search.Hits (BlackLab 1.3.3 API)</title>
+<title>Uses of Class nl.inl.blacklab.search.Hits (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class nl.inl.blacklab.search.Hits (BlackLab 1.3.3 API)";
+        parent.document.title="Uses of Class nl.inl.blacklab.search.Hits (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -141,10 +141,20 @@
          int&nbsp;doc,
          org.apache.lucene.document.Document&nbsp;document,
          <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;docHits)</code>
-<div class="block">Construct a DocResult.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use version that doesn't take a Document (will be loaded lazily)</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/perdocument/DocResult.html#DocResult(nl.inl.blacklab.search.Searcher,%20java.lang.String,%20int,%20nl.inl.blacklab.search.Hits)">DocResult</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concField,
+         int&nbsp;doc,
+         <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;docHits)</code>
+<div class="block">Construct a DocResult.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/perdocument/DocResults.html#DocResults(nl.inl.blacklab.search.Searcher,%20nl.inl.blacklab.search.Hits)">DocResults</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
           <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
@@ -168,6 +178,22 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html" title="class in nl.inl.blacklab.search">HitsImpl</a></strong></code>
+<div class="block">Represents a list of Hit objects.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsSample.html" title="class in nl.inl.blacklab.search">HitsSample</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsSampleImpl.html" title="class in nl.inl.blacklab.search">HitsSampleImpl</a></strong></code>
+<div class="block">Implements HitsSample by wrapping a Hits object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search">HitsWindow</a></strong></code>
 <div class="block">Represents a subset of a Hits object, for example a page of hits.</div>
 </td>
@@ -181,6 +207,26 @@
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">HitsSampleImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsSampleImpl.html#copy()">copy</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#copy()">copy</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#copy()">copy</a></strong>()</code>
+<div class="block">Return a copy of this Hits object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#emptyList(nl.inl.blacklab.search.Searcher)">emptyList</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher)</code>
+<div class="block">Construct an empty Hits object.</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
 <td class="colLast"><span class="strong">Searcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Searcher.html#find(org.apache.lucene.search.spans.SpanQuery)">find</a></strong>(org.apache.lucene.search.spans.SpanQuery&nbsp;query)</code>
@@ -223,7 +269,35 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#fromList(nl.inl.blacklab.search.Searcher,%20java.util.List)">fromList</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;&nbsp;docHits)</code>
+<div class="block">Make a wrapper Hits object for a list of Hit objects.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#fromSpanQuery(nl.inl.blacklab.search.Searcher,%20org.apache.lucene.search.spans.SpanQuery)">fromSpanQuery</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+             org.apache.lucene.search.spans.SpanQuery&nbsp;query)</code>
+<div class="block">Construct a Hits object from a SpanQuery.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#fromSpans(nl.inl.blacklab.search.Searcher,%20java.lang.String,%20org.apache.lucene.search.spans.Spans)">fromSpans</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName,
+         org.apache.lucene.search.spans.Spans&nbsp;source)</code>
+<div class="block">Construct a Hits object from a Spans.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#getHitsInDoc(int)">getHitsInDoc</a></strong>(int&nbsp;docid)</code>
+<div class="block">Convenience method to get all hits in a single doc from a larger hitset.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
 <td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getHitsInDoc(int)">getHitsInDoc</a></strong>(int&nbsp;docid)</code>
 <div class="block">Convenience method to get all hits in a single doc from a larger hitset.</div>
 </td>
@@ -266,7 +340,25 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#copySettingsFrom(nl.inl.blacklab.search.Hits)">copySettingsFrom</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#copySettingsFrom(nl.inl.blacklab.search.Hits)">copySettingsFrom</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</code>
+<div class="block">Copy the settings from another Hits object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/HitsSample.html" title="class in nl.inl.blacklab.search">HitsSample</a></code></td>
+<td class="colLast"><span class="strong">HitsSample.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsSample.html#fromHits(nl.inl.blacklab.search.Hits,%20float,%20long)">fromHits</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+        float&nbsp;ratio,
+        long&nbsp;seed)</code>
+<div class="block">Take a sample of hits by wrapping an existing Hits object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/HitsSample.html" title="class in nl.inl.blacklab.search">HitsSample</a></code></td>
+<td class="colLast"><span class="strong">HitsSample.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsSample.html#fromHits(nl.inl.blacklab.search.Hits,%20int,%20long)">fromHits</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+        int&nbsp;number,
+        long&nbsp;seed)</code>
+<div class="block">Take a sample of hits by wrapping an existing Hits object.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
@@ -303,11 +395,6 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Hits)">Hits</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</code>
-<div class="block">Construct a Hits object from an existing Hits object.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsWindow.html#HitsWindow(nl.inl.blacklab.search.Hits,%20int,%20int)">HitsWindow</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;source,
           int&nbsp;first,
           int&nbsp;windowSize)</code>
@@ -378,6 +465,16 @@
 <td class="colLast"><span class="strong">HitPropertyDocumentId.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentId.html#deserialize(nl.inl.blacklab.search.Hits)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyContextWords.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyContextWords</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyContextWords.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyContextWords.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentStoredField.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyDocumentStoredField</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyDocumentStoredField.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentStoredField.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a></code></td>
 <td class="colLast"><span class="strong">HitProperty.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitProperty.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;serialized)</code>
@@ -385,8 +482,48 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentStoredField.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyDocumentStoredField</a></code></td>
-<td class="colLast"><span class="strong">HitPropertyDocumentStoredField.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentStoredField.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValue.html" title="class in nl.inl.blacklab.search.grouping">HitPropValue</a></code></td>
+<td class="colLast"><span class="strong">HitPropValueContextWords.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueContextWords.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordLeft.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyWordLeft</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyWordLeft.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordLeft.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyLeftContext.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyLeftContext</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyLeftContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyLeftContext.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyHitText.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyHitText</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyHitText.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyHitText.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValue.html" title="class in nl.inl.blacklab.search.grouping">HitPropValue</a></code></td>
+<td class="colLast"><span class="strong">HitPropValueContextWord.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueContextWord.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueMultiple.html" title="class in nl.inl.blacklab.search.grouping">HitPropValueMultiple</a></code></td>
+<td class="colLast"><span class="strong">HitPropValueMultiple.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueMultiple.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyRightContext.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyRightContext</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyRightContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyRightContext.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordRight.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyWordRight</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyWordRight.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordRight.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyMultiple.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyMultiple</a></code></td>
+<td class="colLast"><span class="strong">HitPropertyMultiple.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyMultiple.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -397,58 +534,9 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyMultiple.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyMultiple</a></code></td>
-<td class="colLast"><span class="strong">HitPropertyMultiple.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyMultiple.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValue.html" title="class in nl.inl.blacklab.search.grouping">HitPropValue</a></code></td>
-<td class="colLast"><span class="strong">HitPropValueContextWord.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueContextWord.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordRight.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyWordRight</a></code></td>
-<td class="colLast"><span class="strong">HitPropertyWordRight.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordRight.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordLeft.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyWordLeft</a></code></td>
-<td class="colLast"><span class="strong">HitPropertyWordLeft.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordLeft.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValue.html" title="class in nl.inl.blacklab.search.grouping">HitPropValue</a></code></td>
-<td class="colLast"><span class="strong">HitPropValueContextWords.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueContextWords.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyLeftContext.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyLeftContext</a></code></td>
-<td class="colLast"><span class="strong">HitPropertyLeftContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyLeftContext.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentDecade.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyDocumentDecade</a></code></td>
 <td class="colLast"><span class="strong">HitPropertyDocumentDecade.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentDecade.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueMultiple.html" title="class in nl.inl.blacklab.search.grouping">HitPropValueMultiple</a></code></td>
-<td class="colLast"><span class="strong">HitPropValueMultiple.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropValueMultiple.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyHitText.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyHitText</a></code></td>
-<td class="colLast"><span class="strong">HitPropertyHitText.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyHitText.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyRightContext.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyRightContext</a></code></td>
-<td class="colLast"><span class="strong">HitPropertyRightContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyRightContext.html#deserialize(nl.inl.blacklab.search.Hits,%20java.lang.String)">deserialize</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;info)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="strong">HitProperty.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitProperty.html#setHits(nl.inl.blacklab.search.Hits)">setHits</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -460,6 +548,20 @@
 <tbody>
 <tr class="altColor">
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitProperty.html#HitProperty(nl.inl.blacklab.search.Hits)">HitProperty</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyContextWords.html#HitPropertyContextWords(nl.inl.blacklab.search.Hits,%20java.lang.String,%20java.lang.String,%20boolean,%20java.util.List)">HitPropertyContextWords</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;field,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;property,
+                       boolean&nbsp;sensitive,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyContextWords.ContextPart.html" title="class in nl.inl.blacklab.search.grouping">HitPropertyContextWords.ContextPart</a>&gt;&nbsp;words)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyContextWords.html#HitPropertyContextWords(nl.inl.blacklab.search.Hits,%20java.lang.String,%20java.lang.String,%20boolean,%20java.lang.String)">HitPropertyContextWords</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;field,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;property,
+                       boolean&nbsp;sensitive,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wordSpec)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyDocumentDecade.html#HitPropertyDocumentDecade(nl.inl.blacklab.search.Hits,%20java.lang.String)">HitPropertyDocumentDecade</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;hits,

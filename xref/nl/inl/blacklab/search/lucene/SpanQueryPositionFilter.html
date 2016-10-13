@@ -130,7 +130,7 @@
 <a class="jxr_linenumber" name="L122" href="#L122">122</a> 		<strong class="jxr_keyword">case</strong> MATCHES:
 <a class="jxr_linenumber" name="L123" href="#L123">123</a> 			<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SQPositionFilter("</span> + clausesToString(field) + <span class="jxr_string">", "</span> + not + <span class="jxr_string">"MATCHES"</span> + adj + <span class="jxr_string">")"</span>;
 <a class="jxr_linenumber" name="L124" href="#L124">124</a> 		<strong class="jxr_keyword">default</strong>:
-<a class="jxr_linenumber" name="L125" href="#L125">125</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Unknown filter operation "</span> + op);
+<a class="jxr_linenumber" name="L125" href="#L125">125</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Unknown filter operation "</span> + op);
 <a class="jxr_linenumber" name="L126" href="#L126">126</a> 		}
 <a class="jxr_linenumber" name="L127" href="#L127">127</a> 	}
 <a class="jxr_linenumber" name="L128" href="#L128">128</a> }

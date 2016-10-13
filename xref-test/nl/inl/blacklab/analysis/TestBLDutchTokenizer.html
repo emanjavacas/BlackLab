@@ -37,36 +37,33 @@
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  	@Test
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testBasics() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>  		Reader r = <strong class="jxr_keyword">new</strong> StringReader(<span class="jxr_string">"\&quot;hond, a.u.b.: bél(len); \t [pre]cursor \t\nzo'n 'Hij zij' ex-man -"</span>);
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  		Tokenizer ts = <strong class="jxr_keyword">new</strong> BLDutchTokenizer();
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>  		ts.setReader(r);
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>  		ts.reset();
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>  		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>  			CharTermAttribute ta = ts.addAttribute(CharTermAttribute.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>  			Assert.assertEquals(<span class="jxr_string">"hond"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  			Assert.assertEquals(<span class="jxr_string">"a.u.b."</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>  			Assert.assertEquals(<span class="jxr_string">"bél(len)"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>  			Assert.assertEquals(<span class="jxr_string">"[pre]cursor"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  			Assert.assertEquals(<span class="jxr_string">"zo'n"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L48" href="#L48">48</a>  			Assert.assertEquals(<span class="jxr_string">"'Hij"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>  			Assert.assertEquals(<span class="jxr_string">"zij'"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L52" href="#L52">52</a>  			Assert.assertEquals(<span class="jxr_string">"ex-man"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>  			Assert.assertTrue(ts.incrementToken());
-<a class="jxr_linenumber" name="L54" href="#L54">54</a>  			Assert.assertEquals(<span class="jxr_string">"-"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>  			Assert.assertFalse(ts.incrementToken());
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		} <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="L57" href="#L57">57</a>  			ts.close();
-<a class="jxr_linenumber" name="L58" href="#L58">58</a>  		}
-<a class="jxr_linenumber" name="L59" href="#L59">59</a>  	}
-<a class="jxr_linenumber" name="L60" href="#L60">60</a>  
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>  }
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  		<strong class="jxr_keyword">try</strong> (Tokenizer ts = <strong class="jxr_keyword">new</strong> BLDutchTokenizer()) {
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  			ts.setReader(r);
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  			ts.reset();
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  			CharTermAttribute ta = ts.addAttribute(CharTermAttribute.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  			Assert.assertEquals(<span class="jxr_string">"hond"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  			Assert.assertEquals(<span class="jxr_string">"a.u.b."</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  			Assert.assertEquals(<span class="jxr_string">"bél(len)"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  			Assert.assertEquals(<span class="jxr_string">"[pre]cursor"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  			Assert.assertEquals(<span class="jxr_string">"zo'n"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  			Assert.assertEquals(<span class="jxr_string">"'Hij"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  			Assert.assertEquals(<span class="jxr_string">"zij'"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  			Assert.assertEquals(<span class="jxr_string">"ex-man"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  			Assert.assertTrue(ts.incrementToken());
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  			Assert.assertEquals(<span class="jxr_string">"-"</span>, <strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  			Assert.assertFalse(ts.incrementToken());
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  		}
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  	}
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

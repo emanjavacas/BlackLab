@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class nl.inl.blacklab.forwardindex.ForwardIndex (BlackLab 1.3.3 API)</title>
+<title>Uses of Class nl.inl.blacklab.forwardindex.ForwardIndex (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class nl.inl.blacklab.forwardindex.ForwardIndex (BlackLab 1.3.3 API)";
+        parent.document.title="Uses of Class nl.inl.blacklab.forwardindex.ForwardIndex (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -111,19 +111,6 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
-<td class="colLast"><span class="strong">ForwardIndex.</span><code><strong><a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#open(java.io.File)">open</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir)</code>
-<div class="block">Open a forward index.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
-<td class="colLast"><span class="strong">ForwardIndex.</span><code><strong><a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#open(java.io.File,%20boolean)">open</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir,
-    boolean&nbsp;indexMode)</code>
-<div class="block">Open a forward index.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
 <td class="colLast"><span class="strong">ForwardIndex.</span><code><strong><a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#open(java.io.File,%20boolean,%20java.text.Collator,%20boolean)">open</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir,
     boolean&nbsp;indexMode,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/text/Collator.html?is-external=true" title="class or interface in java.text">Collator</a>&nbsp;collator,
@@ -138,6 +125,21 @@
 <!--   -->
 </a>
 <h3>Uses of <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a> in <a href="../../../../../nl/inl/blacklab/search/package-summary.html">nl.inl.blacklab.search</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing fields, and an explanation">
+<caption><span>Fields in <a href="../../../../../nl/inl/blacklab/search/package-summary.html">nl.inl.blacklab.search</a> with type parameters of type <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&gt;</code></td>
+<td class="colLast"><span class="strong">Searcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Searcher.html#forwardIndices">forwardIndices</a></strong></code>
+<div class="block">ForwardIndices allow us to quickly find what token occurs at a specific position.</div>
+</td>
+</tr>
+</tbody>
+</table>
 <table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
 <caption><span>Methods in <a href="../../../../../nl/inl/blacklab/search/package-summary.html">nl.inl.blacklab.search</a> that return <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -150,6 +152,14 @@
 <td class="colLast"><span class="strong">Searcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Searcher.html#getForwardIndex(java.lang.String)">getForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName)</code>
 <div class="block">Tries to get the ForwardIndex object for the specified fieldname.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
+<td class="colLast"><span class="strong">SearcherImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/SearcherImpl.html#openForwardIndex(java.lang.String)">openForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
+<td class="colLast"><span class="strong">Searcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Searcher.html#openForwardIndex(java.lang.String)">openForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -166,11 +176,38 @@
 </tr>
 </tbody>
 </table>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../nl/inl/blacklab/search/package-summary.html">nl.inl.blacklab.search</a> with parameters of type <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><span class="strong">Searcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Searcher.html#addForwardIndex(java.lang.String,%20nl.inl.blacklab.forwardindex.ForwardIndex)">addForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName,
+               <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&nbsp;forwardIndex)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li class="blockList"><a name="nl.inl.blacklab.testutil">
 <!--   -->
 </a>
 <h3>Uses of <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a> in <a href="../../../../../nl/inl/blacklab/testutil/package-summary.html">nl.inl.blacklab.testutil</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../nl/inl/blacklab/testutil/package-summary.html">nl.inl.blacklab.testutil</a> that return <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
+<td class="colLast"><span class="strong">MockSearcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/testutil/MockSearcher.html#openForwardIndex(java.lang.String)">openForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
 <table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
 <caption><span>Methods in <a href="../../../../../nl/inl/blacklab/testutil/package-summary.html">nl.inl.blacklab.testutil</a> with parameters of type <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -187,6 +224,11 @@
                  int&nbsp;snippets)</code>
 <div class="block">Do a performance test, retrieving snippets from a number of documents.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">MockSearcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/testutil/MockSearcher.html#setForwardIndex(java.lang.String,%20nl.inl.blacklab.forwardindex.ForwardIndex)">setForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName,
+               <a href="../../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&nbsp;forwardIndex)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>

@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LuceneUtil (BlackLab 1.3.3 API)</title>
+<title>LuceneUtil (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="LuceneUtil (BlackLab 1.3.3 API)";
+        parent.document.title="LuceneUtil (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -151,7 +151,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getFrequenciesFromTermVector(org.apache.lucene.index.DirectoryReader,%20int,%20java.lang.String,%20java.util.Map)">getFrequenciesFromTermVector</a></strong>(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getFrequenciesFromTermVector(org.apache.lucene.index.IndexReader,%20int,%20java.lang.String,%20java.util.Map)">getFrequenciesFromTermVector</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
                             int&nbsp;doc,
                             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneName,
                             <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;freq)</code>
@@ -159,6 +159,11 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static org.apache.lucene.index.IndexWriterConfig</code></td>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getIndexWriterConfig(org.apache.lucene.analysis.Analyzer,%20boolean)">getIndexWriterConfig</a></strong>(org.apache.lucene.analysis.Analyzer&nbsp;analyzer,
+                    boolean&nbsp;create)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getMatchingTermsFromIndex(org.apache.lucene.index.IndexReader,%20java.lang.String,%20java.util.Collection,%20int)">getMatchingTermsFromIndex</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneName,
@@ -167,9 +172,9 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="block">Get all the terms in the index with low edit distance from the supplied term</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getWordsFromTermVector(org.apache.lucene.index.DirectoryReader,%20int,%20java.lang.String,%20int,%20int)">getWordsFromTermVector</a></strong>(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getWordsFromTermVector(org.apache.lucene.index.IndexReader,%20int,%20java.lang.String,%20int,%20int)">getWordsFromTermVector</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
                       int&nbsp;doc,
                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneName,
                       int&nbsp;start,
@@ -177,9 +182,9 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="block">Get all words between the specified start and end positions from the term vector.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getWordsFromTermVector(org.apache.lucene.index.DirectoryReader,%20int,%20java.lang.String,%20int,%20int,%20boolean)">getWordsFromTermVector</a></strong>(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#getWordsFromTermVector(org.apache.lucene.index.IndexReader,%20int,%20java.lang.String,%20int,%20int,%20boolean)">getWordsFromTermVector</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
                       int&nbsp;doc,
                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneName,
                       int&nbsp;start,
@@ -188,7 +193,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="block">Get all words between the specified start and end positions from the term vector.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static org.apache.lucene.search.Query</code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#parseLuceneQuery(java.lang.String,%20org.apache.lucene.analysis.Analyzer,%20java.lang.String)">parseLuceneQuery</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneQuery,
                 org.apache.lucene.analysis.Analyzer&nbsp;analyzer,
@@ -196,12 +201,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="block">Parse a query in the Lucene query language format (QueryParser supplied with Lucene).</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#termOccursInIndex(org.apache.lucene.index.IndexReader,%20org.apache.lucene.index.Term)">termOccursInIndex</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
-                 org.apache.lucene.index.Term&nbsp;term)</code>
-<div class="block">Test if a term occurs in the index</div>
-</td>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/LuceneUtil.html#termFrequencies(org.apache.lucene.search.IndexSearcher,%20org.apache.lucene.search.Query,%20java.lang.String,%20java.lang.String,%20java.lang.String)">termFrequencies</a></strong>(org.apache.lucene.search.IndexSearcher&nbsp;indexSearcher,
+               org.apache.lucene.search.Query&nbsp;documentFilterQuery,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;altName)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -225,19 +231,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="termOccursInIndex(org.apache.lucene.index.IndexReader, org.apache.lucene.index.Term)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>termOccursInIndex</h4>
-<pre>public static&nbsp;boolean&nbsp;termOccursInIndex(org.apache.lucene.index.IndexReader&nbsp;reader,
-                        org.apache.lucene.index.Term&nbsp;term)</pre>
-<div class="block">Test if a term occurs in the index</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>reader</code> - the index</dd><dd><code>term</code> - the term</dd>
-<dt><span class="strong">Returns:</span></dt><dd>true iff it occurs in the index</dd></dl>
-</li>
-</ul>
 <a name="getMatchingTermsFromIndex(org.apache.lucene.index.IndexReader, java.lang.String, java.util.Collection, int)">
 <!--   -->
 </a>
@@ -273,13 +266,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dd><code>org.apache.lucene.queryparser.classic.ParseException</code> - on syntax error</dd></dl>
 </li>
 </ul>
-<a name="getWordsFromTermVector(org.apache.lucene.index.DirectoryReader, int, java.lang.String, int, int)">
+<a name="getWordsFromTermVector(org.apache.lucene.index.IndexReader, int, java.lang.String, int, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getWordsFromTermVector</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getWordsFromTermVector(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getWordsFromTermVector(org.apache.lucene.index.IndexReader&nbsp;reader,
                               int&nbsp;doc,
                               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneName,
                               int&nbsp;start,
@@ -292,13 +285,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>the words found, in order</dd></dl>
 </li>
 </ul>
-<a name="getWordsFromTermVector(org.apache.lucene.index.DirectoryReader, int, java.lang.String, int, int, boolean)">
+<a name="getWordsFromTermVector(org.apache.lucene.index.IndexReader, int, java.lang.String, int, int, boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getWordsFromTermVector</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getWordsFromTermVector(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getWordsFromTermVector(org.apache.lucene.index.IndexReader&nbsp;reader,
                               int&nbsp;doc,
                               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneName,
                               int&nbsp;start,
@@ -313,13 +306,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>the words found, in order</dd></dl>
 </li>
 </ul>
-<a name="getFrequenciesFromTermVector(org.apache.lucene.index.DirectoryReader, int, java.lang.String, java.util.Map)">
+<a name="getFrequenciesFromTermVector(org.apache.lucene.index.IndexReader, int, java.lang.String, java.util.Map)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getFrequenciesFromTermVector</h4>
-<pre>public static&nbsp;void&nbsp;getFrequenciesFromTermVector(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<pre>public static&nbsp;void&nbsp;getFrequenciesFromTermVector(org.apache.lucene.index.IndexReader&nbsp;reader,
                                 int&nbsp;doc,
                                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;luceneName,
                                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;freq)</pre>
@@ -372,7 +365,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <a name="findTermsByPrefix(org.apache.lucene.index.LeafReader, java.lang.String, java.lang.String, boolean, int)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>findTermsByPrefix</h4>
 <pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;findTermsByPrefix(org.apache.lucene.index.LeafReader&nbsp;index,
@@ -383,6 +376,29 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="block">Find terms in the index based on a prefix. Useful for autocomplete.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - the index</dd><dd><code>fieldName</code> - the field</dd><dd><code>prefix</code> - the prefix we're looking for (null or empty string for all terms)</dd><dd><code>sensitive</code> - match case-sensitively or not?</dd><dd><code>maxResults</code> - max. number of results to return (or -1 for all)</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the matching terms</dd></dl>
+</li>
+</ul>
+<a name="termFrequencies(org.apache.lucene.search.IndexSearcher, org.apache.lucene.search.Query, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>termFrequencies</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;termFrequencies(org.apache.lucene.search.IndexSearcher&nbsp;indexSearcher,
+                                  org.apache.lucene.search.Query&nbsp;documentFilterQuery,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;altName)</pre>
+</li>
+</ul>
+<a name="getIndexWriterConfig(org.apache.lucene.analysis.Analyzer, boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getIndexWriterConfig</h4>
+<pre>public static&nbsp;org.apache.lucene.index.IndexWriterConfig&nbsp;getIndexWriterConfig(org.apache.lucene.analysis.Analyzer&nbsp;analyzer,
+                                                             boolean&nbsp;create)</pre>
 </li>
 </ul>
 </li>

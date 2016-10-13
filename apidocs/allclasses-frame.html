@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>All Classes (BlackLab 1.3.3 API)</title>
+<title>All Classes (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
 </head>
 <body>
@@ -23,6 +23,7 @@
 <li><a href="nl/inl/blacklab/analysis/BLDutchTokenizer.html" title="class in nl.inl.blacklab.analysis" target="classFrame">BLDutchTokenizer</a></li>
 <li><a href="nl/inl/blacklab/analysis/BLNonTokenizer.html" title="class in nl.inl.blacklab.analysis" target="classFrame">BLNonTokenizer</a></li>
 <li><a href="nl/inl/blacklab/analysis/BLNonTokenizingAnalyzer.html" title="class in nl.inl.blacklab.analysis" target="classFrame">BLNonTokenizingAnalyzer</a></li>
+<li><a href="nl/inl/blacklab/search/BLRuntimeException.html" title="class in nl.inl.blacklab.search" target="classFrame">BLRuntimeException</a></li>
 <li><a href="nl/inl/blacklab/search/lucene/BLSpanMultiTermQueryWrapper.html" title="class in nl.inl.blacklab.search.lucene" target="classFrame">BLSpanMultiTermQueryWrapper</a></li>
 <li><a href="nl/inl/blacklab/search/lucene/BLSpanMultiTermQueryWrapper.BLTopTermsSpanBooleanQueryRewrite.html" title="class in nl.inl.blacklab.search.lucene" target="classFrame">BLSpanMultiTermQueryWrapper.BLTopTermsSpanBooleanQueryRewrite</a></li>
 <li><a href="nl/inl/blacklab/search/lucene/BLSpanOrQuery.html" title="class in nl.inl.blacklab.search.lucene" target="classFrame">BLSpanOrQuery</a></li>
@@ -31,10 +32,7 @@
 <li><a href="nl/inl/blacklab/search/lucene/BLSpanTermQuery.html" title="class in nl.inl.blacklab.search.lucene" target="classFrame">BLSpanTermQuery</a></li>
 <li><a href="nl/inl/blacklab/analysis/BLStandardAnalyzer.html" title="class in nl.inl.blacklab.analysis" target="classFrame">BLStandardAnalyzer</a></li>
 <li><a href="nl/inl/blacklab/analysis/BLWhitespaceAnalyzer.html" title="class in nl.inl.blacklab.analysis" target="classFrame">BLWhitespaceAnalyzer</a></li>
-<li><a href="nl/inl/util/CapturingReader.html" title="class in nl.inl.util" target="classFrame">CapturingReader</a></li>
-<li><a href="nl/inl/util/json/CDL.html" title="class in nl.inl.util.json" target="classFrame">CDL</a></li>
-<li><a href="nl/inl/util/ChunkedIntList.html" title="class in nl.inl.util" target="classFrame">ChunkedIntList</a></li>
-<li><a href="nl/inl/util/ChunkedList.html" title="class in nl.inl.util" target="classFrame">ChunkedList</a></li>
+<li><a href="nl/inl/util/CollUtil.html" title="class in nl.inl.util" target="classFrame">CollUtil</a></li>
 <li><a href="nl/inl/blacklab/perdocument/ComparatorDocGroupProperty.html" title="class in nl.inl.blacklab.perdocument" target="classFrame">ComparatorDocGroupProperty</a></li>
 <li><a href="nl/inl/blacklab/perdocument/ComparatorDocProperty.html" title="class in nl.inl.blacklab.perdocument" target="classFrame">ComparatorDocProperty</a></li>
 <li><a href="nl/inl/blacklab/search/CompleteQuery.html" title="class in nl.inl.blacklab.search" target="classFrame">CompleteQuery</a></li>
@@ -46,27 +44,24 @@
 <li><a href="nl/inl/blacklab/index/complex/ComplexFieldUtil.BookkeepFieldType.html" title="enum in nl.inl.blacklab.index.complex" target="classFrame">ComplexFieldUtil.BookkeepFieldType</a></li>
 <li><a href="nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search" target="classFrame">Concordance</a></li>
 <li><a href="nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search" target="classFrame">ConcordanceType</a></li>
-<li><a href="nl/inl/util/ConsoleUtil.html" title="class in nl.inl.util" target="classFrame">ConsoleUtil</a></li>
 <li><a href="nl/inl/blacklab/search/ContentAccessor.html" title="class in nl.inl.blacklab.search" target="classFrame">ContentAccessor</a></li>
-<li><a href="nl/inl/blacklab/externalstorage/ContentAccessorContentStore.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentAccessorContentStore</a></li>
 <li><a href="nl/inl/blacklab/externalstorage/ContentStore.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStore</a></li>
+<li><a href="nl/inl/blacklab/externalstorage/ContentStore.DocTask.html" title="interface in nl.inl.blacklab.externalstorage" target="classFrame"><i>ContentStore.DocTask</i></a></li>
 <li><a href="nl/inl/blacklab/externalstorage/ContentStoreDir.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStoreDir</a></li>
 <li><a href="nl/inl/blacklab/externalstorage/ContentStoreDirAbstract.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStoreDirAbstract</a></li>
 <li><a href="nl/inl/blacklab/externalstorage/ContentStoreDirFixedBlock.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStoreDirFixedBlock</a></li>
 <li><a href="nl/inl/blacklab/externalstorage/ContentStoreDirUtf8.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStoreDirUtf8</a></li>
 <li><a href="nl/inl/blacklab/externalstorage/ContentStoreDirZip.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStoreDirZip</a></li>
 <li><a href="nl/inl/blacklab/externalstorage/ContentStoreMemory.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStoreMemory</a></li>
+<li><a href="nl/inl/blacklab/externalstorage/ContentStoresManager.html" title="class in nl.inl.blacklab.externalstorage" target="classFrame">ContentStoresManager</a></li>
 <li><a href="nl/inl/blacklab/queryParser/contextql/ContextQlParseUtils.html" title="class in nl.inl.blacklab.queryParser.contextql" target="classFrame">ContextQlParseUtils</a></li>
 <li><a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParser.html" title="class in nl.inl.blacklab.queryParser.contextql" target="classFrame">ContextualQueryLanguageParser</a></li>
 <li><a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.contextql" target="classFrame"><i>ContextualQueryLanguageParserConstants</i></a></li>
 <li><a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParserTokenManager.html" title="class in nl.inl.blacklab.queryParser.contextql" target="classFrame">ContextualQueryLanguageParserTokenManager</a></li>
-<li><a href="nl/inl/util/json/Cookie.html" title="class in nl.inl.util.json" target="classFrame">Cookie</a></li>
-<li><a href="nl/inl/util/json/CookieList.html" title="class in nl.inl.util.json" target="classFrame">CookieList</a></li>
 <li><a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParser.html" title="class in nl.inl.blacklab.queryParser.corpusql" target="classFrame">CorpusQueryLanguageParser</a></li>
 <li><a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.corpusql" target="classFrame"><i>CorpusQueryLanguageParserConstants</i></a></li>
 <li><a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html" title="class in nl.inl.blacklab.queryParser.corpusql" target="classFrame">CorpusQueryLanguageParserTokenManager</a></li>
 <li><a href="nl/inl/util/CountingReader.html" title="class in nl.inl.util" target="classFrame">CountingReader</a></li>
-<li><a href="nl/inl/util/DateUtil.html" title="class in nl.inl.util" target="classFrame">DateUtil</a></li>
 <li><a href="nl/inl/blacklab/filter/DesensitizeFilter.html" title="class in nl.inl.blacklab.filter" target="classFrame">DesensitizeFilter</a></li>
 <li><a href="nl/inl/blacklab/index/complex/DesensitizerAdder.html" title="class in nl.inl.blacklab.index.complex" target="classFrame">DesensitizerAdder</a></li>
 <li><a href="nl/inl/blacklab/search/DocContents.html" title="class in nl.inl.blacklab.search" target="classFrame">DocContents</a></li>
@@ -85,7 +80,7 @@
 <li><a href="nl/inl/blacklab/index/DocIndexer.MaxDocsReachedException.html" title="class in nl.inl.blacklab.index" target="classFrame">DocIndexer.MaxDocsReachedException</a></li>
 <li><a href="nl/inl/blacklab/index/DocIndexerAbstract.html" title="class in nl.inl.blacklab.index" target="classFrame">DocIndexerAbstract</a></li>
 <li><a href="nl/inl/blacklab/indexers/DocIndexerAlto.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerAlto</a></li>
-<li><a href="nl/inl/blacklab/example/DocIndexerExample.html" title="class in nl.inl.blacklab.example" target="classFrame">DocIndexerExample</a></li>
+<li><a href="nl/inl/blacklab/tools/indexexample/DocIndexerExample.html" title="class in nl.inl.blacklab.tools.indexexample" target="classFrame">DocIndexerExample</a></li>
 <li><a href="nl/inl/blacklab/indexers/DocIndexerFolia.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerFolia</a></li>
 <li><a href="nl/inl/blacklab/indexers/DocIndexerOpenSonar.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerOpenSonar</a></li>
 <li><a href="nl/inl/blacklab/indexers/DocIndexerPageXml.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerPageXml</a></li>
@@ -94,6 +89,7 @@
 <li><a href="nl/inl/blacklab/indexers/DocIndexerTeiP4.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerTeiP4</a></li>
 <li><a href="nl/inl/blacklab/indexers/DocIndexerTeiPosInFunctionAttr.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerTeiPosInFunctionAttr</a></li>
 <li><a href="nl/inl/blacklab/indexers/DocIndexerTeiText.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerTeiText</a></li>
+<li><a href="nl/inl/blacklab/indexers/DocIndexerWhiteLab2.html" title="class in nl.inl.blacklab.indexers" target="classFrame">DocIndexerWhiteLab2</a></li>
 <li><a href="nl/inl/blacklab/index/DocIndexerXml.html" title="class in nl.inl.blacklab.index" target="classFrame">DocIndexerXml</a></li>
 <li><a href="nl/inl/blacklab/index/DocIndexerXmlHandlers.html" title="class in nl.inl.blacklab.index" target="classFrame">DocIndexerXmlHandlers</a></li>
 <li><a href="nl/inl/blacklab/index/DocIndexerXmlHandlers.MetadataFetcher.html" title="class in nl.inl.blacklab.index" target="classFrame">DocIndexerXmlHandlers.MetadataFetcher</a></li>
@@ -107,14 +103,16 @@
 <li><a href="nl/inl/blacklab/perdocument/DocResult.html" title="class in nl.inl.blacklab.perdocument" target="classFrame">DocResult</a></li>
 <li><a href="nl/inl/blacklab/perdocument/DocResults.html" title="class in nl.inl.blacklab.perdocument" target="classFrame">DocResults</a></li>
 <li><a href="nl/inl/blacklab/perdocument/DocResultsWindow.html" title="class in nl.inl.blacklab.perdocument" target="classFrame">DocResultsWindow</a></li>
-<li><a href="nl/inl/blacklab/exceptions/DocumentFormatException.html" title="class in nl.inl.blacklab.exceptions" target="classFrame">DocumentFormatException</a></li>
+<li><a href="nl/inl/blacklab/index/DocumentFormatException.html" title="class in nl.inl.blacklab.index" target="classFrame">DocumentFormatException</a></li>
 <li><a href="nl/inl/blacklab/index/DocumentFormats.html" title="class in nl.inl.blacklab.index" target="classFrame">DocumentFormats</a></li>
-<li><a href="nl/inl/blacklab/example/Example.html" title="class in nl.inl.blacklab.example" target="classFrame">Example</a></li>
+<li><a href="nl/inl/blacklab/tools/indexexample/Example.html" title="class in nl.inl.blacklab.tools.indexexample" target="classFrame">Example</a></li>
+<li><a href="nl/inl/blacklab/testutil/ExportCorpus.html" title="class in nl.inl.blacklab.testutil" target="classFrame">ExportCorpus</a></li>
 <li><a href="nl/inl/util/ExUtil.html" title="class in nl.inl.util" target="classFrame">ExUtil</a></li>
 <li><a href="nl/inl/blacklab/search/indexstructure/FieldType.html" title="enum in nl.inl.blacklab.search.indexstructure" target="classFrame">FieldType</a></li>
 <li><a href="nl/inl/util/FileUtil.html" title="class in nl.inl.util" target="classFrame">FileUtil</a></li>
 <li><a href="nl/inl/util/FileUtil.FileTask.html" title="class in nl.inl.util" target="classFrame">FileUtil.FileTask</a></li>
 <li><a href="nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex" target="classFrame">ForwardIndex</a></li>
+<li><a href="nl/inl/blacklab/forwardindex/ForwardIndex.ForwardIndexDocTask.html" title="interface in nl.inl.blacklab.forwardindex" target="classFrame"><i>ForwardIndex.ForwardIndexDocTask</i></a></li>
 <li><a href="nl/inl/blacklab/testutil/GetDocFromContentStore.html" title="class in nl.inl.blacklab.testutil" target="classFrame">GetDocFromContentStore</a></li>
 <li><a href="nl/inl/blacklab/testutil/GetFieldValues.html" title="class in nl.inl.blacklab.testutil" target="classFrame">GetFieldValues</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/GroupProperty.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">GroupProperty</a></li>
@@ -124,6 +122,9 @@
 <li><a href="nl/inl/blacklab/search/grouping/HitGroup.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitGroup</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/HitGroups.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitGroups</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitProperty</a></li>
+<li><a href="nl/inl/blacklab/search/grouping/HitPropertyContextWords.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitPropertyContextWords</a></li>
+<li><a href="nl/inl/blacklab/search/grouping/HitPropertyContextWords.ContextPart.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitPropertyContextWords.ContextPart</a></li>
+<li><a href="nl/inl/blacklab/search/grouping/HitPropertyContextWords.ContextStart.html" title="enum in nl.inl.blacklab.search.grouping" target="classFrame">HitPropertyContextWords.ContextStart</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/HitPropertyDocumentDecade.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitPropertyDocumentDecade</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/HitPropertyDocumentId.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitPropertyDocumentId</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/HitPropertyDocumentStoredField.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitPropertyDocumentStoredField</a></li>
@@ -143,13 +144,15 @@
 <li><a href="nl/inl/blacklab/search/grouping/HitPropValueString.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">HitPropValueString</a></li>
 <li><a href="nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene" target="classFrame">HitQueryContext</a></li>
 <li><a href="nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search" target="classFrame">Hits</a></li>
+<li><a href="nl/inl/blacklab/search/HitsImpl.html" title="class in nl.inl.blacklab.search" target="classFrame">HitsImpl</a></li>
+<li><a href="nl/inl/blacklab/search/HitsSample.html" title="class in nl.inl.blacklab.search" target="classFrame">HitsSample</a></li>
+<li><a href="nl/inl/blacklab/search/HitsSampleImpl.html" title="class in nl.inl.blacklab.search" target="classFrame">HitsSampleImpl</a></li>
+<li><a href="nl/inl/blacklab/search/HitsSettings.html" title="class in nl.inl.blacklab.search" target="classFrame">HitsSettings</a></li>
 <li><a href="nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search" target="classFrame">HitsWindow</a></li>
 <li><a href="nl/inl/blacklab/index/HookableSaxHandler.html" title="class in nl.inl.blacklab.index" target="classFrame">HookableSaxHandler</a></li>
 <li><a href="nl/inl/blacklab/index/HookableSaxHandler.ContentCapturingHandler.html" title="class in nl.inl.blacklab.index" target="classFrame">HookableSaxHandler.ContentCapturingHandler</a></li>
 <li><a href="nl/inl/blacklab/index/HookableSaxHandler.ElementHandler.html" title="class in nl.inl.blacklab.index" target="classFrame">HookableSaxHandler.ElementHandler</a></li>
 <li><a href="nl/inl/blacklab/index/HookableSaxHandler.SaxPathExpressionChecker.html" title="class in nl.inl.blacklab.index" target="classFrame">HookableSaxHandler.SaxPathExpressionChecker</a></li>
-<li><a href="nl/inl/util/json/HTTP.html" title="class in nl.inl.util.json" target="classFrame">HTTP</a></li>
-<li><a href="nl/inl/util/json/HTTPTokener.html" title="class in nl.inl.util.json" target="classFrame">HTTPTokener</a></li>
 <li><a href="nl/inl/blacklab/index/Indexer.html" title="class in nl.inl.blacklab.index" target="classFrame">Indexer</a></li>
 <li><a href="nl/inl/blacklab/index/IndexListener.html" title="class in nl.inl.blacklab.index" target="classFrame">IndexListener</a></li>
 <li><a href="nl/inl/blacklab/index/IndexListenerDecorator.html" title="class in nl.inl.blacklab.index" target="classFrame">IndexListenerDecorator</a></li>
@@ -160,23 +163,11 @@
 <li><a href="nl/inl/blacklab/search/indexstructure/IndexStructure.html" title="class in nl.inl.blacklab.search.indexstructure" target="classFrame">IndexStructure</a></li>
 <li><a href="nl/inl/blacklab/tools/IndexTool.html" title="class in nl.inl.blacklab.tools" target="classFrame">IndexTool</a></li>
 <li><a href="nl/inl/blacklab/index/InputFormatException.html" title="class in nl.inl.blacklab.index" target="classFrame">InputFormatException</a></li>
-<li><a href="nl/inl/util/IoUtil.html" title="class in nl.inl.util" target="classFrame">IoUtil</a></li>
+<li><a href="nl/inl/blacklab/search/InvalidQueryException.html" title="class in nl.inl.blacklab.search" target="classFrame">InvalidQueryException</a></li>
 <li><a href="nl/inl/blacklab/queryParser/contextql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.contextql" target="classFrame">JavaCharStream</a></li>
 <li><a href="nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql" target="classFrame">JavaCharStream</a></li>
 <li><a href="nl/inl/util/Json.html" title="class in nl.inl.util" target="classFrame">Json</a></li>
-<li><a href="nl/inl/util/json/JSONArray.html" title="class in nl.inl.util.json" target="classFrame">JSONArray</a></li>
-<li><a href="nl/inl/util/json/JSONException.html" title="class in nl.inl.util.json" target="classFrame">JSONException</a></li>
-<li><a href="nl/inl/util/json/JSONML.html" title="class in nl.inl.util.json" target="classFrame">JSONML</a></li>
-<li><a href="nl/inl/util/json/JSONObject.html" title="class in nl.inl.util.json" target="classFrame">JSONObject</a></li>
-<li><a href="nl/inl/util/json/JSONString.html" title="interface in nl.inl.util.json" target="classFrame"><i>JSONString</i></a></li>
-<li><a href="nl/inl/util/json/JSONStringer.html" title="class in nl.inl.util.json" target="classFrame">JSONStringer</a></li>
-<li><a href="nl/inl/util/json/JSONTokener.html" title="class in nl.inl.util.json" target="classFrame">JSONTokener</a></li>
-<li><a href="nl/inl/util/json/JSONWriter.html" title="class in nl.inl.util.json" target="classFrame">JSONWriter</a></li>
-<li><a href="nl/inl/util/json/Kim.html" title="class in nl.inl.util.json" target="classFrame">Kim</a></li>
 <li><a href="nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search" target="classFrame">Kwic</a></li>
-<li><a href="nl/inl/util/Levenshtein.html" title="class in nl.inl.util" target="classFrame">Levenshtein</a></li>
-<li><a href="nl/inl/util/LevenshteinComparator.html" title="class in nl.inl.util" target="classFrame">LevenshteinComparator</a></li>
-<li><a href="nl/inl/util/LocaleUtil.html" title="class in nl.inl.util" target="classFrame">LocaleUtil</a></li>
 <li><a href="nl/inl/util/LogUtil.html" title="class in nl.inl.util" target="classFrame">LogUtil</a></li>
 <li><a href="nl/inl/util/LuceneUtil.html" title="class in nl.inl.util" target="classFrame">LuceneUtil</a></li>
 <li><a href="nl/inl/blacklab/queryParser/corpusql/MalformedTagException.html" title="class in nl.inl.blacklab.queryParser.corpusql" target="classFrame">MalformedTagException</a></li>
@@ -188,26 +179,27 @@
 <li><a href="nl/inl/blacklab/search/indexstructure/MetadataFieldDesc.html" title="class in nl.inl.blacklab.search.indexstructure" target="classFrame">MetadataFieldDesc</a></li>
 <li><a href="nl/inl/blacklab/search/indexstructure/MetadataFieldDesc.UnknownCondition.html" title="enum in nl.inl.blacklab.search.indexstructure" target="classFrame">MetadataFieldDesc.UnknownCondition</a></li>
 <li><a href="nl/inl/blacklab/search/indexstructure/MetadataFieldDesc.ValueListComplete.html" title="enum in nl.inl.blacklab.search.indexstructure" target="classFrame">MetadataFieldDesc.ValueListComplete</a></li>
-<li><a href="nl/inl/util/NetUtil.html" title="class in nl.inl.util" target="classFrame">NetUtil</a></li>
-<li><a href="nl/inl/util/OsUtil.html" title="class in nl.inl.util" target="classFrame">OsUtil</a></li>
+<li><a href="nl/inl/blacklab/testutil/MockSearcher.html" title="class in nl.inl.blacklab.testutil" target="classFrame">MockSearcher</a></li>
 <li><a href="nl/inl/blacklab/queryParser/contextql/ParseException.html" title="class in nl.inl.blacklab.queryParser.contextql" target="classFrame">ParseException</a></li>
 <li><a href="nl/inl/blacklab/queryParser/corpusql/ParseException.html" title="class in nl.inl.blacklab.queryParser.corpusql" target="classFrame">ParseException</a></li>
 <li><a href="nl/inl/blacklab/search/sequences/PerDocumentSortedSpans.html" title="class in nl.inl.blacklab.search.sequences" target="classFrame">PerDocumentSortedSpans</a></li>
-<li><a href="nl/inl/util/PropertiesUtil.html" title="class in nl.inl.util" target="classFrame">PropertiesUtil</a></li>
-<li><a href="nl/inl/util/json/Property.html" title="class in nl.inl.util.json" target="classFrame">Property</a></li>
+<li><a href="nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search" target="classFrame"><i>Prioritizable</i></a></li>
 <li><a href="nl/inl/blacklab/search/indexstructure/PropertyDesc.html" title="class in nl.inl.blacklab.search.indexstructure" target="classFrame">PropertyDesc</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/PropValSerializeUtil.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">PropValSerializeUtil</a></li>
 <li><a href="nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search" target="classFrame">QueryExecutionContext</a></li>
 <li><a href="nl/inl/blacklab/tools/QueryTool.html" title="class in nl.inl.blacklab.tools" target="classFrame">QueryTool</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/RandomAccessGroup.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">RandomAccessGroup</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/RandomAccessGroups.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">RandomAccessGroups</a></li>
-<li><a href="nl/inl/blacklab/debug/ReconstructTermVector.html" title="class in nl.inl.blacklab.debug" target="classFrame">ReconstructTermVector</a></li>
+<li><a href="nl/inl/blacklab/tools/debug/ReconstructTermVector.html" title="class in nl.inl.blacklab.tools.debug" target="classFrame">ReconstructTermVector</a></li>
+<li><a href="nl/inl/blacklab/search/RegexpTooLargeException.html" title="class in nl.inl.blacklab.search" target="classFrame">RegexpTooLargeException</a></li>
 <li><a href="nl/inl/blacklab/filter/RemoveAllAccentsFilter.html" title="class in nl.inl.blacklab.filter" target="classFrame">RemoveAllAccentsFilter</a></li>
 <li><a href="nl/inl/blacklab/filter/RemovePunctuationFilter.html" title="class in nl.inl.blacklab.filter" target="classFrame">RemovePunctuationFilter</a></li>
 <li><a href="nl/inl/blacklab/search/grouping/ResultsGrouper.html" title="class in nl.inl.blacklab.search.grouping" target="classFrame">ResultsGrouper</a></li>
 <li><a href="nl/inl/util/ReverseComparator.html" title="class in nl.inl.util" target="classFrame">ReverseComparator</a></li>
-<li><a href="nl/inl/blacklab/debug/RunTermQuery.html" title="class in nl.inl.blacklab.debug" target="classFrame">RunTermQuery</a></li>
+<li><a href="nl/inl/blacklab/tools/debug/RunTermQuery.html" title="class in nl.inl.blacklab.tools.debug" target="classFrame">RunTermQuery</a></li>
 <li><a href="nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search" target="classFrame">Searcher</a></li>
+<li><a href="nl/inl/blacklab/search/Searcher.LuceneDocTask.html" title="interface in nl.inl.blacklab.search" target="classFrame"><i>Searcher.LuceneDocTask</i></a></li>
+<li><a href="nl/inl/blacklab/search/SearcherImpl.html" title="class in nl.inl.blacklab.search" target="classFrame">SearcherImpl</a></li>
 <li><a href="nl/inl/util/SimpleResourcePool.html" title="class in nl.inl.util" target="classFrame">SimpleResourcePool</a></li>
 <li><a href="nl/inl/blacklab/search/SingleDocIdFilter.html" title="class in nl.inl.blacklab.search" target="classFrame">SingleDocIdFilter</a></li>
 <li><a href="nl/inl/blacklab/search/SingleDocIdSet.html" title="class in nl.inl.blacklab.search" target="classFrame">SingleDocIdSet</a></li>
@@ -297,13 +289,10 @@
 <li><a href="nl/inl/blacklab/filter/TranscribeGermanAccentsFilter.html" title="class in nl.inl.blacklab.filter" target="classFrame">TranscribeGermanAccentsFilter</a></li>
 <li><a href="nl/inl/blacklab/filter/TranscribeGermanAccentsSynonymFilter.html" title="class in nl.inl.blacklab.filter" target="classFrame">TranscribeGermanAccentsSynonymFilter</a></li>
 <li><a href="nl/inl/util/UnicodeReader.html" title="class in nl.inl.util" target="classFrame">UnicodeReader</a></li>
-<li><a href="nl/inl/util/Utilities.html" title="class in nl.inl.util" target="classFrame">Utilities</a></li>
 <li><a href="nl/inl/util/VersionFile.html" title="class in nl.inl.util" target="classFrame">VersionFile</a></li>
-<li><a href="nl/inl/util/json/XML.html" title="class in nl.inl.util.json" target="classFrame">XML</a></li>
 <li><a href="nl/inl/blacklab/highlight/XmlHighlighter.html" title="class in nl.inl.blacklab.highlight" target="classFrame">XmlHighlighter</a></li>
 <li><a href="nl/inl/blacklab/highlight/XmlHighlighter.HitCharSpan.html" title="class in nl.inl.blacklab.highlight" target="classFrame">XmlHighlighter.HitCharSpan</a></li>
 <li><a href="nl/inl/blacklab/highlight/XmlHighlighter.UnbalancedTagsStrategy.html" title="enum in nl.inl.blacklab.highlight" target="classFrame">XmlHighlighter.UnbalancedTagsStrategy</a></li>
-<li><a href="nl/inl/util/json/XMLTokener.html" title="class in nl.inl.util.json" target="classFrame">XMLTokener</a></li>
 <li><a href="nl/inl/util/XmlUtil.html" title="class in nl.inl.util" target="classFrame">XmlUtil</a></li>
 </ul>
 </div>

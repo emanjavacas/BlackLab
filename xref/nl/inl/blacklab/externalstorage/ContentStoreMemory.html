@@ -113,7 +113,7 @@
 <a class="jxr_linenumber" name="L105" href="#L105">105</a> 
 <a class="jxr_linenumber" name="L106" href="#L106">106</a> 		<strong class="jxr_keyword">int</strong> n = start.length;
 <a class="jxr_linenumber" name="L107" href="#L107">107</a> 		<strong class="jxr_keyword">if</strong> (n != end.length)
-<a class="jxr_linenumber" name="L108" href="#L108">108</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"start and end must be of equal length"</span>);
+<a class="jxr_linenumber" name="L108" href="#L108">108</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"start and end must be of equal length"</span>);
 <a class="jxr_linenumber" name="L109" href="#L109">109</a> 		String[] result = <strong class="jxr_keyword">new</strong> String[n];
 <a class="jxr_linenumber" name="L110" href="#L110">110</a> 		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; n; i++) {
 <a class="jxr_linenumber" name="L111" href="#L111">111</a> 			<strong class="jxr_keyword">if</strong> (start[i] == -1 &amp;&amp; end[i] == -1) {
@@ -122,11 +122,11 @@
 <a class="jxr_linenumber" name="L114" href="#L114">114</a> 				end[i] = content.length();
 <a class="jxr_linenumber" name="L115" href="#L115">115</a> 			}
 <a class="jxr_linenumber" name="L116" href="#L116">116</a> 			<strong class="jxr_keyword">if</strong> (start[i] &lt; 0 || end[i] &lt; 0) {
-<a class="jxr_linenumber" name="L117" href="#L117">117</a> 				<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Illegal values, start = "</span> + start[i] + <span class="jxr_string">", end = "</span>
+<a class="jxr_linenumber" name="L117" href="#L117">117</a> 				<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Illegal values, start = "</span> + start[i] + <span class="jxr_string">", end = "</span>
 <a class="jxr_linenumber" name="L118" href="#L118">118</a> 						+ end[i]);
 <a class="jxr_linenumber" name="L119" href="#L119">119</a> 			}
 <a class="jxr_linenumber" name="L120" href="#L120">120</a> 			<strong class="jxr_keyword">if</strong> (start[i] &gt; content.length() || end[i] &gt; content.length()) {
-<a class="jxr_linenumber" name="L121" href="#L121">121</a> 				<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Value(s) out of range, start = "</span> + start[i]
+<a class="jxr_linenumber" name="L121" href="#L121">121</a> 				<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Value(s) out of range, start = "</span> + start[i]
 <a class="jxr_linenumber" name="L122" href="#L122">122</a> 						+ <span class="jxr_string">", end = "</span> + end[i] + <span class="jxr_string">", content length = "</span> + content.length());
 <a class="jxr_linenumber" name="L123" href="#L123">123</a> 			}
 <a class="jxr_linenumber" name="L124" href="#L124">124</a> 
@@ -160,7 +160,12 @@
 <a class="jxr_linenumber" name="L152" href="#L152">152</a> 		<strong class="jxr_keyword">return</strong> toc.get(id).length();
 <a class="jxr_linenumber" name="L153" href="#L153">153</a> 	}
 <a class="jxr_linenumber" name="L154" href="#L154">154</a> 
-<a class="jxr_linenumber" name="L155" href="#L155">155</a> }
+<a class="jxr_linenumber" name="L155" href="#L155">155</a> 	@Override
+<a class="jxr_linenumber" name="L156" href="#L156">156</a> 	<strong class="jxr_keyword">public</strong> Set&lt;Integer&gt; idSet() {
+<a class="jxr_linenumber" name="L157" href="#L157">157</a> 		<strong class="jxr_keyword">return</strong> toc.keySet();
+<a class="jxr_linenumber" name="L158" href="#L158">158</a> 	}
+<a class="jxr_linenumber" name="L159" href="#L159">159</a> 
+<a class="jxr_linenumber" name="L160" href="#L160">160</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

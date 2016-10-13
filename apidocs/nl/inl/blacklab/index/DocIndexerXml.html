@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>DocIndexerXml (BlackLab 1.3.3 API)</title>
+<title>DocIndexerXml (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="DocIndexerXml (BlackLab 1.3.3 API)";
+        parent.document.title="DocIndexerXml (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -103,8 +103,12 @@
 <dd><a href="../../../../nl/inl/blacklab/index/DocIndexer.html" title="interface in nl.inl.blacklab.index">DocIndexer</a></dd>
 </dl>
 <hr>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use DocIndexerXmlHandlers instead; see project site for a guide</i></div>
+</div>
 <br>
-<pre>public abstract class <span class="strong">DocIndexerXml</span>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public abstract class <span class="strong">DocIndexerXml</span>
 extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" title="class in nl.inl.blacklab.index">DocIndexerAbstract</a></pre>
 <div class="block">Abstract base class for a DocIndexer processing XML files.</div>
 </li>
@@ -143,6 +147,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <tr class="altColor">
 <td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#outputPrefixMapping">outputPrefixMapping</a></strong></code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">What namespace prefix mappings have we encountered but not output in a start tag
  yet? (used to make sure the stored XML contains all the required mappings)</div>
 </td>
@@ -153,7 +158,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;nl.inl.blacklab.index.<a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" title="class in nl.inl.blacklab.index">DocIndexerAbstract</a></h3>
-<code><a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#fileName">fileName</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#indexer">indexer</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#nDocumentsSkipped">nDocumentsSkipped</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#omitNorms">omitNorms</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#reader">reader</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#SKIP_LARGE_DOCUMENTS">SKIP_LARGE_DOCUMENTS</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#skippingCurrentDocument">skippingCurrentDocument</a></code></li>
+<code><a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#fileName">fileName</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#indexer">indexer</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#nDocumentsSkipped">nDocumentsSkipped</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#omitNorms">omitNorms</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#parameters">parameters</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#reader">reader</a>, <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html#skippingCurrentDocument">skippingCurrentDocument</a></code></li>
 </ul>
 </li>
 </ul>
@@ -171,7 +176,9 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#DocIndexerXml(nl.inl.blacklab.index.Indexer,%20java.lang.String,%20java.io.Reader)">DocIndexerXml</a></strong>(<a href="../../../../nl/inl/blacklab/index/Indexer.html" title="class in nl.inl.blacklab.index">Indexer</a>&nbsp;indexer,
              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fileName,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader)</code>&nbsp;</td>
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -192,21 +199,28 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#characters(char[],%20int,%20int)">characters</a></strong>(char[]&nbsp;buffer,
           int&nbsp;start,
-          int&nbsp;length)</code>&nbsp;</td>
+          int&nbsp;length)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#describePosition()">describePosition</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#describePosition()">describePosition</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#endElement(java.lang.String,%20java.lang.String,%20java.lang.String)">endElement</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uri,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;localName,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;qName)</code>&nbsp;</td>
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;qName)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#endPrefixMapping(java.lang.String)">endPrefixMapping</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;prefix)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">A previously encountered namespace prefix mapping is no longer in effect.</div>
 </td>
 </tr>
@@ -215,37 +229,45 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#escapeXmlChars(char[],%20int,%20int)">escapeXmlChars</a></strong>(char[]&nbsp;source,
               int&nbsp;start,
               int&nbsp;length)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Escape the special XML chars (<, >, &, ") with their named entity equivalents.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#escapeXmlChars(java.lang.String)">escapeXmlChars</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Escape the special XML chars (<, >, &, ") with their named entity equivalents.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#index()">index</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Index documents contained in a file.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#processingInstruction(java.lang.String,%20java.lang.String)">processingInstruction</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;target,
-                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;data)</code>&nbsp;</td>
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;data)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#startElement(java.lang.String,%20java.lang.String,%20java.lang.String,%20org.xml.sax.Attributes)">startElement</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uri,
             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;localName,
             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;qName,
-            <a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/Attributes.html?is-external=true" title="class or interface in org.xml.sax">Attributes</a>&nbsp;attributes)</code>&nbsp;</td>
+            <a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/Attributes.html?is-external=true" title="class or interface in org.xml.sax">Attributes</a>&nbsp;attributes)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/index/DocIndexerXml.html#startPrefixMapping(java.lang.String,%20java.lang.String)">startPrefixMapping</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;prefix,
                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uri)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Encountered a prefix to namespace mapping; now in effect.</div>
 </td>
 </tr>
@@ -284,7 +306,8 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>outputPrefixMapping</h4>
-<pre>protected static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; outputPrefixMapping</pre>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; outputPrefixMapping</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">What namespace prefix mappings have we encountered but not output in a start tag
  yet? (used to make sure the stored XML contains all the required mappings)</div>
 </li>
@@ -306,6 +329,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <pre>public&nbsp;DocIndexerXml(<a href="../../../../nl/inl/blacklab/index/Indexer.html" title="class in nl.inl.blacklab.index">Indexer</a>&nbsp;indexer,
              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fileName,
              <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -324,6 +348,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <h4>startPrefixMapping</h4>
 <pre>public&nbsp;void&nbsp;startPrefixMapping(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;prefix,
                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uri)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Encountered a prefix to namespace mapping; now in effect.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>prefix</code> - the prefix that is now in effect</dd><dd><code>uri</code> - the namespace the prefix refers to</dd></dl>
 </li>
@@ -335,6 +360,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <li class="blockList">
 <h4>endPrefixMapping</h4>
 <pre>public&nbsp;void&nbsp;endPrefixMapping(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;prefix)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">A previously encountered namespace prefix mapping is no longer in effect.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>prefix</code> - the prefix that's no longer in effect.</dd></dl>
 </li>
@@ -349,6 +375,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;localName,
                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;qName,
                 <a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/Attributes.html?is-external=true" title="class or interface in org.xml.sax">Attributes</a>&nbsp;attributes)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="escapeXmlChars(java.lang.String)">
@@ -358,6 +385,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <li class="blockList">
 <h4>escapeXmlChars</h4>
 <pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;escapeXmlChars(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Escape the special XML chars (<, >, &, ") with their named entity equivalents.
 
  NOTE: copy of StringUtil.escapeXmlChars that re-uses its StringBuilder for increased memory
@@ -375,6 +403,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;escapeXmlChars(char[]&nbsp;source,
                     int&nbsp;start,
                     int&nbsp;length)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Escape the special XML chars (<, >, &, ") with their named entity equivalents.
 
  NOTE: copy of StringUtil.escapeXmlChars that re-uses its StringBuilder for increased memory
@@ -392,6 +421,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <pre>public&nbsp;void&nbsp;characters(char[]&nbsp;buffer,
               int&nbsp;start,
               int&nbsp;length)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="endElement(java.lang.String, java.lang.String, java.lang.String)">
@@ -403,6 +433,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <pre>public&nbsp;void&nbsp;endElement(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uri,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;localName,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;qName)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="processingInstruction(java.lang.String, java.lang.String)">
@@ -413,6 +444,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <h4>processingInstruction</h4>
 <pre>public&nbsp;void&nbsp;processingInstruction(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;target,
                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;data)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="index()">
@@ -424,6 +456,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <pre>public&nbsp;void&nbsp;index()
            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                   <a href="../../../../nl/inl/blacklab/index/InputFormatException.html" title="class in nl.inl.blacklab.index">InputFormatException</a></pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../nl/inl/blacklab/index/DocIndexer.html#index()">DocIndexer</a></code></strong></div>
 <div class="block">Index documents contained in a file.</div>
 <dl><dt><span class="strong">Throws:</span></dt>
@@ -438,6 +471,7 @@ extends <a href="../../../../nl/inl/blacklab/index/DocIndexerAbstract.html" titl
 <li class="blockList">
 <h4>describePosition</h4>
 <pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;describePosition()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>

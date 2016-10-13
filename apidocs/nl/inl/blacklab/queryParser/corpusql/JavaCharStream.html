@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JavaCharStream (BlackLab 1.3.3 API)</title>
+<title>JavaCharStream (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JavaCharStream (BlackLab 1.3.3 API)";
+        parent.document.title="JavaCharStream (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -181,6 +181,10 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html#tabSize">tabSize</a></strong></code>&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html#trackLineColumn">trackLineColumn</a></strong></code>&nbsp;</td>
+</tr>
 </table>
 </li>
 </ul>
@@ -349,8 +353,8 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html#GetSuffix(int)">GetSuffix</a></strong>(int&nbsp;len)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html#getTabSize(int)">getTabSize</a></strong>(int&nbsp;i)</code>&nbsp;</td>
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html#getTabSize()">getTabSize</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected char</code></td>
@@ -435,7 +439,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html#setTabSize(int)">setTabSize</a></strong>(int&nbsp;i)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -596,10 +600,19 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <a name="tabSize">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>tabSize</h4>
 <pre>protected&nbsp;int tabSize</pre>
+</li>
+</ul>
+<a name="trackLineColumn">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>trackLineColumn</h4>
+<pre>protected&nbsp;boolean trackLineColumn</pre>
 </li>
 </ul>
 </li>
@@ -741,16 +754,16 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>setTabSize</h4>
-<pre>protected&nbsp;void&nbsp;setTabSize(int&nbsp;i)</pre>
+<pre>public&nbsp;void&nbsp;setTabSize(int&nbsp;i)</pre>
 </li>
 </ul>
-<a name="getTabSize(int)">
+<a name="getTabSize()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getTabSize</h4>
-<pre>protected&nbsp;int&nbsp;getTabSize(int&nbsp;i)</pre>
+<pre>public&nbsp;int&nbsp;getTabSize()</pre>
 </li>
 </ul>
 <a name="ExpandBuff(boolean)">

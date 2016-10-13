@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class nl.inl.blacklab.search.QueryExecutionContext (BlackLab 1.3.3 API)</title>
+<title>Uses of Class nl.inl.blacklab.search.QueryExecutionContext (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class nl.inl.blacklab.search.QueryExecutionContext (BlackLab 1.3.3 API)";
+        parent.document.title="Uses of Class nl.inl.blacklab.search.QueryExecutionContext (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -92,6 +92,13 @@
 <div class="block">Classes dealing with regex-like patterns of token-level queries, like required for CorpusQL.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#nl.inl.blacklab.testutil">nl.inl.blacklab.testutil</a></td>
+<td class="colLast">
+<div class="block">Package for test applications, for example doing performance testing
+                on the different parts of BlackLab.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -116,23 +123,28 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></code></td>
+<td class="colLast"><span class="strong">SearcherImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/SearcherImpl.html#getDefaultExecutionContext(java.lang.String)">getDefaultExecutionContext</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></code></td>
 <td class="colLast"><span class="strong">Searcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Searcher.html#getDefaultExecutionContext(java.lang.String)">getDefaultExecutionContext</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code>
 <div class="block">Get the default initial query execution context.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></code></td>
-<td class="colLast"><span class="strong">QueryExecutionContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html#getSimple(java.lang.String)">getSimple</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code>
+<td class="colLast"><span class="strong">QueryExecutionContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html#getSimple(nl.inl.blacklab.search.Searcher,%20java.lang.String)">getSimple</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code>
 <div class="block">Get a simple execution context for a field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></code></td>
 <td class="colLast"><span class="strong">QueryExecutionContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html#withProperty(java.lang.String)">withProperty</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newPropName)</code>
 <div class="block">Return a new query execution context with a different property selected.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></code></td>
 <td class="colLast"><span class="strong">QueryExecutionContext.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html#withSensitive(boolean,%20boolean)">withSensitive</a></strong>(boolean&nbsp;caseSensitive_,
              boolean&nbsp;diacriticsSensitive_)</code>&nbsp;</td>
@@ -195,7 +207,9 @@
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPattern.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPattern.html#clausesToString(java.util.List,%20nl.inl.blacklab.search.QueryExecutionContext)">clausesToString</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../nl/inl/blacklab/search/TextPattern.html" title="class in nl.inl.blacklab.search">TextPattern</a>&gt;&nbsp;clauses,
-               <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+               <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
@@ -279,45 +293,52 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a></code></td>
-<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getCollocations(java.lang.String,%20nl.inl.blacklab.search.QueryExecutionContext)">getCollocations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#getCollocations(java.lang.String,%20nl.inl.blacklab.search.QueryExecutionContext)">getCollocations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
                <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;ctx)</code>
 <div class="block">Count occurrences of context words around hit.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getCollocations(java.lang.String,%20nl.inl.blacklab.search.QueryExecutionContext)">getCollocations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
+               <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;ctx)</code>
+<div class="block">Count occurrences of context words around hit.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#not(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">not</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;clause)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#not(nl.inl.blacklab.search.QueryExecutionContext,%20T)">not</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
    <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a>&nbsp;clause)</code>
 <div class="block">Token-level NOT.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#optInsensitive(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">optInsensitive</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#or(nl.inl.blacklab.search.QueryExecutionContext,%20java.util.List)">or</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;clauses)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#or(nl.inl.blacklab.search.QueryExecutionContext,%20java.util.List)">or</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a>&gt;&nbsp;clauses)</code>
 <div class="block">Token-level OR.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#positionFilter(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String,%20java.lang.String,%20nl.inl.blacklab.search.TextPatternPositionFilter.Operation,%20boolean,%20int,%20int)">positionFilter</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;producer,
@@ -329,7 +350,7 @@
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#positionFilter(nl.inl.blacklab.search.QueryExecutionContext,%20T,%20T,%20nl.inl.blacklab.search.TextPatternPositionFilter.Operation,%20boolean,%20int,%20int)">positionFilter</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
               <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a>&nbsp;producer,
@@ -339,47 +360,47 @@
               int&nbsp;leftAdjust,
               int&nbsp;rightAdjust)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#prefix(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">prefix</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#prefix(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">prefix</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#regex(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">regex</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
 <div class="block">A regular expression query</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#regex(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">regex</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#sequence(nl.inl.blacklab.search.QueryExecutionContext,%20java.util.List)">sequence</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;clauses)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#sequence(nl.inl.blacklab.search.QueryExecutionContext,%20java.util.List)">sequence</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a>&gt;&nbsp;clauses)</code>
 <div class="block">Sequence query.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#startsAt(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String,%20java.lang.String)">startsAt</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;producer,
@@ -387,19 +408,19 @@
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#startsAt(nl.inl.blacklab.search.QueryExecutionContext,%20T,%20T)">startsAt</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
         <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a>&nbsp;producer,
         <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a>&nbsp;filter)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#tags(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String,%20java.util.Map)">tags</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;elementName,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attr)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#tags(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String,%20java.util.Map)">tags</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;elementName,
@@ -407,69 +428,37 @@
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#term(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">term</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
 <div class="block">A simple field/value query</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#term(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">term</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternSensitive.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternSensitive.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternAndNot.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternOr.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternOr.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternWithin.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWithin.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<td class="colLast"><span class="strong">TextPatternTags.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTags.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
-&nbsp;</td>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternCaptureGroup.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternCaptureGroup.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">TextPatternPrefix.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternPrefix.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternTags.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTags.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternPrefix.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternPrefix.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternDocLevelAnd.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAnd.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternEdge.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternEdge.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternNot.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternDocLevelAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAndNot.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternPositionFilter.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternPositionFilter.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">TextPatternOr.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternOr.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
@@ -479,60 +468,101 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternCaptureGroup.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternCaptureGroup.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternWithin.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWithin.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternFuzzy.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternFuzzy.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPattern.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPattern.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>toString() shouldn't depend on external information. Use <a href="../../../../../nl/inl/blacklab/search/TextPattern.html#toString()"><code>TextPattern.toString()</code></a>.</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternAndNot.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternProperty.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternProperty.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternNot.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternDocLevelAnd.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAnd.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternDocLevelAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAndNot.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternRegex.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternRegex.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternSensitive.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternSensitive.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternEdge.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternEdge.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternTerm.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTerm.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternPositionFilter.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternPositionFilter.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">TextPatternWildcard.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWildcard.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternContaining.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternContaining.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternFuzzy.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternFuzzy.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternRegex.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternRegex.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternWildcard.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWildcard.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternTerm.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTerm.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternProperty.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternProperty.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPattern.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPattern.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternSensitive.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternSensitive.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternAndNot.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternOr.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternOr.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternWithin.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWithin.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
-<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
-&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternCaptureGroup.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternCaptureGroup.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
@@ -546,27 +576,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternDocLevelAnd.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAnd.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternEdge.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternEdge.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternNot.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternDocLevelAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAndNot.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternPositionFilter.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternPositionFilter.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+<td class="colLast"><span class="strong">TextPatternOr.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternOr.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
          <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -578,39 +588,19 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternContaining.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternContaining.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+<td class="colLast"><span class="strong">TextPatternCaptureGroup.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternCaptureGroup.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternWithin.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWithin.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
          <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <td class="colLast"><span class="strong">TextPatternFuzzy.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternFuzzy.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternRegex.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternRegex.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternWildcard.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWildcard.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternTerm.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTerm.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternProperty.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternProperty.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
-         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>abstract &lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternCombiner.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternCombiner.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
          <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -621,11 +611,78 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternAndNot.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternProperty.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternProperty.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternNot.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternDocLevelAnd.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAnd.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternDocLevelAndNot.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternDocLevelAndNot.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract &lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternCombiner.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternCombiner.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternRegex.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternRegex.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternSensitive.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternSensitive.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternEdge.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternEdge.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternTerm.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTerm.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternPositionFilter.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternPositionFilter.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternWildcard.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternWildcard.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
+<td class="colLast"><span class="strong">TextPatternContaining.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternContaining.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+         <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="type parameter in TextPatternTranslator">T</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslator.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html#wildcard(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">wildcard</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">TextPatternTranslatorString.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html#wildcard(nl.inl.blacklab.search.QueryExecutionContext,%20java.lang.String)">wildcard</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context,
         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
@@ -795,27 +852,37 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternSequence.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternSequence.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">TextPatternAnyToken.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternAnyToken.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternExpansion.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternExpansion.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">TextPatternExpansion.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternExpansion.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternAnyToken.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternAnyToken.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">TextPatternFilterNGrams.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternFilterNGrams.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternFilterNGrams.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternFilterNGrams.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">TextPatternRepetition.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternRepetition.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">TextPatternRepetition.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternRepetition.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">TextPatternSequence.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternSequence.html#toString(nl.inl.blacklab.search.QueryExecutionContext)">toString</a></strong>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternSequence.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternSequence.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+<td class="colLast"><span class="strong">TextPatternAnyToken.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternAnyToken.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
          <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -825,18 +892,36 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternAnyToken.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternAnyToken.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+<td class="colLast"><span class="strong">TextPatternFilterNGrams.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternFilterNGrams.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
          <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternFilterNGrams.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternFilterNGrams.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+<td class="colLast"><span class="strong">TextPatternRepetition.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternRepetition.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
          <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">TextPatternRepetition.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternRepetition.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
+<td class="colLast"><span class="strong">TextPatternSequence.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/sequences/TextPatternSequence.html#translate(nl.inl.blacklab.search.TextPatternTranslator,%20nl.inl.blacklab.search.QueryExecutionContext)">translate</a></strong>(<a href="../../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;&nbsp;translator,
          <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="nl.inl.blacklab.testutil">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a> in <a href="../../../../../nl/inl/blacklab/testutil/package-summary.html">nl.inl.blacklab.testutil</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../nl/inl/blacklab/testutil/package-summary.html">nl.inl.blacklab.testutil</a> that return <a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></code></td>
+<td class="colLast"><span class="strong">MockSearcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/testutil/MockSearcher.html#getDefaultExecutionContext(java.lang.String)">getDefaultExecutionContext</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>

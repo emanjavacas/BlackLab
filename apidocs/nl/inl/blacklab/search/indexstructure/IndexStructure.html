@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>IndexStructure (BlackLab 1.3.3 API)</title>
+<title>IndexStructure (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="IndexStructure (BlackLab 1.3.3 API)";
+        parent.document.title="IndexStructure (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -117,6 +117,10 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/text/DateFormat.html?is-external=true" title="class or interface in java.text">DateFormat</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/indexstructure/IndexStructure.html#DATETIME_FORMAT">DATETIME_FORMAT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected static org.apache.log4j.Logger</code></td>
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/search/indexstructure/IndexStructure.html#logger">logger</a></strong></code>&nbsp;</td>
 </tr>
@@ -135,7 +139,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../../nl/inl/blacklab/search/indexstructure/IndexStructure.html#IndexStructure(org.apache.lucene.index.DirectoryReader,%20java.io.File,%20boolean)">IndexStructure</a></strong>(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<td class="colOne"><code><strong><a href="../../../../../nl/inl/blacklab/search/indexstructure/IndexStructure.html#IndexStructure(org.apache.lucene.index.IndexReader,%20java.io.File,%20boolean)">IndexStructure</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexDir,
               boolean&nbsp;createNewIndex)</code>
 <div class="block">Construct an IndexStructure object, querying the index for the available
@@ -143,7 +147,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../../nl/inl/blacklab/search/indexstructure/IndexStructure.html#IndexStructure(org.apache.lucene.index.DirectoryReader,%20java.io.File,%20boolean,%20java.io.File)">IndexStructure</a></strong>(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<td class="colOne"><code><strong><a href="../../../../../nl/inl/blacklab/search/indexstructure/IndexStructure.html#IndexStructure(org.apache.lucene.index.IndexReader,%20java.io.File,%20boolean,%20java.io.File)">IndexStructure</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexDir,
               boolean&nbsp;createNewIndex,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexTemplateFile)</code>
@@ -430,10 +434,19 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <a name="logger">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>logger</h4>
 <pre>protected static final&nbsp;org.apache.log4j.Logger logger</pre>
+</li>
+</ul>
+<a name="DATETIME_FORMAT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DATETIME_FORMAT</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/text/DateFormat.html?is-external=true" title="class or interface in java.text">DateFormat</a> DATETIME_FORMAT</pre>
 </li>
 </ul>
 </li>
@@ -444,13 +457,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="IndexStructure(org.apache.lucene.index.DirectoryReader, java.io.File, boolean)">
+<a name="IndexStructure(org.apache.lucene.index.IndexReader, java.io.File, boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>IndexStructure</h4>
-<pre>public&nbsp;IndexStructure(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<pre>public&nbsp;IndexStructure(org.apache.lucene.index.IndexReader&nbsp;reader,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexDir,
               boolean&nbsp;createNewIndex)</pre>
 <div class="block">Construct an IndexStructure object, querying the index for the available
@@ -458,13 +471,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>reader</code> - the index of which we want to know the structure</dd><dd><code>indexDir</code> - where the index (and the metadata file) is stored</dd><dd><code>createNewIndex</code> - whether we're creating a new index</dd></dl>
 </li>
 </ul>
-<a name="IndexStructure(org.apache.lucene.index.DirectoryReader, java.io.File, boolean, java.io.File)">
+<a name="IndexStructure(org.apache.lucene.index.IndexReader, java.io.File, boolean, java.io.File)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>IndexStructure</h4>
-<pre>public&nbsp;IndexStructure(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<pre>public&nbsp;IndexStructure(org.apache.lucene.index.IndexReader&nbsp;reader,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexDir,
               boolean&nbsp;createNewIndex,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexTemplateFile)</pre>

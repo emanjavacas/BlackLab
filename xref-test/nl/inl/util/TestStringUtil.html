@@ -58,9 +58,19 @@
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testEscapeDoubleQuotedString() {
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  		Assert.assertEquals(<span class="jxr_string">"Test &#92;&#92;\&quot; test &#92;&#92;&#92;&#92; test"</span>,
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  				StringUtil.escapeDoubleQuotedString(<span class="jxr_string">"Test \&quot; test &#92;&#92; test"</span>));
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>  	}
-<a class="jxr_linenumber" name="L54" href="#L54">54</a>  
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>  }
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  		Assert.assertEquals(<span class="jxr_string">"Newline &#92;&#92;n Return &#92;&#92;r Windows line end &#92;&#92;r&#92;&#92;n"</span>,
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  				StringUtil.escapeDoubleQuotedString(<span class="jxr_string">"Newline \n Return \r Windows line end \r\n"</span>));
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  	}
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  	@SuppressWarnings(<span class="jxr_string">"deprecation"</span>)
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  	@Test
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCapitalize() {
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  		Assert.assertEquals(<span class="jxr_string">"Aap"</span>, StringUtil.capitalizeFirst(<span class="jxr_string">"aap"</span>));
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  		Assert.assertEquals(<span class="jxr_string">"AAP"</span>, StringUtil.capitalizeFirst(<span class="jxr_string">"AAP"</span>));
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  		Assert.assertEquals(<span class="jxr_string">"'aap'"</span>, StringUtil.capitalizeFirst(<span class="jxr_string">"'aap'"</span>));
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  	}
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

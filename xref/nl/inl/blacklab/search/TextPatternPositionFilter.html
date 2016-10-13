@@ -172,14 +172,23 @@
 <a class="jxr_linenumber" name="L164" href="#L164">164</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">super</strong>.hashCode() + op.hashCode() + (invert ? 13 : 0) + leftAdjust * 31 + rightAdjust * 37;
 <a class="jxr_linenumber" name="L165" href="#L165">165</a> 	}
 <a class="jxr_linenumber" name="L166" href="#L166">166</a> 
-<a class="jxr_linenumber" name="L167" href="#L167">167</a> 	@Override
-<a class="jxr_linenumber" name="L168" href="#L168">168</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
-<a class="jxr_linenumber" name="L169" href="#L169">169</a> 		String producer = clauses.get(0).toString(context);
-<a class="jxr_linenumber" name="L170" href="#L170">170</a> 		String filter = clauses.get(1).toString(context);
-<a class="jxr_linenumber" name="L171" href="#L171">171</a> 		String adj = (leftAdjust != 0 || rightAdjust != 0 ? <span class="jxr_string">", "</span> + leftAdjust + <span class="jxr_string">", "</span> + rightAdjust : <span class="jxr_string">""</span>);
-<a class="jxr_linenumber" name="L172" href="#L172">172</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"POSFILTER("</span> + producer + <span class="jxr_string">", "</span> + filter + <span class="jxr_string">", "</span> + (invert ? <span class="jxr_string">"NOT"</span> : <span class="jxr_string">""</span>) + op + adj + <span class="jxr_string">")"</span>;
-<a class="jxr_linenumber" name="L173" href="#L173">173</a> 	}
-<a class="jxr_linenumber" name="L174" href="#L174">174</a> }
+<a class="jxr_linenumber" name="L167" href="#L167">167</a> 	@Deprecated
+<a class="jxr_linenumber" name="L168" href="#L168">168</a> 	@Override
+<a class="jxr_linenumber" name="L169" href="#L169">169</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
+<a class="jxr_linenumber" name="L170" href="#L170">170</a> 		String producer = clauses.get(0).toString(context);
+<a class="jxr_linenumber" name="L171" href="#L171">171</a> 		String filter = clauses.get(1).toString(context);
+<a class="jxr_linenumber" name="L172" href="#L172">172</a> 		String adj = (leftAdjust != 0 || rightAdjust != 0 ? <span class="jxr_string">", "</span> + leftAdjust + <span class="jxr_string">", "</span> + rightAdjust : <span class="jxr_string">""</span>);
+<a class="jxr_linenumber" name="L173" href="#L173">173</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"POSFILTER("</span> + producer + <span class="jxr_string">", "</span> + filter + <span class="jxr_string">", "</span> + (invert ? <span class="jxr_string">"NOT"</span> : <span class="jxr_string">""</span>) + op + adj + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L174" href="#L174">174</a> 	}
+<a class="jxr_linenumber" name="L175" href="#L175">175</a> 
+<a class="jxr_linenumber" name="L176" href="#L176">176</a> 	@Override
+<a class="jxr_linenumber" name="L177" href="#L177">177</a> 	<strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="L178" href="#L178">178</a> 		String producer = clauses.get(0).toString();
+<a class="jxr_linenumber" name="L179" href="#L179">179</a> 		String filter = clauses.get(1).toString();
+<a class="jxr_linenumber" name="L180" href="#L180">180</a> 		String adj = (leftAdjust != 0 || rightAdjust != 0 ? <span class="jxr_string">", "</span> + leftAdjust + <span class="jxr_string">", "</span> + rightAdjust : <span class="jxr_string">""</span>);
+<a class="jxr_linenumber" name="L181" href="#L181">181</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"POSFILTER("</span> + producer + <span class="jxr_string">", "</span> + filter + <span class="jxr_string">", "</span> + (invert ? <span class="jxr_string">"NOT"</span> : <span class="jxr_string">""</span>) + op + adj + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> 	}
+<a class="jxr_linenumber" name="L183" href="#L183">183</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

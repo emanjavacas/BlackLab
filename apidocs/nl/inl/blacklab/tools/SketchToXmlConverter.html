@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SketchToXmlConverter (BlackLab 1.3.3 API)</title>
+<title>SketchToXmlConverter (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="SketchToXmlConverter (BlackLab 1.3.3 API)";
+        parent.document.title="SketchToXmlConverter (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -141,10 +141,33 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;outFn)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/tools/SketchToXmlConverter.html#getFileProp(java.util.Properties,%20java.lang.String,%20java.io.File)">getFileProp</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;basePath)</code>
+<div class="block">Get a File property from a Properties object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/tools/SketchToXmlConverter.html#getFileProp(java.util.Properties,%20java.lang.String,%20java.lang.String,%20java.io.File)">getFileProp</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultValue,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;basePath)</code>
+<div class="block">Get a File property from a Properties object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/tools/SketchToXmlConverter.html#getPropertiesFromResource(java.lang.String)">getPropertiesFromResource</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourcePath)</code>
+<div class="block">Read Properties from a resource</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/tools/SketchToXmlConverter.html#main(java.lang.String[])">main</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/tools/SketchToXmlConverter.html#processLine(java.lang.String,%20java.io.Writer)">processLine</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;line,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a>&nbsp;out)</code>&nbsp;</td>
@@ -198,6 +221,56 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
                  throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="getPropertiesFromResource(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPropertiesFromResource</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;getPropertiesFromResource(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourcePath)
+                                            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Read Properties from a resource</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>resourcePath</code> - file path, relative to the classpath, where the properties file is</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Properties read</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getFileProp(java.util.Properties, java.lang.String, java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFileProp</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getFileProp(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;basePath)</pre>
+<div class="block">Get a File property from a Properties object.
+
+ This may be an absolute file path (starts with / or \ or a Windows drive letter spec), or a
+ path relative to basePath</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>properties</code> - where to read the value from</dd><dd><code>name</code> - the value's name</dd><dd><code>basePath</code> - base path the file path may be relative to</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the file, or null if not found</dd></dl>
+</li>
+</ul>
+<a name="getFileProp(java.util.Properties, java.lang.String, java.lang.String, java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFileProp</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getFileProp(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultValue,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;basePath)</pre>
+<div class="block">Get a File property from a Properties object.
+
+ This may be an absolute file path (starts with / or \ or a Windows drive letter spec), or a
+ path relative to basePath</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>properties</code> - where to read the value from</dd><dd><code>name</code> - the value's name</dd><dd><code>defaultValue</code> - default value if the property was not specified</dd><dd><code>basePath</code> - base path the file path may be relative to</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the file, or null if not found</dd></dl>
 </li>
 </ul>
 <a name="processLine(java.lang.String, java.io.Writer)">

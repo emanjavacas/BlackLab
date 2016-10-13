@@ -56,7 +56,7 @@
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>  	}
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>  
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordLeft.html">HitPropertyWordLeft</a>(<a href="../../../../../nl/inl/blacklab/search/Hits.html">Hits</a> hits) {
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>  		<strong class="jxr_keyword">this</strong>(hits, hits.getSearcher().getContentsFieldMainPropName(), hits.getSearcher()
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  		<strong class="jxr_keyword">this</strong>(hits, hits.getSearcher().getMainContentsFieldName(), hits.getSearcher()
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  				.isDefaultSearchCaseSensitive());
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  	}
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  
@@ -79,7 +79,7 @@
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>  	}
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>  
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordLeft.html">HitPropertyWordLeft</a>(<a href="../../../../../nl/inl/blacklab/search/Hits.html">Hits</a> hits, <strong class="jxr_keyword">boolean</strong> sensitive) {
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>  		<strong class="jxr_keyword">this</strong>(hits, hits.getSearcher().getContentsFieldMainPropName(), sensitive);
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  		<strong class="jxr_keyword">this</strong>(hits, hits.getSearcher().getMainContentsFieldName(), sensitive);
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>  	}
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>  
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  	@Override
@@ -132,13 +132,13 @@
 <a class="jxr_linenumber" name="L124" href="#L124">124</a> 	@Override
 <a class="jxr_linenumber" name="L125" href="#L125">125</a> 	<strong class="jxr_keyword">public</strong> String serialize() {
 <a class="jxr_linenumber" name="L126" href="#L126">126</a> 		String[] parts = ComplexFieldUtil.getNameComponents(luceneFieldName);
-<a class="jxr_linenumber" name="L127" href="#L127">127</a> 		String propName = parts.length &gt; 1 ? parts[1] : <span class="jxr_string">""</span>;
-<a class="jxr_linenumber" name="L128" href="#L128">128</a> 		<strong class="jxr_keyword">return</strong> serializeReverse() + PropValSerializeUtil.combineParts(<span class="jxr_string">"wordleft"</span>, propName, sensitive ? <span class="jxr_string">"s"</span> : <span class="jxr_string">"i"</span>);
+<a class="jxr_linenumber" name="L127" href="#L127">127</a> 		String thePropName = parts.length &gt; 1 ? parts[1] : <span class="jxr_string">""</span>;
+<a class="jxr_linenumber" name="L128" href="#L128">128</a> 		<strong class="jxr_keyword">return</strong> serializeReverse() + PropValSerializeUtil.combineParts(<span class="jxr_string">"wordleft"</span>, thePropName, sensitive ? <span class="jxr_string">"s"</span> : <span class="jxr_string">"i"</span>);
 <a class="jxr_linenumber" name="L129" href="#L129">129</a> 	}
 <a class="jxr_linenumber" name="L130" href="#L130">130</a> 
 <a class="jxr_linenumber" name="L131" href="#L131">131</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../nl/inl/blacklab/search/grouping/HitPropertyWordLeft.html">HitPropertyWordLeft</a> deserialize(<a href="../../../../../nl/inl/blacklab/search/Hits.html">Hits</a> hits, String info) {
 <a class="jxr_linenumber" name="L132" href="#L132">132</a> 		String[] parts = PropValSerializeUtil.splitParts(info);
-<a class="jxr_linenumber" name="L133" href="#L133">133</a> 		String fieldName = hits.getConcordanceFieldName();
+<a class="jxr_linenumber" name="L133" href="#L133">133</a> 		String fieldName = hits.settings().concordanceField();
 <a class="jxr_linenumber" name="L134" href="#L134">134</a> 		String propName = parts[0];
 <a class="jxr_linenumber" name="L135" href="#L135">135</a> 		<strong class="jxr_keyword">if</strong> (propName.length() == 0)
 <a class="jxr_linenumber" name="L136" href="#L136">136</a> 			propName = ComplexFieldUtil.getDefaultMainPropName();

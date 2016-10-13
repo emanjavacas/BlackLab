@@ -424,11 +424,17 @@
 <a class="jxr_linenumber" name="L416" href="#L416">416</a> 		<strong class="jxr_keyword">return</strong> n;
 <a class="jxr_linenumber" name="L417" href="#L417">417</a> 	}
 <a class="jxr_linenumber" name="L418" href="#L418">418</a> 
-<a class="jxr_linenumber" name="L419" href="#L419">419</a> 	@Override
-<a class="jxr_linenumber" name="L420" href="#L420">420</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
-<a class="jxr_linenumber" name="L421" href="#L421">421</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SEQ("</span> + clausesToString(include, context) + <span class="jxr_string">")"</span>;
-<a class="jxr_linenumber" name="L422" href="#L422">422</a> 	}
-<a class="jxr_linenumber" name="L423" href="#L423">423</a> }
+<a class="jxr_linenumber" name="L419" href="#L419">419</a> 	@Deprecated
+<a class="jxr_linenumber" name="L420" href="#L420">420</a> 	@Override
+<a class="jxr_linenumber" name="L421" href="#L421">421</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
+<a class="jxr_linenumber" name="L422" href="#L422">422</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SEQ("</span> + clausesToString(include, context) + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L423" href="#L423">423</a> 	}
+<a class="jxr_linenumber" name="L424" href="#L424">424</a> 
+<a class="jxr_linenumber" name="L425" href="#L425">425</a> 	@Override
+<a class="jxr_linenumber" name="L426" href="#L426">426</a> 	<strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="L427" href="#L427">427</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SEQ("</span> + clausesToString(include) + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L428" href="#L428">428</a> 	}
+<a class="jxr_linenumber" name="L429" href="#L429">429</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

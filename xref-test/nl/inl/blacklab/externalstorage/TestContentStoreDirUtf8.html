@@ -30,7 +30,7 @@
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">import</strong> org.junit.Before;
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>  
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <strong class="jxr_keyword">import</strong> nl.inl.util.Utilities;
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <strong class="jxr_keyword">import</strong> nl.inl.util.UtilsForTesting;
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>  
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../nl/inl/blacklab/externalstorage/TestContentStoreDirUtf8.html">TestContentStoreDirUtf8</a> {
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>  	<strong class="jxr_keyword">private</strong> ContentStore store;
@@ -42,10 +42,10 @@
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>  	@Before
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setUp() {
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>  		<em class="jxr_comment">// Remove any previously left over temp test dirs</em>
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>  		Utilities.removeBlackLabTestDirs();
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  		UtilsForTesting.removeBlackLabTestDirs();
 <a class="jxr_linenumber" name="L38" href="#L38">38</a>  
 <a class="jxr_linenumber" name="L39" href="#L39">39</a>  		<em class="jxr_comment">// Create new test dir</em>
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  		dir = Utilities.createBlackLabTestDir(<span class="jxr_string">"ContentStoreDirUtf8"</span>);
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  		dir = UtilsForTesting.createBlackLabTestDir(<span class="jxr_string">"ContentStoreDirUtf8"</span>);
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>  
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>  		store = <strong class="jxr_keyword">new</strong> ContentStoreDirUtf8(dir);
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  		<strong class="jxr_keyword">try</strong> {
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  		<strong class="jxr_keyword">if</strong> (store != <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>  			store.close();
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>  		<em class="jxr_comment">// Try to remove (some files may be locked though)</em>
-<a class="jxr_linenumber" name="L64" href="#L64">64</a>  		Utilities.removeBlackLabTestDirs();
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  		UtilsForTesting.removeBlackLabTestDirs();
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>  	}
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>  
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>  	@Test

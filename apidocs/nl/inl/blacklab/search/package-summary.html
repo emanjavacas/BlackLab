@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>nl.inl.blacklab.search (BlackLab 1.3.3 API)</title>
+<title>nl.inl.blacklab.search (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="nl.inl.blacklab.search (BlackLab 1.3.3 API)";
+        parent.document.title="nl.inl.blacklab.search (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -71,6 +71,27 @@
 <div class="contentContainer">
 <ul class="blockList">
 <li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation">
+<caption><span>Interface Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Interface</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/Searcher.LuceneDocTask.html" title="interface in nl.inl.blacklab.search">Searcher.LuceneDocTask</a></td>
+<td class="colLast">
+<div class="block">A task to perform on a Lucene document.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
 <table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation">
 <caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -125,9 +146,27 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/HitsImpl.html" title="class in nl.inl.blacklab.search">HitsImpl</a></td>
 <td class="colLast">
 <div class="block">Represents a list of Hit objects.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/HitsSample.html" title="class in nl.inl.blacklab.search">HitsSample</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/HitsSampleImpl.html" title="class in nl.inl.blacklab.search">HitsSampleImpl</a></td>
+<td class="colLast">
+<div class="block">Implements HitsSample by wrapping a Hits object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/HitsSettings.html" title="class in nl.inl.blacklab.search">HitsSettings</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search">HitsWindow</a></td>
@@ -150,186 +189,190 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/SearcherImpl.html" title="class in nl.inl.blacklab.search">SearcherImpl</a></td>
 <td class="colLast">
 <div class="block">The main interface into the BlackLab library.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/SingleDocIdFilter.html" title="class in nl.inl.blacklab.search">SingleDocIdFilter</a></td>
 <td class="colLast">
 <div class="block">A Filter that only matches a single Lucene document id.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/SingleDocIdSet.html" title="class in nl.inl.blacklab.search">SingleDocIdSet</a></td>
 <td class="colLast">
 <div class="block">A DocIdSet with a single Lucene document id in it.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a></td>
 <td class="colLast">
 <div class="block">A start and end position (no document id).</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TermFrequency.html" title="class in nl.inl.blacklab.search">TermFrequency</a></td>
 <td class="colLast">
 <div class="block">One token and its frequency in some context.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a></td>
 <td class="colLast">
 <div class="block">A collection of tokens and their (absolute) frequencies.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPattern.html" title="class in nl.inl.blacklab.search">TextPattern</a></td>
 <td class="colLast">
 <div class="block">Describes some pattern of words in a content field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternAnd.html" title="class in nl.inl.blacklab.search">TextPatternAnd</a></td>
 <td class="colLast">Deprecated
 <div class="block"><i>use TextPatternAndNot</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternAndNot.html" title="class in nl.inl.blacklab.search">TextPatternAndNot</a></td>
 <td class="colLast">
 <div class="block">AND query for combining different properties from a complex field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternBoolean.html" title="class in nl.inl.blacklab.search">TextPatternBoolean</a></td>
 <td class="colLast">Deprecated
 <div class="block"><i>not used</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternCaptureGroup.html" title="class in nl.inl.blacklab.search">TextPatternCaptureGroup</a></td>
 <td class="colLast">
 <div class="block">TextPattern for capturing a subclause as a named "group".</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternCombiner.html" title="class in nl.inl.blacklab.search">TextPatternCombiner</a></td>
 <td class="colLast">
 <div class="block">Abstract base class for combining several text patterns into a single new compound TextPattern</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternContaining.html" title="class in nl.inl.blacklab.search">TextPatternContaining</a></td>
 <td class="colLast">Deprecated
 <div class="block"><i>use TextPatternPositionFilter</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternDocLevelAnd.html" title="class in nl.inl.blacklab.search">TextPatternDocLevelAnd</a></td>
 <td class="colLast">
 <div class="block">A TextPattern returning hits from all clauses, but only in documents that match all clauses.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternDocLevelAndNot.html" title="class in nl.inl.blacklab.search">TextPatternDocLevelAndNot</a></td>
 <td class="colLast">
 <div class="block">A TextPattern returning hits from the "include" clause, but only in documents where the "exclude"
  clause doesn't occur.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternEdge.html" title="class in nl.inl.blacklab.search">TextPatternEdge</a></td>
 <td class="colLast">
 <div class="block">Returns either the left edge or right edge of the specified query.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternFuzzy.html" title="class in nl.inl.blacklab.search">TextPatternFuzzy</a></td>
 <td class="colLast">
 <div class="block">A TextPattern matching a word with fuzzy matching.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternNot.html" title="class in nl.inl.blacklab.search">TextPatternNot</a></td>
 <td class="colLast">
 <div class="block">NOT operator for TextPattern queries at token and sequence level.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternOr.html" title="class in nl.inl.blacklab.search">TextPatternOr</a></td>
 <td class="colLast">
 <div class="block">A TextPattern matching at least one of its child clauses.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternPositionFilter.html" title="class in nl.inl.blacklab.search">TextPatternPositionFilter</a></td>
 <td class="colLast">
 <div class="block">A TextPattern searching for TextPatterns that contain a hit from another TextPattern.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternPrefix.html" title="class in nl.inl.blacklab.search">TextPatternPrefix</a></td>
 <td class="colLast">
 <div class="block">A TextPattern matching words that start with the specified prefix.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternProperty.html" title="class in nl.inl.blacklab.search">TextPatternProperty</a></td>
 <td class="colLast">
 <div class="block">TextPattern for wrapping another TextPattern so that it applies to a certain word property.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternRegex.html" title="class in nl.inl.blacklab.search">TextPatternRegex</a></td>
 <td class="colLast">
 <div class="block">A TextPattern matching a regular expression.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternSensitive.html" title="class in nl.inl.blacklab.search">TextPatternSensitive</a></td>
 <td class="colLast">
 <div class="block">TextPattern for wrapping another TextPattern so that it applies to a certain word property.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternTags.html" title="class in nl.inl.blacklab.search">TextPatternTags</a></td>
 <td class="colLast">
 <div class="block">A TextPattern matching a word.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternTerm.html" title="class in nl.inl.blacklab.search">TextPatternTerm</a></td>
 <td class="colLast">
 <div class="block">A TextPattern matching a word.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternTranslator.html" title="class in nl.inl.blacklab.search">TextPatternTranslator</a>&lt;T&gt;</td>
 <td class="colLast">
 <div class="block">Interface for translating a TextPattern into a different representation.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternTranslatorString.html" title="class in nl.inl.blacklab.search">TextPatternTranslatorString</a></td>
 <td class="colLast">Deprecated
 <div class="block"><i>use TextPattern.toString()</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternWildcard.html" title="class in nl.inl.blacklab.search">TextPatternWildcard</a></td>
 <td class="colLast">
 <div class="block">A textpattern matching a simple wildcard expression.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TextPatternWithin.html" title="class in nl.inl.blacklab.search">TextPatternWithin</a></td>
 <td class="colLast">Deprecated
 <div class="block"><i>use TextPatternPositionFilter</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../nl/inl/blacklab/search/TPBooleanClause.html" title="class in nl.inl.blacklab.search">TPBooleanClause</a></td>
 <td class="colLast">
 <div class="block">Adapted from Lucene's BooleanClause.</div>
@@ -357,6 +400,33 @@
 <td class="colLast">
 <div class="block">The different positional operations</div>
 </td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Exception Summary table, listing exceptions, and an explanation">
+<caption><span>Exception Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Exception</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/BLRuntimeException.html" title="class in nl.inl.blacklab.search">BLRuntimeException</a></td>
+<td class="colLast">
+<div class="block">A RuntimeException generated by BlackLab.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/InvalidQueryException.html" title="class in nl.inl.blacklab.search">InvalidQueryException</a></td>
+<td class="colLast">
+<div class="block">There was something wrong with the query.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../nl/inl/blacklab/search/RegexpTooLargeException.html" title="class in nl.inl.blacklab.search">RegexpTooLargeException</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
 </table>

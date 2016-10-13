@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ForwardIndex (BlackLab 1.3.3 API)</title>
+<title>ForwardIndex (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ForwardIndex (BlackLab 1.3.3 API)";
+        parent.document.title="ForwardIndex (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -36,7 +36,7 @@
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../nl/inl/blacklab/forwardindex/Terms.html" title="class in nl.inl.blacklab.forwardindex"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.ForwardIndexDocTask.html" title="interface in nl.inl.blacklab.forwardindex"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?nl/inl/blacklab/forwardindex/ForwardIndex.html" target="_top">Frames</a></li>
@@ -60,7 +60,7 @@
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">Method</a></li>
@@ -104,6 +104,27 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.ForwardIndexDocTask.html" title="interface in nl.inl.blacklab.forwardindex">ForwardIndex.ForwardIndexDocTask</a></strong></code>
+<div class="block">A task to perform on a document in the forward index.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor_summary">
@@ -159,50 +180,47 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#forEachDocument(nl.inl.blacklab.forwardindex.ForwardIndex.ForwardIndexDocTask)">forEachDocument</a></strong>(<a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.ForwardIndexDocTask.html" title="interface in nl.inl.blacklab.forwardindex">ForwardIndex.ForwardIndexDocTask</a>&nbsp;task)</code>
+<div class="block">Perform a task on each document in the forward index.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#getDocLength(int)">getDocLength</a></strong>(int&nbsp;fiid)</code>
 <div class="block">Gets the length (in tokens) of a document</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#getFreeBlocks()">getFreeBlocks</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract long</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#getFreeSpace()">getFreeSpace</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#getNumDocs()">getNumDocs</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/forwardindex/Terms.html" title="class in nl.inl.blacklab.forwardindex">Terms</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#getTerms()">getTerms</a></strong>()</code>
 <div class="block">Get the Terms object in order to translate ids to token strings</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract long</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#getTotalSize()">getTotalSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#idSet()">idSet</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#luceneDocIdToFiid(int)">luceneDocIdToFiid</a></strong>(int&nbsp;docId)</code>
 <div class="block">Convert a Lucene document id to the corresponding forward index id.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#open(java.io.File)">open</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir)</code>
-<div class="block">Open a forward index.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#open(java.io.File,%20boolean)">open</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir,
-    boolean&nbsp;indexMode)</code>
-<div class="block">Open a forward index.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -215,7 +233,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&gt;</code></td>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#retrieveParts(int,%20int[],%20int[])">retrieveParts</a></strong>(int&nbsp;fiid,
              int[]&nbsp;start,
              int[]&nbsp;end)</code>
@@ -233,7 +251,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;</code></td>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#retrievePartsSortOrder(int,%20int[],%20int[],%20boolean)">retrievePartsSortOrder</a></strong>(int&nbsp;fiid,
                       int[]&nbsp;start,
                       int[]&nbsp;end,
@@ -243,7 +261,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#setIdTranslateInfo(org.apache.lucene.index.DirectoryReader,%20java.lang.String)">setIdTranslateInfo</a></strong>(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#setIdTranslateInfo(org.apache.lucene.index.IndexReader,%20java.lang.String)">setIdTranslateInfo</a></strong>(org.apache.lucene.index.IndexReader&nbsp;reader,
                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;lucenePropFieldName)</code>
 <div class="block">Indicate how to translate Lucene document ids to forward index ids
  (by looking them up in the index).</div>
@@ -252,6 +270,10 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#setLargeTermsFileSupport(boolean)">setLargeTermsFileSupport</a></strong>(boolean&nbsp;b)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html#warmUp()">warmUp</a></strong>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -292,13 +314,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="setIdTranslateInfo(org.apache.lucene.index.DirectoryReader, java.lang.String)">
+<a name="setIdTranslateInfo(org.apache.lucene.index.IndexReader, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setIdTranslateInfo</h4>
-<pre>public abstract&nbsp;void&nbsp;setIdTranslateInfo(org.apache.lucene.index.DirectoryReader&nbsp;reader,
+<pre>public abstract&nbsp;void&nbsp;setIdTranslateInfo(org.apache.lucene.index.IndexReader&nbsp;reader,
                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;lucenePropFieldName)</pre>
 <div class="block">Indicate how to translate Lucene document ids to forward index ids
  (by looking them up in the index).
@@ -376,7 +398,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <li class="blockList">
 <h4>retrieveParts</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&gt;&nbsp;retrieveParts(int&nbsp;fiid,
+public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&gt;&nbsp;retrieveParts(int&nbsp;fiid,
                                       int[]&nbsp;start,
                                       int[]&nbsp;end)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use retrievePartsInt and getTerms().get(id)</i></div>
@@ -404,7 +426,7 @@ public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util
 <li class="blockList">
 <h4>retrievePartsSortOrder</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;retrievePartsSortOrder(int&nbsp;fiid,
+public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;retrievePartsSortOrder(int&nbsp;fiid,
                                             int[]&nbsp;start,
                                             int[]&nbsp;end,
                                             boolean&nbsp;sensitive)</pre>
@@ -509,38 +531,6 @@ public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util
 <dt><span class="strong">Returns:</span></dt><dd>length of the document</dd></dl>
 </li>
 </ul>
-<a name="open(java.io.File)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>open</h4>
-<pre>public static&nbsp;<a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&nbsp;open(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir)</pre>
-<div class="block">Open a forward index.
-
- Automatically figures out the forward index version and
- instantiates the right class.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dir</code> - forward index directory</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the forward index object</dd></dl>
-</li>
-</ul>
-<a name="open(java.io.File, boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>open</h4>
-<pre>public static&nbsp;<a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&nbsp;open(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir,
-                boolean&nbsp;indexMode)</pre>
-<div class="block">Open a forward index.
-
- Automatically figures out the forward index version and
- instantiates the right class.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dir</code> - forward index directory</dd><dd><code>indexMode</code> - true iff we're in index mode (writing to
-   the forward index); otherwise it will be read-only.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the forward index object</dd></dl>
-</li>
-</ul>
 <a name="open(java.io.File, boolean, java.text.Collator, boolean)">
 <!--   -->
 </a>
@@ -563,10 +553,40 @@ public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util
 <a name="setLargeTermsFileSupport(boolean)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setLargeTermsFileSupport</h4>
 <pre>protected abstract&nbsp;void&nbsp;setLargeTermsFileSupport(boolean&nbsp;b)</pre>
+</li>
+</ul>
+<a name="warmUp()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>warmUp</h4>
+<pre>public&nbsp;void&nbsp;warmUp()</pre>
+</li>
+</ul>
+<a name="idSet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>idSet</h4>
+<pre>public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;idSet()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the set of all forward index ids</dd></dl>
+</li>
+</ul>
+<a name="forEachDocument(nl.inl.blacklab.forwardindex.ForwardIndex.ForwardIndexDocTask)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>forEachDocument</h4>
+<pre>public&nbsp;void&nbsp;forEachDocument(<a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.ForwardIndexDocTask.html" title="interface in nl.inl.blacklab.forwardindex">ForwardIndex.ForwardIndexDocTask</a>&nbsp;task)</pre>
+<div class="block">Perform a task on each document in the forward index.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>task</code> - the task to perform</dd></dl>
 </li>
 </ul>
 </li>
@@ -596,7 +616,7 @@ public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../nl/inl/blacklab/forwardindex/Terms.html" title="class in nl.inl.blacklab.forwardindex"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.ForwardIndexDocTask.html" title="interface in nl.inl.blacklab.forwardindex"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?nl/inl/blacklab/forwardindex/ForwardIndex.html" target="_top">Frames</a></li>
@@ -620,7 +640,7 @@ public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">Method</a></li>

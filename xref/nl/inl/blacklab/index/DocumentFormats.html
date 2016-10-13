@@ -20,74 +20,74 @@
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.indexers.DocIndexerTei;
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.indexers.DocIndexerTeiPosInFunctionAttr;
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.indexers.DocIndexerTeiText;
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.indexers.DocIndexerXmlSketch;
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>  
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_javadoccomment"> * Document format registry, for resolving a DocIndexer class given a</em>
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_javadoccomment"> * format identifier (common abbreviation or (qualified) class name).</em>
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../nl/inl/blacklab/index/DocumentFormats.html">DocumentFormats</a> {
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  	<em class="jxr_javadoccomment">/** Document formats */</em>
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  	<strong class="jxr_keyword">static</strong> Map&lt;String, Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt;&gt; formats = <strong class="jxr_keyword">new</strong> TreeMap&lt;&gt;();
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>  
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  	<strong class="jxr_keyword">static</strong> {
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>  		<em class="jxr_comment">// Some abbreviations for commonly used builtin DocIndexers.</em>
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>  		<em class="jxr_comment">// You can also specify the classname for builtin DocIndexers,</em>
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>  		<em class="jxr_comment">// or a fully-qualified name for your custom DocIndexer (must</em>
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  		<em class="jxr_comment">// be on the classpath)</em>
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>  		register(<span class="jxr_string">"alto"</span>, DocIndexerAlto.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  		register(<span class="jxr_string">"folia"</span>, DocIndexerFolia.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>  		register(<span class="jxr_string">"pagexml"</span>, DocIndexerPageXml.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>  		register(<span class="jxr_string">"sketchxml"</span>, DocIndexerXmlSketch.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>  
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>  		<em class="jxr_comment">// TEI has a number of variants</em>
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>  		<em class="jxr_comment">// By default, the contents of the "body" element are indexed, but alternatively you can index the contents of "text".</em>
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>  		<em class="jxr_comment">// By default, the "type" attribute is assumed to contain PoS, but alternatively you can use the "function" attribute.</em>
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>  		register(<span class="jxr_string">"tei"</span>, DocIndexerTei.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  		register(<span class="jxr_string">"tei-element-body"</span>, DocIndexerTei.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>  		register(<span class="jxr_string">"tei-element-text"</span>, DocIndexerTeiText.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>  		register(<span class="jxr_string">"tei-pos-type"</span>, DocIndexerTei.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>  		register(<span class="jxr_string">"tei-pos-function"</span>, DocIndexerTeiPosInFunctionAttr.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>  	}
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>  
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>  <em class="jxr_javadoccomment">	 * Register an abbreviated document format identifier.</em>
-<a class="jxr_linenumber" name="L48" href="#L48">48</a>  <em class="jxr_javadoccomment">	 *</em>
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>  <em class="jxr_javadoccomment">	 * @param formatAbbreviation the format abbreviation, e.g. "tei"</em>
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>  <em class="jxr_javadoccomment">	 *   (NOTE: format abbreviations are case-insensitive, and are lowercased internally)</em>
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>  <em class="jxr_javadoccomment">	 * @param docIndexerClass the DocIndexer class for this format</em>
-<a class="jxr_linenumber" name="L52" href="#L52">52</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> register(String formatAbbreviation, Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt; docIndexerClass) {
-<a class="jxr_linenumber" name="L54" href="#L54">54</a>  		formats.put(formatAbbreviation.toLowerCase(), docIndexerClass);
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>  	}
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>  
-<a class="jxr_linenumber" name="L57" href="#L57">57</a>  	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L58" href="#L58">58</a>  <em class="jxr_javadoccomment">	 * Get the DocIndexer class associated with the format identifier.</em>
-<a class="jxr_linenumber" name="L59" href="#L59">59</a>  <em class="jxr_javadoccomment">	 *</em>
-<a class="jxr_linenumber" name="L60" href="#L60">60</a>  <em class="jxr_javadoccomment">	 * @param formatIdentifier format identifier, e.g. "tei" or "com.example.MyIndexer"</em>
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>  <em class="jxr_javadoccomment">	 * @return the DocIndexer class, or null if not found</em>
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L63" href="#L63">63</a>  	@SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
-<a class="jxr_linenumber" name="L64" href="#L64">64</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt; getIndexerClass(String formatIdentifier) {
-<a class="jxr_linenumber" name="L65" href="#L65">65</a>  		<em class="jxr_comment">// Check if it's a known abbreviation.</em>
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>  		Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt; docIndexerClass = formats.get(formatIdentifier.toLowerCase());
-<a class="jxr_linenumber" name="L67" href="#L67">67</a>  		<strong class="jxr_keyword">if</strong> (docIndexerClass == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L68" href="#L68">68</a>  			<em class="jxr_comment">// No; is it a fully qualified class name?</em>
-<a class="jxr_linenumber" name="L69" href="#L69">69</a>  			<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>  				docIndexerClass = (Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt;) Class.forName(formatIdentifier);
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>  			} <strong class="jxr_keyword">catch</strong> (Exception e1) {
-<a class="jxr_linenumber" name="L72" href="#L72">72</a>  				<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>  					<em class="jxr_comment">// No. Is it a class in the BlackLab indexers package?</em>
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>  					docIndexerClass = (Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt;) Class
-<a class="jxr_linenumber" name="L75" href="#L75">75</a>  							.forName(<span class="jxr_string">"nl.inl.blacklab.indexers."</span> + formatIdentifier);
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.indexers.DocIndexerWhiteLab2;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.indexers.DocIndexerXmlSketch;
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_javadoccomment"> * Document format registry, for resolving a DocIndexer class given a</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment"> * format identifier (common abbreviation or (qualified) class name).</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../nl/inl/blacklab/index/DocumentFormats.html">DocumentFormats</a> {
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  	<em class="jxr_javadoccomment">/** Document formats */</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  	<strong class="jxr_keyword">static</strong> Map&lt;String, Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt;&gt; formats = <strong class="jxr_keyword">new</strong> TreeMap&lt;&gt;();
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  	<strong class="jxr_keyword">static</strong> {
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  		<em class="jxr_comment">// Some abbreviations for commonly used builtin DocIndexers.</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  		<em class="jxr_comment">// You can also specify the classname for builtin DocIndexers,</em>
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  		<em class="jxr_comment">// or a fully-qualified name for your custom DocIndexer (must</em>
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  		<em class="jxr_comment">// be on the classpath)</em>
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  		register(<span class="jxr_string">"alto"</span>, DocIndexerAlto.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  		register(<span class="jxr_string">"folia"</span>, DocIndexerFolia.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  		register(<span class="jxr_string">"whitelab2"</span>, DocIndexerWhiteLab2.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  		register(<span class="jxr_string">"pagexml"</span>, DocIndexerPageXml.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  		register(<span class="jxr_string">"sketchxml"</span>, DocIndexerXmlSketch.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  		<em class="jxr_comment">// TEI has a number of variants</em>
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  		<em class="jxr_comment">// By default, the contents of the "body" element are indexed, but alternatively you can index the contents of "text".</em>
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  		<em class="jxr_comment">// By default, the "type" attribute is assumed to contain PoS, but alternatively you can use the "function" attribute.</em>
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  		register(<span class="jxr_string">"tei"</span>, DocIndexerTei.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  		register(<span class="jxr_string">"tei-element-body"</span>, DocIndexerTei.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  		register(<span class="jxr_string">"tei-element-text"</span>, DocIndexerTeiText.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  		register(<span class="jxr_string">"tei-pos-type"</span>, DocIndexerTei.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  		register(<span class="jxr_string">"tei-pos-function"</span>, DocIndexerTeiPosInFunctionAttr.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  	}
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  <em class="jxr_javadoccomment">	 * Register an abbreviated document format identifier.</em>
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  <em class="jxr_javadoccomment">	 *</em>
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  <em class="jxr_javadoccomment">	 * @param formatAbbreviation the format abbreviation, e.g. "tei"</em>
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  <em class="jxr_javadoccomment">	 *   (NOTE: format abbreviations are case-insensitive, and are lowercased internally)</em>
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  <em class="jxr_javadoccomment">	 * @param docIndexerClass the DocIndexer class for this format</em>
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> register(String formatAbbreviation, Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt; docIndexerClass) {
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		formats.put(formatAbbreviation.toLowerCase(), docIndexerClass);
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  	}
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  <em class="jxr_javadoccomment">	 * Get the DocIndexer class associated with the format identifier.</em>
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  <em class="jxr_javadoccomment">	 *</em>
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  <em class="jxr_javadoccomment">	 * @param formatIdentifier format identifier, e.g. "tei" or "com.example.MyIndexer"</em>
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  <em class="jxr_javadoccomment">	 * @return the DocIndexer class, or null if not found</em>
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Class&lt;? <strong class="jxr_keyword">extends</strong> DocIndexer&gt; getIndexerClass(String formatIdentifier) {
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>  		<em class="jxr_comment">// Check if it's a known abbreviation.</em>
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>  		Class&lt;?&gt; docIndexerClass = formats.get(formatIdentifier.toLowerCase());
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>  		<strong class="jxr_keyword">if</strong> (docIndexerClass == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>  			<em class="jxr_comment">// No; is it a fully qualified class name?</em>
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>  			<strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  				docIndexerClass = Class.forName(formatIdentifier);
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>  			} <strong class="jxr_keyword">catch</strong> (Exception e1) {
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>  				<strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  					<em class="jxr_comment">// No. Is it a class in the BlackLab indexers package?</em>
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>  					docIndexerClass = Class.forName(<span class="jxr_string">"nl.inl.blacklab.indexers."</span> + formatIdentifier);
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>  				} <strong class="jxr_keyword">catch</strong> (Exception e) {
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  					<em class="jxr_comment">// Couldn't be resolved. That's okay, we'll just return null and let</em>
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>  					<em class="jxr_comment">// the application deal with it.</em>
 <a class="jxr_linenumber" name="L79" href="#L79">79</a>  				}
 <a class="jxr_linenumber" name="L80" href="#L80">80</a>  			}
 <a class="jxr_linenumber" name="L81" href="#L81">81</a>  		}
-<a class="jxr_linenumber" name="L82" href="#L82">82</a>  		<strong class="jxr_keyword">return</strong> docIndexerClass;
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>  		<strong class="jxr_keyword">return</strong> docIndexerClass.asSubclass(DocIndexer.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>  	}
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>  
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>  	<em class="jxr_javadoccomment">/**</em>

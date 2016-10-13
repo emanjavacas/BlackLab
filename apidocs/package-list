@@ -1,7 +1,4 @@
 nl.inl.blacklab.analysis
-nl.inl.blacklab.debug
-nl.inl.blacklab.example
-nl.inl.blacklab.exceptions
 nl.inl.blacklab.externalstorage
 nl.inl.blacklab.filter
 nl.inl.blacklab.forwardindex
@@ -19,5 +16,6 @@ nl.inl.blacklab.search.lucene
 nl.inl.blacklab.search.sequences
 nl.inl.blacklab.testutil
 nl.inl.blacklab.tools
+nl.inl.blacklab.tools.debug
+nl.inl.blacklab.tools.indexexample
 nl.inl.util
-nl.inl.util.json

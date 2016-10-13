@@ -23,19 +23,19 @@
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_javadoccomment"> *******************************************************************************/</em>
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  <strong class="jxr_keyword">package</strong> nl.inl.blacklab.index.complex;
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <strong class="jxr_keyword">import</strong> java.util.ArrayList;
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <strong class="jxr_keyword">import</strong> java.util.Collection;
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <strong class="jxr_keyword">import</strong> java.util.Collections;
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">import</strong> java.util.HashMap;
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">import</strong> java.util.List;
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <strong class="jxr_keyword">import</strong> java.util.Set;
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>  
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.index.complex.ComplexFieldProperty.SensitivitySetting;
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>  
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> org.apache.lucene.document.Document;
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> org.apache.lucene.document.Field;
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> org.apache.lucene.document.IntField;
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <strong class="jxr_keyword">import</strong> java.util.Collection;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <strong class="jxr_keyword">import</strong> java.util.Collections;
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <strong class="jxr_keyword">import</strong> java.util.HashMap;
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> java.util.Set;
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <strong class="jxr_keyword">import</strong> org.apache.lucene.document.Document;
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">import</strong> org.apache.lucene.document.Field;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <strong class="jxr_keyword">import</strong> org.apache.lucene.document.IntField;
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> org.eclipse.collections.impl.list.mutable.primitive.IntArrayList;
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.index.complex.ComplexFieldProperty.SensitivitySetting;
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>  
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>  
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>  <em class="jxr_javadoccomment">/**</em>
@@ -61,9 +61,9 @@
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  	<strong class="jxr_keyword">private</strong> Map&lt;String, ComplexFieldProperty&gt; properties = <strong class="jxr_keyword">new</strong> HashMap&lt;&gt;();
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>  	<strong class="jxr_keyword">private</strong> List&lt;Integer&gt; start = <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  	<strong class="jxr_keyword">private</strong> IntArrayList start = <strong class="jxr_keyword">new</strong> IntArrayList();
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>  
-<a class="jxr_linenumber" name="L58" href="#L58">58</a>  	<strong class="jxr_keyword">private</strong> List&lt;Integer&gt; end = <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  	<strong class="jxr_keyword">private</strong> IntArrayList end = <strong class="jxr_keyword">new</strong> IntArrayList();
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>  
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>  	<strong class="jxr_keyword">private</strong> String fieldName;
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  
@@ -129,7 +129,7 @@
 <a class="jxr_linenumber" name="L121" href="#L121">121</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addPropertyAlternative(String propName, String altName, <a href="../../../../../nl/inl/blacklab/index/complex/TokenFilterAdder.html">TokenFilterAdder</a> filterAdder) {
 <a class="jxr_linenumber" name="L122" href="#L122">122</a> 		ComplexFieldProperty p = properties.get(propName);
 <a class="jxr_linenumber" name="L123" href="#L123">123</a> 		<strong class="jxr_keyword">if</strong> (p == <strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L124" href="#L124">124</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Undefined property '"</span> + propName + <span class="jxr_string">"'"</span>);
+<a class="jxr_linenumber" name="L124" href="#L124">124</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Undefined property '"</span> + propName + <span class="jxr_string">"'"</span>);
 <a class="jxr_linenumber" name="L125" href="#L125">125</a> 		p.addAlternative(altName, filterAdder);
 <a class="jxr_linenumber" name="L126" href="#L126">126</a> 	}
 <a class="jxr_linenumber" name="L127" href="#L127">127</a> 
@@ -209,7 +209,7 @@
 <a class="jxr_linenumber" name="L201" href="#L201">201</a> 	<strong class="jxr_keyword">public</strong> <a href="../../../../../nl/inl/blacklab/index/complex/ComplexFieldProperty.html">ComplexFieldProperty</a> getProperty(String name) {
 <a class="jxr_linenumber" name="L202" href="#L202">202</a> 		ComplexFieldProperty p = properties.get(name);
 <a class="jxr_linenumber" name="L203" href="#L203">203</a> 		<strong class="jxr_keyword">if</strong> (p == <strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L204" href="#L204">204</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
+<a class="jxr_linenumber" name="L204" href="#L204">204</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
 <a class="jxr_linenumber" name="L205" href="#L205">205</a> 		<strong class="jxr_keyword">return</strong> p;
 <a class="jxr_linenumber" name="L206" href="#L206">206</a> 	}
 <a class="jxr_linenumber" name="L207" href="#L207">207</a> 
@@ -223,7 +223,7 @@
 <a class="jxr_linenumber" name="L215" href="#L215">215</a> 	<strong class="jxr_keyword">public</strong> List&lt;String&gt; getPropertyValues(String name) {
 <a class="jxr_linenumber" name="L216" href="#L216">216</a> 		ComplexFieldProperty p = properties.get(name);
 <a class="jxr_linenumber" name="L217" href="#L217">217</a> 		<strong class="jxr_keyword">if</strong> (p == <strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L218" href="#L218">218</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
+<a class="jxr_linenumber" name="L218" href="#L218">218</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
 <a class="jxr_linenumber" name="L219" href="#L219">219</a> 		<strong class="jxr_keyword">return</strong> p.getValues();
 <a class="jxr_linenumber" name="L220" href="#L220">220</a> 	}
 <a class="jxr_linenumber" name="L221" href="#L221">221</a> 
@@ -237,7 +237,7 @@
 <a class="jxr_linenumber" name="L229" href="#L229">229</a> 	<strong class="jxr_keyword">public</strong> List&lt;Integer&gt; getPropertyPositionIncrements(String name) {
 <a class="jxr_linenumber" name="L230" href="#L230">230</a> 		ComplexFieldProperty p = properties.get(name);
 <a class="jxr_linenumber" name="L231" href="#L231">231</a> 		<strong class="jxr_keyword">if</strong> (p == <strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L232" href="#L232">232</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
+<a class="jxr_linenumber" name="L232" href="#L232">232</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
 <a class="jxr_linenumber" name="L233" href="#L233">233</a> 		<strong class="jxr_keyword">return</strong> p.getPositionIncrements();
 <a class="jxr_linenumber" name="L234" href="#L234">234</a> 	}
 <a class="jxr_linenumber" name="L235" href="#L235">235</a> 
@@ -264,7 +264,7 @@
 <a class="jxr_linenumber" name="L256" href="#L256">256</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addPropertyValue(String name, String value, <strong class="jxr_keyword">int</strong> posIncr) {
 <a class="jxr_linenumber" name="L257" href="#L257">257</a> 		ComplexFieldProperty p = properties.get(name);
 <a class="jxr_linenumber" name="L258" href="#L258">258</a> 		<strong class="jxr_keyword">if</strong> (p == <strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L259" href="#L259">259</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
+<a class="jxr_linenumber" name="L259" href="#L259">259</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Undefined property '"</span> + name + <span class="jxr_string">"'"</span>);
 <a class="jxr_linenumber" name="L260" href="#L260">260</a> 		p.addValue(value, posIncr);
 <a class="jxr_linenumber" name="L261" href="#L261">261</a> 	}
 <a class="jxr_linenumber" name="L262" href="#L262">262</a> 

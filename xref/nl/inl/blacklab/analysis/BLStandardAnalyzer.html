@@ -77,51 +77,48 @@
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>  		String TEST_STR = <span class="jxr_string">"Hé jij И!  раскази и повѣсти. Ст]' Дѣдо  	Нисторъ. Ива"</span>;
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>  
-<a class="jxr_linenumber" name="L72" href="#L72">72</a>  		Analyzer a = <strong class="jxr_keyword">new</strong> <a href="../../../../nl/inl/blacklab/analysis/BLStandardAnalyzer.html">BLStandardAnalyzer</a>();
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>  		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>  			TokenStream ts = a.tokenStream(<span class="jxr_string">"test"</span>, <strong class="jxr_keyword">new</strong> StringReader(TEST_STR));
-<a class="jxr_linenumber" name="L75" href="#L75">75</a>  			CharTermAttribute ta = ts.addAttribute(CharTermAttribute.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L76" href="#L76">76</a>  			<strong class="jxr_keyword">while</strong> (ts.incrementToken()) {
-<a class="jxr_linenumber" name="L77" href="#L77">77</a>  				System.out.println(<strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L78" href="#L78">78</a>  			}
-<a class="jxr_linenumber" name="L79" href="#L79">79</a>  			TokenStream ts2 = a.tokenStream(ComplexFieldUtil.propertyField(<span class="jxr_string">"test"</span>, <strong class="jxr_keyword">null</strong>, <span class="jxr_string">"s"</span>),
-<a class="jxr_linenumber" name="L80" href="#L80">80</a>  					<strong class="jxr_keyword">new</strong> StringReader(TEST_STR));
-<a class="jxr_linenumber" name="L81" href="#L81">81</a>  			ta = ts2.addAttribute(CharTermAttribute.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L82" href="#L82">82</a>  			<strong class="jxr_keyword">while</strong> (ts2.incrementToken()) {
-<a class="jxr_linenumber" name="L83" href="#L83">83</a>  				System.out.println(<strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
-<a class="jxr_linenumber" name="L84" href="#L84">84</a>  			}
-<a class="jxr_linenumber" name="L85" href="#L85">85</a>  		} <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="L86" href="#L86">86</a>  			a.close();
-<a class="jxr_linenumber" name="L87" href="#L87">87</a>  		}
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>  	}
-<a class="jxr_linenumber" name="L89" href="#L89">89</a>  
-<a class="jxr_linenumber" name="L90" href="#L90">90</a>  	<em class="jxr_comment">/* CODE JESSE: */</em>
-<a class="jxr_linenumber" name="L91" href="#L91">91</a>  	<strong class="jxr_keyword">static</strong> Pattern prePunctuationPattern = Pattern.compile(<span class="jxr_string">"(^|&#92;&#92;s)&#92;&#92;p{P}+"</span>);
-<a class="jxr_linenumber" name="L92" href="#L92">92</a>  	<strong class="jxr_keyword">static</strong> Pattern postPunctuationPattern = Pattern.compile(<span class="jxr_string">"&#92;&#92;p{P}+($|&#92;&#92;s)"</span>);
-<a class="jxr_linenumber" name="L93" href="#L93">93</a>  
-<a class="jxr_linenumber" name="L94" href="#L94">94</a>  	<strong class="jxr_keyword">public</strong> String prePunctuation = <span class="jxr_string">""</span>;
-<a class="jxr_linenumber" name="L95" href="#L95">95</a>  	<strong class="jxr_keyword">public</strong> String postPunctuation = <span class="jxr_string">""</span>;
-<a class="jxr_linenumber" name="L96" href="#L96">96</a>  	<strong class="jxr_keyword">public</strong> String trimmedToken = <span class="jxr_string">""</span>;
-<a class="jxr_linenumber" name="L97" href="#L97">97</a>  
-<a class="jxr_linenumber" name="L98" href="#L98">98</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tokenize(String t) {
-<a class="jxr_linenumber" name="L99" href="#L99">99</a>  		Matcher m1 = prePunctuationPattern.matcher(t);
-<a class="jxr_linenumber" name="L100" href="#L100">100</a> 		Matcher m2 = postPunctuationPattern.matcher(t);
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>  		<strong class="jxr_keyword">try</strong> (Analyzer a = <strong class="jxr_keyword">new</strong> BLStandardAnalyzer()) {
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>  			TokenStream ts = a.tokenStream(<span class="jxr_string">"test"</span>, <strong class="jxr_keyword">new</strong> StringReader(TEST_STR));
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  			CharTermAttribute ta = ts.addAttribute(CharTermAttribute.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>  			<strong class="jxr_keyword">while</strong> (ts.incrementToken()) {
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>  				System.out.println(<strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>  			}
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>  			TokenStream ts2 = a.tokenStream(ComplexFieldUtil.propertyField(<span class="jxr_string">"test"</span>, <strong class="jxr_keyword">null</strong>, <span class="jxr_string">"s"</span>),
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  					<strong class="jxr_keyword">new</strong> StringReader(TEST_STR));
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>  			ta = ts2.addAttribute(CharTermAttribute.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>  			<strong class="jxr_keyword">while</strong> (ts2.incrementToken()) {
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>  				System.out.println(<strong class="jxr_keyword">new</strong> String(ta.buffer(), 0, ta.length()));
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>  			}
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>  		}
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>  	}
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>  
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>  	<em class="jxr_comment">/* CODE JESSE: */</em>
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>  	<strong class="jxr_keyword">static</strong> Pattern prePunctuationPattern = Pattern.compile(<span class="jxr_string">"(^|&#92;&#92;s)&#92;&#92;p{P}+"</span>);
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>  	<strong class="jxr_keyword">static</strong> Pattern postPunctuationPattern = Pattern.compile(<span class="jxr_string">"&#92;&#92;p{P}+($|&#92;&#92;s)"</span>);
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>  
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>  	<strong class="jxr_keyword">public</strong> String prePunctuation = <span class="jxr_string">""</span>;
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>  	<strong class="jxr_keyword">public</strong> String postPunctuation = <span class="jxr_string">""</span>;
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>  	<strong class="jxr_keyword">public</strong> String trimmedToken = <span class="jxr_string">""</span>;
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>  
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tokenize(String t) {
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>  		Matcher m1 = prePunctuationPattern.matcher(t);
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>  		Matcher m2 = postPunctuationPattern.matcher(t);
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>  
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>  		<strong class="jxr_keyword">int</strong> s = 0;
+<a class="jxr_linenumber" name="L100" href="#L100">100</a> 		<strong class="jxr_keyword">int</strong> e = t.length();
 <a class="jxr_linenumber" name="L101" href="#L101">101</a> 
-<a class="jxr_linenumber" name="L102" href="#L102">102</a> 		<strong class="jxr_keyword">int</strong> s = 0;
-<a class="jxr_linenumber" name="L103" href="#L103">103</a> 		<strong class="jxr_keyword">int</strong> e = t.length();
-<a class="jxr_linenumber" name="L104" href="#L104">104</a> 
-<a class="jxr_linenumber" name="L105" href="#L105">105</a> 		<strong class="jxr_keyword">if</strong> (m1.find())
-<a class="jxr_linenumber" name="L106" href="#L106">106</a> 			s = m1.end();
-<a class="jxr_linenumber" name="L107" href="#L107">107</a> 		<strong class="jxr_keyword">if</strong> (m2.find())
-<a class="jxr_linenumber" name="L108" href="#L108">108</a> 			e = m2.start();
-<a class="jxr_linenumber" name="L109" href="#L109">109</a> 
-<a class="jxr_linenumber" name="L110" href="#L110">110</a> 		<strong class="jxr_keyword">if</strong> (e &lt; s)
-<a class="jxr_linenumber" name="L111" href="#L111">111</a> 			e = s;
-<a class="jxr_linenumber" name="L112" href="#L112">112</a> 		trimmedToken = t.substring(s, e);
-<a class="jxr_linenumber" name="L113" href="#L113">113</a> 		prePunctuation = t.substring(0, s);
-<a class="jxr_linenumber" name="L114" href="#L114">114</a> 		postPunctuation = t.substring(e, t.length());
-<a class="jxr_linenumber" name="L115" href="#L115">115</a> 	}
-<a class="jxr_linenumber" name="L116" href="#L116">116</a> }
+<a class="jxr_linenumber" name="L102" href="#L102">102</a> 		<strong class="jxr_keyword">if</strong> (m1.find())
+<a class="jxr_linenumber" name="L103" href="#L103">103</a> 			s = m1.end();
+<a class="jxr_linenumber" name="L104" href="#L104">104</a> 		<strong class="jxr_keyword">if</strong> (m2.find())
+<a class="jxr_linenumber" name="L105" href="#L105">105</a> 			e = m2.start();
+<a class="jxr_linenumber" name="L106" href="#L106">106</a> 
+<a class="jxr_linenumber" name="L107" href="#L107">107</a> 		<strong class="jxr_keyword">if</strong> (e &lt; s)
+<a class="jxr_linenumber" name="L108" href="#L108">108</a> 			e = s;
+<a class="jxr_linenumber" name="L109" href="#L109">109</a> 		trimmedToken = t.substring(s, e);
+<a class="jxr_linenumber" name="L110" href="#L110">110</a> 		prePunctuation = t.substring(0, s);
+<a class="jxr_linenumber" name="L111" href="#L111">111</a> 		postPunctuation = t.substring(e, t.length());
+<a class="jxr_linenumber" name="L112" href="#L112">112</a> 	}
+<a class="jxr_linenumber" name="L113" href="#L113">113</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

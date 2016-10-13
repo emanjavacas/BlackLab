@@ -80,7 +80,7 @@
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>  		<strong class="jxr_keyword">boolean</strong> isContentsSearch = false;
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  		String prop = <span class="jxr_string">"word"</span>;
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>  		<strong class="jxr_keyword">boolean</strong> isProperty;
-<a class="jxr_linenumber" name="L75" href="#L75">75</a>  		<strong class="jxr_keyword">if</strong> (searcher != <strong class="jxr_keyword">null</strong>)
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>  		<strong class="jxr_keyword">if</strong> (searcher != <strong class="jxr_keyword">null</strong> &amp;&amp; !searcher.getClass().getSimpleName().startsWith(<span class="jxr_string">"Mock"</span>)) <em class="jxr_comment">// ARGH...</em>
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>  			isProperty = searcher.getIndexStructure().getMainContentsField().getProperties().contains(field);
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  		<strong class="jxr_keyword">else</strong>
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>  			isProperty = field.equals(<span class="jxr_string">"word"</span>) || field.equals(<span class="jxr_string">"lemma"</span>) || field.equals(<span class="jxr_string">"pos"</span>); <em class="jxr_comment">// common case</em>

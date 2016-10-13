@@ -8,66 +8,66 @@
 <div id="overview"><a href="../../../../../../testapidocs/nl/inl/blacklab/search/grouping/TestHitProperties.html">View Javadoc</a></div><pre>
 <a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> nl.inl.blacklab.search.grouping;
 <a class="jxr_linenumber" name="L2" href="#L2">2</a>   
-<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> org.junit.Assert;
-<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="L5" href="#L5">5</a>   
-<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> nl.inl.blacklab.perdocument.DocProperty;
-<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> nl.inl.blacklab.perdocument.DocPropertyDecade;
-<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> nl.inl.blacklab.search.Hits;
-<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> nl.inl.blacklab.search.Searcher;
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>  
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../nl/inl/blacklab/search/grouping/TestHitProperties.html">TestHitProperties</a> {
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> org.junit.AfterClass;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> org.junit.Assert;
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> org.junit.BeforeClass;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> nl.inl.blacklab.TestIndex;
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> nl.inl.blacklab.forwardindex.Terms;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.queryParser.corpusql.ParseException;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> nl.inl.blacklab.search.Hits;
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  
-<a class="jxr_linenumber" name="L13" href="#L13">13</a>  	Hits hits = <strong class="jxr_keyword">new</strong> Hits((Searcher)<strong class="jxr_keyword">null</strong>);
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../nl/inl/blacklab/search/grouping/TestHitProperties.html">TestHitProperties</a> {
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>  	@Test
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testHitPropertySerialize() {
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>  		HitProperty prop;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> NO_TERM = Terms.NO_TERM;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../nl/inl/blacklab/TestIndex.html">TestIndex</a> testIndex;
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>  		<em class="jxr_comment">// Need stub Searcher object for testing!</em>
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment">//		prop = new HitPropertyDocumentDecade(hits, "decade");</em>
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment">//		Assert.assertEquals("decade:decade", prop.serialize());</em>
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  		prop = <strong class="jxr_keyword">new</strong> HitPropertyDocumentId(hits);
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  		prop.setReverse(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>  		String exp = <span class="jxr_string">"-docid"</span>;
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  		Assert.assertEquals(exp, prop.serialize());
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>  		Assert.assertEquals(exp, HitProperty.deserialize(hits, exp).serialize());
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>  
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <em class="jxr_comment">//		prop = new HitPropertyHitText(hits, "lemma", "s");</em>
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <em class="jxr_comment">//		Assert.assertEquals("hit:lemma:s", prop.serialize());</em>
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>  	}
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>  	@Test
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testDocPropertySerialize() {
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>  		DocProperty prop;
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>  
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>  		prop = <strong class="jxr_keyword">new</strong> DocPropertyDecade(<span class="jxr_string">"decade"</span>);
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>  		prop.setReverse(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>  		String exp = <span class="jxr_string">"-decade:decade"</span>;
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  		Assert.assertEquals(exp, prop.serialize());
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>  		Assert.assertEquals(exp, DocProperty.deserialize(exp).serialize());
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>  	}
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>  
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>  	@Test
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testHitPropValueSerialize() {
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  		HitPropValue val, val1;
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>  
-<a class="jxr_linenumber" name="L48" href="#L48">48</a>  		val1 = <strong class="jxr_keyword">new</strong> HitPropValueDecade(1980);
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>  		String exp = <span class="jxr_string">"dec:1980"</span>;
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>  		Assert.assertEquals(exp, val1.serialize());
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>  		Assert.assertEquals(exp, HitPropValue.deserialize(hits, <span class="jxr_string">"dec:1980"</span>).serialize());
-<a class="jxr_linenumber" name="L52" href="#L52">52</a>  
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>  		val = <strong class="jxr_keyword">new</strong> HitPropValueMultiple(<strong class="jxr_keyword">new</strong> HitPropValue[] {val1, <strong class="jxr_keyword">new</strong> HitPropValueString(<span class="jxr_string">"blabla"</span>)});
-<a class="jxr_linenumber" name="L54" href="#L54">54</a>  		exp = <span class="jxr_string">"dec:1980,str:blabla"</span>;
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>  		Assert.assertEquals(exp, val.serialize());
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		Assert.assertEquals(exp, HitPropValue.deserialize(hits, exp).serialize());
-<a class="jxr_linenumber" name="L57" href="#L57">57</a>  
-<a class="jxr_linenumber" name="L58" href="#L58">58</a>  		val = <strong class="jxr_keyword">new</strong> HitPropValueMultiple(<strong class="jxr_keyword">new</strong> HitPropValue[] {val1, <strong class="jxr_keyword">new</strong> HitPropValueString(<span class="jxr_string">"$bl:ab,la"</span>)});
-<a class="jxr_linenumber" name="L59" href="#L59">59</a>  		exp = <span class="jxr_string">"dec:1980,str:$DLbl$CLab$CMla"</span>;
-<a class="jxr_linenumber" name="L60" href="#L60">60</a>  		Assert.assertEquals(exp, val.serialize());
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>  		Assert.assertEquals(exp, HitPropValue.deserialize(hits, exp).serialize());
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>  	}
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Terms terms;
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  	@BeforeClass
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> setUp() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  		testIndex = <strong class="jxr_keyword">new</strong> <a href="../../../../../nl/inl/blacklab/TestIndex.html">TestIndex</a>();
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  		terms = testIndex.getSearcher().getForwardIndex(<span class="jxr_string">"contents%word"</span>).getTerms();
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  	}
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> term(String word) {
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  		<strong class="jxr_keyword">return</strong> terms.indexOf(word);
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  	}
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  	@AfterClass
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> tearDown() {
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  		testIndex.close();
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  	}
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  	@Test
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testHitPropHitText() <strong class="jxr_keyword">throws</strong> ParseException {
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  		Hits hits = testIndex.find(<span class="jxr_string">" 'the' "</span>);
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  		HitProperty p = <strong class="jxr_keyword">new</strong> HitPropertyHitText(hits, <strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  		HitGroups g = hits.groupedBy(p);
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  		HitGroup group = g.getGroup(<strong class="jxr_keyword">new</strong> HitPropValueContextWords(hits, <span class="jxr_string">"word"</span>, <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[] {term(<span class="jxr_string">"the"</span>)}, <strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  		Assert.assertEquals(3, group.size());
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  		group = g.getGroup(<strong class="jxr_keyword">new</strong> HitPropValueContextWords(hits, <span class="jxr_string">"word"</span>, <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[] {term(<span class="jxr_string">"The"</span>)}, <strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  		Assert.assertEquals(1, group.size());
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  	}
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  	@Test
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testHitPropContextWords() <strong class="jxr_keyword">throws</strong> ParseException {
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  		Hits hits = testIndex.find(<span class="jxr_string">" 'the' "</span>);
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  		HitProperty p = <strong class="jxr_keyword">new</strong> HitPropertyContextWords(hits, <span class="jxr_string">"contents"</span>, <span class="jxr_string">"word"</span>, <strong class="jxr_keyword">true</strong>, <span class="jxr_string">"L1-1;H1-2"</span>);
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  		HitGroups g = hits.groupedBy(p);
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  		HitGroup group;
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  		group = g.getGroup(<strong class="jxr_keyword">new</strong> HitPropValueContextWords(hits, <span class="jxr_string">"word"</span>, <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[] {NO_TERM, term(<span class="jxr_string">"The"</span>), NO_TERM}, <strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  		Assert.assertEquals(1, group.size());
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  		group = g.getGroup(<strong class="jxr_keyword">new</strong> HitPropValueContextWords(hits, <span class="jxr_string">"word"</span>, <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[] {term(<span class="jxr_string">"over"</span>), term(<span class="jxr_string">"the"</span>), NO_TERM}, <strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		Assert.assertEquals(1, group.size());
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  		group = g.getGroup(<strong class="jxr_keyword">new</strong> HitPropValueContextWords(hits, <span class="jxr_string">"word"</span>, <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[] {term(<span class="jxr_string">"May"</span>), term(<span class="jxr_string">"the"</span>), NO_TERM}, <strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  		Assert.assertEquals(1, group.size());
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  		group = g.getGroup(<strong class="jxr_keyword">new</strong> HitPropValueContextWords(hits, <span class="jxr_string">"word"</span>, <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[] {term(<span class="jxr_string">"is"</span>), term(<span class="jxr_string">"the"</span>), NO_TERM}, <strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  		Assert.assertEquals(1, group.size());
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  	}
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>  }
 </pre>
 <hr/>

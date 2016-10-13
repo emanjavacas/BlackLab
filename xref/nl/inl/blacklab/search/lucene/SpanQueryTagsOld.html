@@ -60,7 +60,7 @@
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  		<strong class="jxr_keyword">super</strong>();
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  		<strong class="jxr_keyword">this</strong>.tagName = tagName;
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  		clauses = <strong class="jxr_keyword">new</strong> SpanQuery[2];
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>  		baseFieldName = context.fieldName;
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  		baseFieldName = context.fieldName();
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  		QueryExecutionContext startTagContext = context.withProperty(ComplexFieldUtil.START_TAG_PROP_NAME);
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>  		String startTagFieldName = startTagContext.luceneField();
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>  		QueryExecutionContext endTagContext = context.withProperty(ComplexFieldUtil.END_TAG_PROP_NAME);

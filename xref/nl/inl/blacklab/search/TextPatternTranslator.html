@@ -194,9 +194,9 @@
 <a class="jxr_linenumber" name="L186" href="#L186">186</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> T any(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context, <strong class="jxr_keyword">int</strong> min, <strong class="jxr_keyword">int</strong> max);
 <a class="jxr_linenumber" name="L187" href="#L187">187</a> 
 <a class="jxr_linenumber" name="L188" href="#L188">188</a> 	<strong class="jxr_keyword">public</strong> String optInsensitive(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context, String value) {
-<a class="jxr_linenumber" name="L189" href="#L189">189</a> 		<strong class="jxr_keyword">if</strong> (!context.diacriticsSensitive)
+<a class="jxr_linenumber" name="L189" href="#L189">189</a> 		<strong class="jxr_keyword">if</strong> (!context.diacriticsSensitive())
 <a class="jxr_linenumber" name="L190" href="#L190">190</a> 			value = StringUtil.removeAccents(value);
-<a class="jxr_linenumber" name="L191" href="#L191">191</a> 		<strong class="jxr_keyword">if</strong> (!context.caseSensitive)
+<a class="jxr_linenumber" name="L191" href="#L191">191</a> 		<strong class="jxr_keyword">if</strong> (!context.caseSensitive())
 <a class="jxr_linenumber" name="L192" href="#L192">192</a> 			value = value.toLowerCase();
 <a class="jxr_linenumber" name="L193" href="#L193">193</a> 		<strong class="jxr_keyword">return</strong> value;
 <a class="jxr_linenumber" name="L194" href="#L194">194</a> 	}

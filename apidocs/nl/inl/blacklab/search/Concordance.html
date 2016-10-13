@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Concordance (BlackLab 1.3.3 API)</title>
+<title>Concordance (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Concordance (BlackLab 1.3.3 API)";
+        parent.document.title="Concordance (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -203,6 +203,18 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Concordance.html#parts()">parts</a></strong>()</code>
+<div class="block">Return the three parts of the concordance: left, middle and right.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Concordance.html#partsNoXml()">partsNoXml</a></strong>()</code>
+<div class="block">Return the parts of the concordance with XML tags stripped out.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Concordance.html#right()">right</a></strong>()</code>
 <div class="block">Return the part of the content to the right of the matched part.</div>
@@ -361,12 +373,35 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.h
 <a name="right()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>right</h4>
 <pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;right()</pre>
 <div class="block">Return the part of the content to the right of the matched part.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the right context</dd></dl>
+</li>
+</ul>
+<a name="parts()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parts</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;parts()</pre>
+<div class="block">Return the three parts of the concordance: left, middle and right.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>an array of concordance parts</dd></dl>
+</li>
+</ul>
+<a name="partsNoXml()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>partsNoXml</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;partsNoXml()</pre>
+<div class="block">Return the parts of the concordance with XML tags stripped out.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>an array of three Strings: the left context, the matched text,
+         and the right context.</dd></dl>
 </li>
 </ul>
 </li>

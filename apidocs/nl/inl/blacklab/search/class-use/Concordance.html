@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class nl.inl.blacklab.search.Concordance (BlackLab 1.3.3 API)</title>
+<title>Uses of Class nl.inl.blacklab.search.Concordance (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class nl.inl.blacklab.search.Concordance (BlackLab 1.3.3 API)";
+        parent.document.title="Uses of Class nl.inl.blacklab.search.Concordance (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -104,13 +104,28 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
-<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getConcordance(nl.inl.blacklab.search.Hit,%20int)">getConcordance</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#getConcordance(nl.inl.blacklab.search.Hit,%20int)">getConcordance</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
               int&nbsp;contextSize)</code>
 <div class="block">Get a concordance with a custom context size.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
+<td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getConcordance(nl.inl.blacklab.search.Hit,%20int)">getConcordance</a></strong>(<a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
+              int&nbsp;contextSize)</code>
+<div class="block">Get a concordance with a custom context size.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
+<td class="colLast"><span class="strong">HitsImpl.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/HitsImpl.html#getConcordance(java.lang.String,%20nl.inl.blacklab.search.Hit,%20int)">getConcordance</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+              <a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
+              int&nbsp;contextSize)</code>
+<div class="block">Retrieve a single concordance.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
 <td class="colLast"><span class="strong">Hits.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Hits.html#getConcordance(java.lang.String,%20nl.inl.blacklab.search.Hit,%20int)">getConcordance</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
               <a href="../../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
               int&nbsp;contextSize)</code>
@@ -120,7 +135,33 @@
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
 <td class="colLast"><span class="strong">Kwic.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Kwic.html#toConcordance()">toConcordance</a></strong>()</code>
-<div class="block">Convert this Kwic object to a Concordance object (the same information in XML format).</div>
+<div class="block">Convert this Kwic object to a Concordance object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
+<td class="colLast"><span class="strong">Kwic.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Kwic.html#toConcordance(boolean)">toConcordance</a></strong>(boolean&nbsp;produceXml)</code>
+<div class="block">Convert this Kwic object to a Concordance object.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../nl/inl/blacklab/search/package-summary.html">nl.inl.blacklab.search</a> that return types with arguments of type <a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a>&gt;</code></td>
+<td class="colLast"><span class="strong">Searcher.</span><code><strong><a href="../../../../../nl/inl/blacklab/search/Searcher.html#makeConcordancesFromContentStore(int,%20java.lang.String,%20int[],%20int[],%20nl.inl.blacklab.highlight.XmlHighlighter)">makeConcordancesFromContentStore</a></strong>(int&nbsp;doc,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+                                int[]&nbsp;startsOfWords,
+                                int[]&nbsp;endsOfWords,
+                                <a href="../../../../../nl/inl/blacklab/highlight/XmlHighlighter.html" title="class in nl.inl.blacklab.highlight">XmlHighlighter</a>&nbsp;hl)</code>
+<div class="block">Determine the concordance strings for a number of concordances, given the relevant character
+ positions.</div>
 </td>
 </tr>
 </tbody>

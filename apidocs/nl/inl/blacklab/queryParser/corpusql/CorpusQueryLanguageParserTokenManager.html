@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CorpusQueryLanguageParserTokenManager (BlackLab 1.3.3 API)</title>
+<title>CorpusQueryLanguageParserTokenManager (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="CorpusQueryLanguageParserTokenManager (BlackLab 1.3.3 API)";
+        parent.document.title="CorpusQueryLanguageParserTokenManager (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -102,6 +102,7 @@
 <pre>public class <span class="strong">CorpusQueryLanguageParserTokenManager</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.corpusql">CorpusQueryLanguageParserConstants</a></pre>
+<div class="block">Token Manager.</div>
 </li>
 </ul>
 </div>
@@ -121,12 +122,14 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected char</code></td>
+<td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#curChar">curChar</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html?is-external=true" title="class or interface in java.io">PrintStream</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#debugStream">debugStream</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#debugStream">debugStream</a></strong></code>
+<div class="block">Debug output.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a></code></td>
@@ -134,11 +137,15 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#jjstrLiteralImages">jjstrLiteralImages</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#jjstrLiteralImages">jjstrLiteralImages</a></strong></code>
+<div class="block">Token literal values.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#lexStateNames">lexStateNames</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#lexStateNames">lexStateNames</a></strong></code>
+<div class="block">Lexer state names.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -162,11 +169,15 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#CorpusQueryLanguageParserTokenManager(nl.inl.blacklab.queryParser.corpusql.JavaCharStream)">CorpusQueryLanguageParserTokenManager</a></strong>(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream)</code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#CorpusQueryLanguageParserTokenManager(nl.inl.blacklab.queryParser.corpusql.JavaCharStream)">CorpusQueryLanguageParserTokenManager</a></strong>(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream)</code>
+<div class="block">Constructor.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#CorpusQueryLanguageParserTokenManager(nl.inl.blacklab.queryParser.corpusql.JavaCharStream,%20int)">CorpusQueryLanguageParserTokenManager</a></strong>(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream,
-                                     int&nbsp;lexState)</code>&nbsp;</td>
+                                     int&nbsp;lexState)</code>
+<div class="block">Constructor.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -185,7 +196,9 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/Token.html" title="class in nl.inl.blacklab.queryParser.corpusql">Token</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#getNextToken()">getNextToken</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#getNextToken()">getNextToken</a></strong>()</code>
+<div class="block">Get the next Token.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/Token.html" title="class in nl.inl.blacklab.queryParser.corpusql">Token</a></code></td>
@@ -193,20 +206,28 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#ReInit(nl.inl.blacklab.queryParser.corpusql.JavaCharStream)">ReInit</a></strong>(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#ReInit(nl.inl.blacklab.queryParser.corpusql.JavaCharStream)">ReInit</a></strong>(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream)</code>
+<div class="block">Reinitialise parser.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#ReInit(nl.inl.blacklab.queryParser.corpusql.JavaCharStream,%20int)">ReInit</a></strong>(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream,
-      int&nbsp;lexState)</code>&nbsp;</td>
+      int&nbsp;lexState)</code>
+<div class="block">Reinitialise parser.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#setDebugStream(java.io.PrintStream)">setDebugStream</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html?is-external=true" title="class or interface in java.io">PrintStream</a>&nbsp;ds)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#setDebugStream(java.io.PrintStream)">setDebugStream</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html?is-external=true" title="class or interface in java.io">PrintStream</a>&nbsp;ds)</code>
+<div class="block">Set debug output.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#SwitchTo(int)">SwitchTo</a></strong>(int&nbsp;lexState)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html#SwitchTo(int)">SwitchTo</a></strong>(int&nbsp;lexState)</code>
+<div class="block">Switch to specified lex state.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -237,6 +258,7 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <li class="blockList">
 <h4>debugStream</h4>
 <pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html?is-external=true" title="class or interface in java.io">PrintStream</a> debugStream</pre>
+<div class="block">Debug output.</div>
 </li>
 </ul>
 <a name="jjstrLiteralImages">
@@ -246,6 +268,7 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <li class="blockList">
 <h4>jjstrLiteralImages</h4>
 <pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] jjstrLiteralImages</pre>
+<div class="block">Token literal values.</div>
 </li>
 </ul>
 <a name="lexStateNames">
@@ -255,6 +278,7 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <li class="blockList">
 <h4>lexStateNames</h4>
 <pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] lexStateNames</pre>
+<div class="block">Lexer state names.</div>
 </li>
 </ul>
 <a name="input_stream">
@@ -272,7 +296,7 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>curChar</h4>
-<pre>protected&nbsp;char curChar</pre>
+<pre>protected&nbsp;int curChar</pre>
 </li>
 </ul>
 </li>
@@ -290,6 +314,7 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <li class="blockList">
 <h4>CorpusQueryLanguageParserTokenManager</h4>
 <pre>public&nbsp;CorpusQueryLanguageParserTokenManager(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream)</pre>
+<div class="block">Constructor.</div>
 </li>
 </ul>
 <a name="CorpusQueryLanguageParserTokenManager(nl.inl.blacklab.queryParser.corpusql.JavaCharStream, int)">
@@ -300,6 +325,7 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <h4>CorpusQueryLanguageParserTokenManager</h4>
 <pre>public&nbsp;CorpusQueryLanguageParserTokenManager(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream,
                                      int&nbsp;lexState)</pre>
+<div class="block">Constructor.</div>
 </li>
 </ul>
 </li>
@@ -317,34 +343,7 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <li class="blockList">
 <h4>setDebugStream</h4>
 <pre>public&nbsp;void&nbsp;setDebugStream(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html?is-external=true" title="class or interface in java.io">PrintStream</a>&nbsp;ds)</pre>
-</li>
-</ul>
-<a name="ReInit(nl.inl.blacklab.queryParser.corpusql.JavaCharStream)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ReInit</h4>
-<pre>public&nbsp;void&nbsp;ReInit(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream)</pre>
-</li>
-</ul>
-<a name="ReInit(nl.inl.blacklab.queryParser.corpusql.JavaCharStream, int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ReInit</h4>
-<pre>public&nbsp;void&nbsp;ReInit(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream,
-          int&nbsp;lexState)</pre>
-</li>
-</ul>
-<a name="SwitchTo(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>SwitchTo</h4>
-<pre>public&nbsp;void&nbsp;SwitchTo(int&nbsp;lexState)</pre>
+<div class="block">Set debug output.</div>
 </li>
 </ul>
 <a name="jjFillToken()">
@@ -359,10 +358,42 @@ implements <a href="../../../../../nl/inl/blacklab/queryParser/corpusql/CorpusQu
 <a name="getNextToken()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getNextToken</h4>
 <pre>public&nbsp;<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/Token.html" title="class in nl.inl.blacklab.queryParser.corpusql">Token</a>&nbsp;getNextToken()</pre>
+<div class="block">Get the next Token.</div>
+</li>
+</ul>
+<a name="ReInit(nl.inl.blacklab.queryParser.corpusql.JavaCharStream)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ReInit</h4>
+<pre>public&nbsp;void&nbsp;ReInit(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream)</pre>
+<div class="block">Reinitialise parser.</div>
+</li>
+</ul>
+<a name="ReInit(nl.inl.blacklab.queryParser.corpusql.JavaCharStream, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ReInit</h4>
+<pre>public&nbsp;void&nbsp;ReInit(<a href="../../../../../nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql">JavaCharStream</a>&nbsp;stream,
+          int&nbsp;lexState)</pre>
+<div class="block">Reinitialise parser.</div>
+</li>
+</ul>
+<a name="SwitchTo(int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SwitchTo</h4>
+<pre>public&nbsp;void&nbsp;SwitchTo(int&nbsp;lexState)</pre>
+<div class="block">Switch to specified lex state.</div>
 </li>
 </ul>
 </li>

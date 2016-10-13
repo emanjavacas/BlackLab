@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Class Hierarchy (BlackLab 1.3.3 API)</title>
+<title>Class Hierarchy (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Class Hierarchy (BlackLab 1.3.3 API)";
+        parent.document.title="Class Hierarchy (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -66,9 +66,6 @@
 <span class="strong">Package Hierarchies:</span>
 <ul class="horizontal">
 <li><a href="nl/inl/blacklab/analysis/package-tree.html">nl.inl.blacklab.analysis</a>, </li>
-<li><a href="nl/inl/blacklab/debug/package-tree.html">nl.inl.blacklab.debug</a>, </li>
-<li><a href="nl/inl/blacklab/example/package-tree.html">nl.inl.blacklab.example</a>, </li>
-<li><a href="nl/inl/blacklab/exceptions/package-tree.html">nl.inl.blacklab.exceptions</a>, </li>
 <li><a href="nl/inl/blacklab/externalstorage/package-tree.html">nl.inl.blacklab.externalstorage</a>, </li>
 <li><a href="nl/inl/blacklab/filter/package-tree.html">nl.inl.blacklab.filter</a>, </li>
 <li><a href="nl/inl/blacklab/forwardindex/package-tree.html">nl.inl.blacklab.forwardindex</a>, </li>
@@ -86,8 +83,9 @@
 <li><a href="nl/inl/blacklab/search/sequences/package-tree.html">nl.inl.blacklab.search.sequences</a>, </li>
 <li><a href="nl/inl/blacklab/testutil/package-tree.html">nl.inl.blacklab.testutil</a>, </li>
 <li><a href="nl/inl/blacklab/tools/package-tree.html">nl.inl.blacklab.tools</a>, </li>
-<li><a href="nl/inl/util/package-tree.html">nl.inl.util</a>, </li>
-<li><a href="nl/inl/util/json/package-tree.html">nl.inl.util.json</a></li>
+<li><a href="nl/inl/blacklab/tools/debug/package-tree.html">nl.inl.blacklab.tools.debug</a>, </li>
+<li><a href="nl/inl/blacklab/tools/indexexample/package-tree.html">nl.inl.blacklab.tools.indexexample</a>, </li>
+<li><a href="nl/inl/util/package-tree.html">nl.inl.util</a></li>
 </ul>
 </div>
 <div class="contentContainer">
@@ -99,11 +97,18 @@
 <ul>
 <li type="circle">java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html?is-external=true" title="class or interface in java.util"><span class="strong">AbstractList</span></a>&lt;E&gt; (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;E&gt;)
 <ul>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/ChunkedIntList.html" title="class in nl.inl.util"><span class="strong">ChunkedIntList</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/ChunkedList.html" title="class in nl.inl.util"><span class="strong">ChunkedList</span></a>&lt;T&gt;</li>
-<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search"><span class="strong">Hits</span></a>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search"><span class="strong">Hits</span></a> (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a>, nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a>)
 <ul>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/HitsImpl.html" title="class in nl.inl.blacklab.search"><span class="strong">HitsImpl</span></a>
+<ul>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/HitsSample.html" title="class in nl.inl.blacklab.search"><span class="strong">HitsSample</span></a>
+<ul>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/HitsSampleImpl.html" title="class in nl.inl.blacklab.search"><span class="strong">HitsSampleImpl</span></a></li>
+</ul>
+</li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search"><span class="strong">HitsWindow</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search"><span class="strong">TermFrequencyList</span></a></li>
@@ -163,9 +168,7 @@
 <li type="circle">nl.inl.blacklab.testutil.<a href="nl/inl/blacklab/testutil/BatchContentStore.html" title="class in nl.inl.blacklab.testutil"><span class="strong">BatchContentStore</span></a></li>
 <li type="circle">nl.inl.blacklab.testutil.<a href="nl/inl/blacklab/testutil/BatchForwardIndex.html" title="class in nl.inl.blacklab.testutil"><span class="strong">BatchForwardIndex</span></a></li>
 <li type="circle">nl.inl.blacklab.testutil.<a href="nl/inl/blacklab/testutil/BatchQuery.html" title="class in nl.inl.blacklab.testutil"><span class="strong">BatchQuery</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/CDL.html" title="class in nl.inl.util.json"><span class="strong">CDL</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/ChunkedIntList.ChunkedIntListIterator.html" title="class in nl.inl.util"><span class="strong">ChunkedIntList.ChunkedIntListIterator</span></a> (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;)</li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/ChunkedList.ChunkedListIterator.html" title="class in nl.inl.util"><span class="strong">ChunkedList.ChunkedListIterator</span></a> (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;)</li>
+<li type="circle">nl.inl.util.<a href="nl/inl/util/CollUtil.html" title="class in nl.inl.util"><span class="strong">CollUtil</span></a></li>
 <li type="circle">nl.inl.blacklab.perdocument.<a href="nl/inl/blacklab/perdocument/ComparatorDocGroupProperty.html" title="class in nl.inl.blacklab.perdocument"><span class="strong">ComparatorDocGroupProperty</span></a> (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;)</li>
 <li type="circle">nl.inl.blacklab.perdocument.<a href="nl/inl/blacklab/perdocument/ComparatorDocProperty.html" title="class in nl.inl.blacklab.perdocument"><span class="strong">ComparatorDocProperty</span></a> (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;)</li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/CompleteQuery.html" title="class in nl.inl.blacklab.search"><span class="strong">CompleteQuery</span></a></li>
@@ -173,12 +176,7 @@
 <li type="circle">nl.inl.blacklab.index.complex.<a href="nl/inl/blacklab/index/complex/ComplexFieldProperty.html" title="class in nl.inl.blacklab.index.complex"><span class="strong">ComplexFieldProperty</span></a></li>
 <li type="circle">nl.inl.blacklab.index.complex.<a href="nl/inl/blacklab/index/complex/ComplexFieldUtil.html" title="class in nl.inl.blacklab.index.complex"><span class="strong">ComplexFieldUtil</span></a></li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search"><span class="strong">Concordance</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/ConsoleUtil.html" title="class in nl.inl.util"><span class="strong">ConsoleUtil</span></a></li>
-<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/ContentAccessor.html" title="class in nl.inl.blacklab.search"><span class="strong">ContentAccessor</span></a>
-<ul>
-<li type="circle">nl.inl.blacklab.externalstorage.<a href="nl/inl/blacklab/externalstorage/ContentAccessorContentStore.html" title="class in nl.inl.blacklab.externalstorage"><span class="strong">ContentAccessorContentStore</span></a></li>
-</ul>
-</li>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/ContentAccessor.html" title="class in nl.inl.blacklab.search"><span class="strong">ContentAccessor</span></a></li>
 <li type="circle">nl.inl.blacklab.externalstorage.<a href="nl/inl/blacklab/externalstorage/ContentStore.html" title="class in nl.inl.blacklab.externalstorage"><span class="strong">ContentStore</span></a>
 <ul>
 <li type="circle">nl.inl.blacklab.externalstorage.<a href="nl/inl/blacklab/externalstorage/ContentStoreDirAbstract.html" title="class in nl.inl.blacklab.externalstorage"><span class="strong">ContentStoreDirAbstract</span></a>
@@ -195,14 +193,12 @@
 <li type="circle">nl.inl.blacklab.externalstorage.<a href="nl/inl/blacklab/externalstorage/ContentStoreMemory.html" title="class in nl.inl.blacklab.externalstorage"><span class="strong">ContentStoreMemory</span></a></li>
 </ul>
 </li>
+<li type="circle">nl.inl.blacklab.externalstorage.<a href="nl/inl/blacklab/externalstorage/ContentStoresManager.html" title="class in nl.inl.blacklab.externalstorage"><span class="strong">ContentStoresManager</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ContextQlParseUtils.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">ContextQlParseUtils</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParser.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">ContextualQueryLanguageParser</span></a> (implements nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.contextql">ContextualQueryLanguageParserConstants</a>)</li>
 <li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParserTokenManager.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">ContextualQueryLanguageParserTokenManager</span></a> (implements nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.contextql">ContextualQueryLanguageParserConstants</a>)</li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/Cookie.html" title="class in nl.inl.util.json"><span class="strong">Cookie</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/CookieList.html" title="class in nl.inl.util.json"><span class="strong">CookieList</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParser.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">CorpusQueryLanguageParser</span></a> (implements nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.corpusql">CorpusQueryLanguageParserConstants</a>)</li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserTokenManager.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">CorpusQueryLanguageParserTokenManager</span></a> (implements nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.corpusql">CorpusQueryLanguageParserConstants</a>)</li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/DateUtil.html" title="class in nl.inl.util"><span class="strong">DateUtil</span></a></li>
 <li type="circle">org.xml.sax.helpers.<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers.DefaultHandler.html?is-external=true" title="class or interface in org.xml.sax"><span class="strong">DefaultHandler</span></a> (implements org.xml.sax.<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/ContentHandler.html?is-external=true" title="class or interface in org.xml.sax">ContentHandler</a>, org.xml.sax.<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/DTDHandler.html?is-external=true" title="class or interface in org.xml.sax">DTDHandler</a>, org.xml.sax.<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/EntityResolver.html?is-external=true" title="class or interface in org.xml.sax">EntityResolver</a>, org.xml.sax.<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/ErrorHandler.html?is-external=true" title="class or interface in org.xml.sax">ErrorHandler</a>)
 <ul>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/HookableSaxHandler.html" title="class in nl.inl.blacklab.index"><span class="strong">HookableSaxHandler</span></a></li>
@@ -266,7 +262,7 @@
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/DocIndexerXmlHandlers.html" title="class in nl.inl.blacklab.index"><span class="strong">DocIndexerXmlHandlers</span></a>
 <ul>
 <li type="circle">nl.inl.blacklab.indexers.<a href="nl/inl/blacklab/indexers/DocIndexerAlto.html" title="class in nl.inl.blacklab.indexers"><span class="strong">DocIndexerAlto</span></a></li>
-<li type="circle">nl.inl.blacklab.example.<a href="nl/inl/blacklab/example/DocIndexerExample.html" title="class in nl.inl.blacklab.example"><span class="strong">DocIndexerExample</span></a></li>
+<li type="circle">nl.inl.blacklab.tools.indexexample.<a href="nl/inl/blacklab/tools/indexexample/DocIndexerExample.html" title="class in nl.inl.blacklab.tools.indexexample"><span class="strong">DocIndexerExample</span></a></li>
 <li type="circle">nl.inl.blacklab.indexers.<a href="nl/inl/blacklab/indexers/DocIndexerFolia.html" title="class in nl.inl.blacklab.indexers"><span class="strong">DocIndexerFolia</span></a></li>
 <li type="circle">nl.inl.blacklab.indexers.<a href="nl/inl/blacklab/indexers/DocIndexerOpenSonar.html" title="class in nl.inl.blacklab.indexers"><span class="strong">DocIndexerOpenSonar</span></a></li>
 <li type="circle">nl.inl.blacklab.indexers.<a href="nl/inl/blacklab/indexers/DocIndexerPageXml.html" title="class in nl.inl.blacklab.indexers"><span class="strong">DocIndexerPageXml</span></a></li>
@@ -281,6 +277,7 @@
 <li type="circle">nl.inl.blacklab.indexers.<a href="nl/inl/blacklab/indexers/DocIndexerTeiText.html" title="class in nl.inl.blacklab.indexers"><span class="strong">DocIndexerTeiText</span></a></li>
 </ul>
 </li>
+<li type="circle">nl.inl.blacklab.indexers.<a href="nl/inl/blacklab/indexers/DocIndexerWhiteLab2.html" title="class in nl.inl.blacklab.indexers"><span class="strong">DocIndexerWhiteLab2</span></a></li>
 <li type="circle">nl.inl.blacklab.indexers.<a href="nl/inl/blacklab/indexers/DocIndexerXmlSketch.html" title="class in nl.inl.blacklab.indexers"><span class="strong">DocIndexerXmlSketch</span></a></li>
 </ul>
 </li>
@@ -302,13 +299,14 @@
 </ul>
 </li>
 <li type="circle">nl.inl.blacklab.perdocument.<a href="nl/inl/blacklab/perdocument/DocResult.html" title="class in nl.inl.blacklab.perdocument"><span class="strong">DocResult</span></a></li>
-<li type="circle">nl.inl.blacklab.perdocument.<a href="nl/inl/blacklab/perdocument/DocResults.html" title="class in nl.inl.blacklab.perdocument"><span class="strong">DocResults</span></a> (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;)
+<li type="circle">nl.inl.blacklab.perdocument.<a href="nl/inl/blacklab/perdocument/DocResults.html" title="class in nl.inl.blacklab.perdocument"><span class="strong">DocResults</span></a> (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;, nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a>)
 <ul>
 <li type="circle">nl.inl.blacklab.perdocument.<a href="nl/inl/blacklab/perdocument/DocResultsWindow.html" title="class in nl.inl.blacklab.perdocument"><span class="strong">DocResultsWindow</span></a></li>
 </ul>
 </li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/DocumentFormats.html" title="class in nl.inl.blacklab.index"><span class="strong">DocumentFormats</span></a></li>
-<li type="circle">nl.inl.blacklab.example.<a href="nl/inl/blacklab/example/Example.html" title="class in nl.inl.blacklab.example"><span class="strong">Example</span></a></li>
+<li type="circle">nl.inl.blacklab.tools.indexexample.<a href="nl/inl/blacklab/tools/indexexample/Example.html" title="class in nl.inl.blacklab.tools.indexexample"><span class="strong">Example</span></a></li>
+<li type="circle">nl.inl.blacklab.testutil.<a href="nl/inl/blacklab/testutil/ExportCorpus.html" title="class in nl.inl.blacklab.testutil"><span class="strong">ExportCorpus</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/ExUtil.html" title="class in nl.inl.util"><span class="strong">ExUtil</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/FileUtil.html" title="class in nl.inl.util"><span class="strong">FileUtil</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/FileUtil.FileTask.html" title="class in nl.inl.util"><span class="strong">FileUtil.FileTask</span></a></li>
@@ -335,6 +333,7 @@
 </li>
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitProperty</span></a> (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;)
 <ul>
+<li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropertyContextWords.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropertyContextWords</span></a></li>
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropertyDocumentDecade.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropertyDocumentDecade</span></a></li>
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropertyDocumentId.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropertyDocumentId</span></a></li>
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropertyDocumentStoredField.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropertyDocumentStoredField</span></a></li>
@@ -346,6 +345,7 @@
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropertyWordRight.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropertyWordRight</span></a></li>
 </ul>
 </li>
+<li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropertyContextWords.ContextPart.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropertyContextWords.ContextPart</span></a></li>
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropValue.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropValue</span></a> (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;)
 <ul>
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropValueContext.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">HitPropValueContext</span></a>
@@ -364,6 +364,7 @@
 </ul>
 </li>
 <li type="circle">nl.inl.blacklab.search.lucene.<a href="nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene"><span class="strong">HitQueryContext</span></a></li>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/HitsSettings.html" title="class in nl.inl.blacklab.search"><span class="strong">HitsSettings</span></a></li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/HookableSaxHandler.ElementHandler.html" title="class in nl.inl.blacklab.index"><span class="strong">HookableSaxHandler.ElementHandler</span></a>
 <ul>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/DocIndexerXmlHandlers.DocumentElementHandler.html" title="class in nl.inl.blacklab.index"><span class="strong">DocIndexerXmlHandlers.DocumentElementHandler</span></a></li>
@@ -387,7 +388,6 @@
 </ul>
 </li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/HookableSaxHandler.SaxPathExpressionChecker.html" title="class in nl.inl.blacklab.index"><span class="strong">HookableSaxHandler.SaxPathExpressionChecker</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/HTTP.html" title="class in nl.inl.util.json"><span class="strong">HTTP</span></a></li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/Indexer.html" title="class in nl.inl.blacklab.index"><span class="strong">Indexer</span></a></li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/IndexListener.html" title="class in nl.inl.blacklab.index"><span class="strong">IndexListener</span></a>
 <ul>
@@ -400,29 +400,10 @@
 <li type="circle">nl.inl.blacklab.search.indexstructure.<a href="nl/inl/blacklab/search/indexstructure/IndexMetadata.html" title="class in nl.inl.blacklab.search.indexstructure"><span class="strong">IndexMetadata</span></a></li>
 <li type="circle">nl.inl.blacklab.search.indexstructure.<a href="nl/inl/blacklab/search/indexstructure/IndexStructure.html" title="class in nl.inl.blacklab.search.indexstructure"><span class="strong">IndexStructure</span></a></li>
 <li type="circle">nl.inl.blacklab.tools.<a href="nl/inl/blacklab/tools/IndexTool.html" title="class in nl.inl.blacklab.tools"><span class="strong">IndexTool</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/IoUtil.html" title="class in nl.inl.util"><span class="strong">IoUtil</span></a></li>
-<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">JavaCharStream</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">JavaCharStream</span></a></li>
+<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/JavaCharStream.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">JavaCharStream</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/Json.html" title="class in nl.inl.util"><span class="strong">Json</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONArray.html" title="class in nl.inl.util.json"><span class="strong">JSONArray</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONML.html" title="class in nl.inl.util.json"><span class="strong">JSONML</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONObject.html" title="class in nl.inl.util.json"><span class="strong">JSONObject</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONTokener.html" title="class in nl.inl.util.json"><span class="strong">JSONTokener</span></a>
-<ul>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/HTTPTokener.html" title="class in nl.inl.util.json"><span class="strong">HTTPTokener</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/XMLTokener.html" title="class in nl.inl.util.json"><span class="strong">XMLTokener</span></a></li>
-</ul>
-</li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONWriter.html" title="class in nl.inl.util.json"><span class="strong">JSONWriter</span></a>
-<ul>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONStringer.html" title="class in nl.inl.util.json"><span class="strong">JSONStringer</span></a></li>
-</ul>
-</li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/Kim.html" title="class in nl.inl.util.json"><span class="strong">Kim</span></a></li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search"><span class="strong">Kwic</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/Levenshtein.html" title="class in nl.inl.util"><span class="strong">Levenshtein</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/LevenshteinComparator.html" title="class in nl.inl.util"><span class="strong">LevenshteinComparator</span></a> (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;)</li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/LocaleUtil.html" title="class in nl.inl.util"><span class="strong">LocaleUtil</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/LogUtil.html" title="class in nl.inl.util"><span class="strong">LogUtil</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/LuceneUtil.html" title="class in nl.inl.util"><span class="strong">LuceneUtil</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/MemoryUtil.html" title="class in nl.inl.util"><span class="strong">MemoryUtil</span></a></li>
@@ -437,10 +418,6 @@
 </li>
 </ul>
 </li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/NetUtil.html" title="class in nl.inl.util"><span class="strong">NetUtil</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/OsUtil.html" title="class in nl.inl.util"><span class="strong">OsUtil</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/PropertiesUtil.html" title="class in nl.inl.util"><span class="strong">PropertiesUtil</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/Property.html" title="class in nl.inl.util.json"><span class="strong">Property</span></a></li>
 <li type="circle">nl.inl.blacklab.search.indexstructure.<a href="nl/inl/blacklab/search/indexstructure/PropertyDesc.html" title="class in nl.inl.blacklab.search.indexstructure"><span class="strong">PropertyDesc</span></a></li>
 <li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/PropValSerializeUtil.html" title="class in nl.inl.blacklab.search.grouping"><span class="strong">PropValSerializeUtil</span></a></li>
 <li type="circle">org.apache.lucene.search.Query (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a>)
@@ -492,15 +469,19 @@
 <li type="circle">nl.inl.blacklab.tools.<a href="nl/inl/blacklab/tools/QueryTool.html" title="class in nl.inl.blacklab.tools"><span class="strong">QueryTool</span></a></li>
 <li type="circle">java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Reader.html?is-external=true" title="class or interface in java.io"><span class="strong">Reader</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a>, java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Readable.html?is-external=true" title="class or interface in java.lang">Readable</a>)
 <ul>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/CapturingReader.html" title="class in nl.inl.util"><span class="strong">CapturingReader</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/CountingReader.html" title="class in nl.inl.util"><span class="strong">CountingReader</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/UnicodeReader.html" title="class in nl.inl.util"><span class="strong">UnicodeReader</span></a></li>
 </ul>
 </li>
-<li type="circle">nl.inl.blacklab.debug.<a href="nl/inl/blacklab/debug/ReconstructTermVector.html" title="class in nl.inl.blacklab.debug"><span class="strong">ReconstructTermVector</span></a></li>
+<li type="circle">nl.inl.blacklab.tools.debug.<a href="nl/inl/blacklab/tools/debug/ReconstructTermVector.html" title="class in nl.inl.blacklab.tools.debug"><span class="strong">ReconstructTermVector</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/ReverseComparator.html" title="class in nl.inl.util"><span class="strong">ReverseComparator</span></a>&lt;T&gt; (implements java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;)</li>
-<li type="circle">nl.inl.blacklab.debug.<a href="nl/inl/blacklab/debug/RunTermQuery.html" title="class in nl.inl.blacklab.debug"><span class="strong">RunTermQuery</span></a></li>
-<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search"><span class="strong">Searcher</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a>)</li>
+<li type="circle">nl.inl.blacklab.tools.debug.<a href="nl/inl/blacklab/tools/debug/RunTermQuery.html" title="class in nl.inl.blacklab.tools.debug"><span class="strong">RunTermQuery</span></a></li>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search"><span class="strong">Searcher</span></a>
+<ul>
+<li type="circle">nl.inl.blacklab.testutil.<a href="nl/inl/blacklab/testutil/MockSearcher.html" title="class in nl.inl.blacklab.testutil"><span class="strong">MockSearcher</span></a></li>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/SearcherImpl.html" title="class in nl.inl.blacklab.search"><span class="strong">SearcherImpl</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a>)</li>
+</ul>
+</li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/SimpleResourcePool.html" title="class in nl.inl.util"><span class="strong">SimpleResourcePool</span></a>&lt;T&gt;</li>
 <li type="circle">nl.inl.blacklab.tools.<a href="nl/inl/blacklab/tools/SketchToXmlConverter.html" title="class in nl.inl.blacklab.tools"><span class="strong">SketchToXmlConverter</span></a></li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search"><span class="strong">Span</span></a></li>
@@ -561,30 +542,38 @@
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/TextPatternTranslatorString.html" title="class in nl.inl.blacklab.search"><span class="strong">TextPatternTranslatorString</span></a></li>
 </ul>
 </li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/ThreadPriority.html" title="class in nl.inl.util"><span class="strong">ThreadPriority</span></a></li>
+<li type="circle">nl.inl.util.<a href="nl/inl/util/ThreadPriority.html" title="class in nl.inl.util"><span class="strong">ThreadPriority</span></a> (implements nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a>)</li>
 <li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang"><span class="strong">Throwable</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)
 <ul>
 <li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Error.html?is-external=true" title="class or interface in java.lang"><span class="strong">Error</span></a>
 <ul>
-<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/TokenMgrError.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">TokenMgrError</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/TokenMgrError.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">TokenMgrError</span></a></li>
+<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/TokenMgrError.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">TokenMgrError</span></a></li>
 </ul>
 </li>
 <li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang"><span class="strong">Exception</span></a>
 <ul>
-<li type="circle">nl.inl.blacklab.exceptions.<a href="nl/inl/blacklab/exceptions/DocumentFormatException.html" title="class in nl.inl.blacklab.exceptions"><span class="strong">DocumentFormatException</span></a></li>
+<li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/DocumentFormatException.html" title="class in nl.inl.blacklab.index"><span class="strong">DocumentFormatException</span></a></li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/InputFormatException.html" title="class in nl.inl.blacklab.index"><span class="strong">InputFormatException</span></a></li>
-<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ParseException.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">ParseException</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/ParseException.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">ParseException</span></a>
 <ul>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/MalformedTagException.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">MalformedTagException</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/SingleQuotesException.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">SingleQuotesException</span></a></li>
 </ul>
 </li>
+<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ParseException.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">ParseException</span></a></li>
 <li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><span class="strong">RuntimeException</span></a>
 <ul>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/BLRuntimeException.html" title="class in nl.inl.blacklab.search"><span class="strong">BLRuntimeException</span></a>
+<ul>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/InvalidQueryException.html" title="class in nl.inl.blacklab.search"><span class="strong">InvalidQueryException</span></a>
+<ul>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/RegexpTooLargeException.html" title="class in nl.inl.blacklab.search"><span class="strong">RegexpTooLargeException</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/DocIndexer.MaxDocsReachedException.html" title="class in nl.inl.blacklab.index"><span class="strong">DocIndexer.MaxDocsReachedException</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONException.html" title="class in nl.inl.util.json"><span class="strong">JSONException</span></a></li>
 </ul>
 </li>
 </ul>
@@ -593,13 +582,11 @@
 </li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/Timer.html" title="class in nl.inl.util"><span class="strong">Timer</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/TimeUtil.html" title="class in nl.inl.util"><span class="strong">TimeUtil</span></a></li>
-<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/Token.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">Token</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)</li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/Token.html" title="class in nl.inl.blacklab.queryParser.corpusql"><span class="strong">Token</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)</li>
+<li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/Token.html" title="class in nl.inl.blacklab.queryParser.contextql"><span class="strong">Token</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)</li>
 <li type="circle">nl.inl.blacklab.testutil.<a href="nl/inl/blacklab/testutil/TokensPerMetaValue.html" title="class in nl.inl.blacklab.testutil"><span class="strong">TokensPerMetaValue</span></a></li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/TPBooleanClause.html" title="class in nl.inl.blacklab.search"><span class="strong">TPBooleanClause</span></a></li>
-<li type="circle">nl.inl.util.<a href="nl/inl/util/Utilities.html" title="class in nl.inl.util"><span class="strong">Utilities</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/VersionFile.html" title="class in nl.inl.util"><span class="strong">VersionFile</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/XML.html" title="class in nl.inl.util.json"><span class="strong">XML</span></a></li>
 <li type="circle">nl.inl.blacklab.highlight.<a href="nl/inl/blacklab/highlight/XmlHighlighter.html" title="class in nl.inl.blacklab.highlight"><span class="strong">XmlHighlighter</span></a></li>
 <li type="circle">nl.inl.blacklab.highlight.<a href="nl/inl/blacklab/highlight/XmlHighlighter.HitCharSpan.html" title="class in nl.inl.blacklab.highlight"><span class="strong">XmlHighlighter.HitCharSpan</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/XmlUtil.html" title="class in nl.inl.util"><span class="strong">XmlUtil</span></a></li>
@@ -608,10 +595,13 @@
 </ul>
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
+<li type="circle">nl.inl.blacklab.externalstorage.<a href="nl/inl/blacklab/externalstorage/ContentStore.DocTask.html" title="interface in nl.inl.blacklab.externalstorage"><span class="strong">ContentStore.DocTask</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.contextql.<a href="nl/inl/blacklab/queryParser/contextql/ContextualQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.contextql"><span class="strong">ContextualQueryLanguageParserConstants</span></a></li>
 <li type="circle">nl.inl.blacklab.queryParser.corpusql.<a href="nl/inl/blacklab/queryParser/corpusql/CorpusQueryLanguageParserConstants.html" title="interface in nl.inl.blacklab.queryParser.corpusql"><span class="strong">CorpusQueryLanguageParserConstants</span></a></li>
 <li type="circle">nl.inl.blacklab.index.<a href="nl/inl/blacklab/index/DocIndexer.html" title="interface in nl.inl.blacklab.index"><span class="strong">DocIndexer</span></a></li>
-<li type="circle">nl.inl.util.json.<a href="nl/inl/util/json/JSONString.html" title="interface in nl.inl.util.json"><span class="strong">JSONString</span></a></li>
+<li type="circle">nl.inl.blacklab.forwardindex.<a href="nl/inl/blacklab/forwardindex/ForwardIndex.ForwardIndexDocTask.html" title="interface in nl.inl.blacklab.forwardindex"><span class="strong">ForwardIndex.ForwardIndexDocTask</span></a></li>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search"><span class="strong">Prioritizable</span></a></li>
+<li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/Searcher.LuceneDocTask.html" title="interface in nl.inl.blacklab.search"><span class="strong">Searcher.LuceneDocTask</span></a></li>
 <li type="circle">nl.inl.blacklab.search.sequences.<a href="nl/inl/blacklab/search/sequences/SpansInBuckets.html" title="interface in nl.inl.blacklab.search.sequences"><span class="strong">SpansInBuckets</span></a></li>
 <li type="circle">nl.inl.blacklab.search.sequences.<a href="nl/inl/blacklab/search/sequences/SpansInBuckets.BucketSpanComparator.html" title="interface in nl.inl.blacklab.search.sequences"><span class="strong">SpansInBuckets.BucketSpanComparator</span></a></li>
 <li type="circle">nl.inl.util.<a href="nl/inl/util/StringUtil.Stringifier.html" title="interface in nl.inl.util"><span class="strong">StringUtil.Stringifier</span></a>&lt;T&gt;</li>
@@ -629,6 +619,7 @@
 <li type="circle">nl.inl.blacklab.index.complex.<a href="nl/inl/blacklab/index/complex/ComplexFieldUtil.BookkeepFieldType.html" title="enum in nl.inl.blacklab.index.complex"><span class="strong">ComplexFieldUtil.BookkeepFieldType</span></a></li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search"><span class="strong">ConcordanceType</span></a></li>
 <li type="circle">nl.inl.blacklab.search.indexstructure.<a href="nl/inl/blacklab/search/indexstructure/FieldType.html" title="enum in nl.inl.blacklab.search.indexstructure"><span class="strong">FieldType</span></a></li>
+<li type="circle">nl.inl.blacklab.search.grouping.<a href="nl/inl/blacklab/search/grouping/HitPropertyContextWords.ContextStart.html" title="enum in nl.inl.blacklab.search.grouping"><span class="strong">HitPropertyContextWords.ContextStart</span></a></li>
 <li type="circle">nl.inl.blacklab.search.indexstructure.<a href="nl/inl/blacklab/search/indexstructure/MetadataFieldDesc.UnknownCondition.html" title="enum in nl.inl.blacklab.search.indexstructure"><span class="strong">MetadataFieldDesc.UnknownCondition</span></a></li>
 <li type="circle">nl.inl.blacklab.search.indexstructure.<a href="nl/inl/blacklab/search/indexstructure/MetadataFieldDesc.ValueListComplete.html" title="enum in nl.inl.blacklab.search.indexstructure"><span class="strong">MetadataFieldDesc.ValueListComplete</span></a></li>
 <li type="circle">nl.inl.blacklab.search.<a href="nl/inl/blacklab/search/TextPatternPositionFilter.Operation.html" title="enum in nl.inl.blacklab.search"><span class="strong">TextPatternPositionFilter.Operation</span></a></li>

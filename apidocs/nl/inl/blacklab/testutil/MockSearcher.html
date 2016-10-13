@@ -1,0 +1,843 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MockSearcher (BlackLab 1.6.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="MockSearcher (BlackLab 1.6.0-SNAPSHOT API)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/MockSearcher.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../nl/inl/blacklab/testutil/GetFieldValues.html" title="class in nl.inl.blacklab.testutil"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../nl/inl/blacklab/testutil/TokensPerMetaValue.html" title="class in nl.inl.blacklab.testutil"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?nl/inl/blacklab/testutil/MockSearcher.html" target="_top">Frames</a></li>
+<li><a href="MockSearcher.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_nl.inl.blacklab.search.Searcher">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_nl.inl.blacklab.search.Searcher">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">nl.inl.blacklab.testutil</div>
+<h2 title="Class MockSearcher" class="title">Class MockSearcher</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">nl.inl.blacklab.search.Searcher</a></li>
+<li>
+<ul class="inheritance">
+<li>nl.inl.blacklab.testutil.MockSearcher</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">MockSearcher</span>
+extends <a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_nl.inl.blacklab.search.Searcher">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;nl.inl.blacklab.search.<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></h3>
+<code><a href="../../../../nl/inl/blacklab/search/Searcher.LuceneDocTask.html" title="interface in nl.inl.blacklab.search">Searcher.LuceneDocTask</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_nl.inl.blacklab.search.Searcher">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;nl.inl.blacklab.search.<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></h3>
+<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#analyzer">analyzer</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#contentStores">contentStores</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_CONC_ATTR_PROP">DEFAULT_CONC_ATTR_PROP</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_CONC_PUNCT_PROP">DEFAULT_CONC_PUNCT_PROP</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_CONC_TYPE">DEFAULT_CONC_TYPE</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_CONC_WORD_PROP">DEFAULT_CONC_WORD_PROP</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_CONTENTS_FIELD_NAME">DEFAULT_CONTENTS_FIELD_NAME</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_CONTEXT_SIZE">DEFAULT_CONTEXT_SIZE</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_MAX_COUNT">DEFAULT_MAX_COUNT</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#DEFAULT_MAX_RETRIEVE">DEFAULT_MAX_RETRIEVE</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#defaultAnalyzer">defaultAnalyzer</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#defaultCaseSensitive">defaultCaseSensitive</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#defaultCollator">defaultCollator</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#defaultDiacriticsSensitive">defaultDiacriticsSensitive</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#forwardIndices">forwardIndices</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#hitsSettings">hitsSettings</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#indexMode">indexMode</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#indexStructure">indexStructure</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#logger">logger</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#mainContentsFieldName">mainContentsFieldName</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#nonTokenizingAnalyzer">nonTokenizingAnalyzer</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#standardAnalyzer">standardAnalyzer</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#UNLIMITED_HITS">UNLIMITED_HITS</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#whitespaceAnalyzer">whitespaceAnalyzer</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#MockSearcher()">MockSearcher</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#collectDocuments(org.apache.lucene.search.Query,%20org.apache.lucene.search.Collector)">collectDocuments</a></strong>(org.apache.lucene.search.Query&nbsp;query,
+                org.apache.lucene.search.Collector&nbsp;collector)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#delete(org.apache.lucene.search.Query)">delete</a></strong>(org.apache.lucene.search.Query&nbsp;q)</code>
+<div class="block">Deletes documents matching a query from the BlackLab index.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#docIdSet()">docIdSet</a></strong>()</code>
+<div class="block">Get a set of all (non-deleted) Lucene document ids.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>org.apache.lucene.document.Document</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#document(int)">document</a></strong>(int&nbsp;doc)</code>
+<div class="block">Retrieve a Lucene Document object from the index.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>org.apache.lucene.search.Scorer</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#findDocScores(org.apache.lucene.search.Query)">findDocScores</a></strong>(org.apache.lucene.search.Query&nbsp;q)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>org.apache.lucene.search.TopDocs</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#findTopDocs(org.apache.lucene.search.Query,%20int)">findTopDocs</a></strong>(org.apache.lucene.search.Query&nbsp;q,
+           int&nbsp;n)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getCharacterOffsets(int,%20java.lang.String,%20int[],%20int[],%20boolean)">getCharacterOffsets</a></strong>(int&nbsp;doc,
+                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+                   int[]&nbsp;startsOfWords,
+                   int[]&nbsp;endsOfWords,
+                   boolean&nbsp;fillInDefaultsIfNotFound)</code>
+<div class="block">Get character positions from word positions.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getDefaultExecutionContext(java.lang.String)">getDefaultExecutionContext</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code>
+<div class="block">Get the default initial query execution context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getFieldTerms(java.lang.String,%20int)">getFieldTerms</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+             int&nbsp;maxResults)</code>
+<div class="block">Return the list of terms that occur in a field.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getIndexDirectory()">getIndexDirectory</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getIndexName()">getIndexName</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>org.apache.lucene.index.IndexReader</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getIndexReader()">getIndexReader</a></strong>()</code>
+<div class="block">Get the Lucene index reader we're using.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>org.apache.lucene.search.IndexSearcher</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getIndexSearcher()">getIndexSearcher</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>org.apache.lucene.index.IndexWriter</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#getWriter()">getWriter</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#isDeleted(int)">isDeleted</a></strong>(int&nbsp;doc)</code>
+<div class="block">Checks if a document has been deleted from the index</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#isEmpty()">isEmpty</a></strong>()</code>
+<div class="block">Is this a newly created, empty index?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#maxDoc()">maxDoc</a></strong>()</code>
+<div class="block">Returns one more than the highest document id</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/externalstorage/ContentStore.html" title="class in nl.inl.blacklab.externalstorage">ContentStore</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#openContentStore(java.io.File,%20boolean)">openContentStore</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexXmlDir,
+                boolean&nbsp;create)</code>
+<div class="block">Factory method to create a directory content store.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../nl/inl/blacklab/externalstorage/ContentStore.html" title="class in nl.inl.blacklab.externalstorage">ContentStore</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#openContentStore(java.lang.String)">openContentStore</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#openForwardIndex(java.lang.String)">openForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>org.apache.lucene.index.IndexWriter</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#openIndexWriter(java.io.File,%20boolean,%20org.apache.lucene.analysis.Analyzer)">openIndexWriter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexDir,
+               boolean&nbsp;create,
+               org.apache.lucene.analysis.Analyzer&nbsp;useAnalyzer)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/perdocument/DocResults.html" title="class in nl.inl.blacklab.perdocument">DocResults</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#queryDocuments(org.apache.lucene.search.Query)">queryDocuments</a></strong>(org.apache.lucene.search.Query&nbsp;documentFilterQuery)</code>
+<div class="block">Perform a document query only (no hits)</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#rollback()">rollback</a></strong>()</code>
+<div class="block">Call this to roll back any changes made to the index this session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#setForwardIndex(java.lang.String,%20nl.inl.blacklab.forwardindex.ForwardIndex)">setForwardIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName,
+               <a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&nbsp;forwardIndex)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/testutil/MockSearcher.html#termFrequencies(org.apache.lucene.search.Query,%20java.lang.String,%20java.lang.String,%20java.lang.String)">termFrequencies</a></strong>(org.apache.lucene.search.Query&nbsp;documentFilterQuery,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;altName)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_nl.inl.blacklab.search.Searcher">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;nl.inl.blacklab.search.<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></h3>
+<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#addForwardIndex(java.lang.String,%20nl.inl.blacklab.forwardindex.ForwardIndex)">addForwardIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#close()">close</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#createIndex(java.io.File)">createIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#createIndex(java.io.File,%20java.lang.String)">createIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#createIndex(java.io.File,%20java.lang.String,%20java.lang.String,%20boolean)">createIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#createSpanQuery(nl.inl.blacklab.search.TextPattern)">createSpanQuery</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#createSpanQuery(nl.inl.blacklab.search.TextPattern,%20org.apache.lucene.search.Filter)">createSpanQuery</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#createSpanQuery(nl.inl.blacklab.search.TextPattern,%20java.lang.String)">createSpanQuery</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#createSpanQuery(nl.inl.blacklab.search.TextPattern,%20java.lang.String,%20org.apache.lucene.search.Filter)">createSpanQuery</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#deleteFromForwardIndices(org.apache.lucene.document.Document)">deleteFromForwardIndices</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#filterDocuments(org.apache.lucene.search.spans.SpanQuery,%20org.apache.lucene.search.Filter)">filterDocuments</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#find(org.apache.lucene.search.spans.SpanQuery)">find</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#find(org.apache.lucene.search.spans.SpanQuery,%20java.lang.String)">find</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#find(nl.inl.blacklab.search.TextPattern)">find</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#find(nl.inl.blacklab.search.TextPattern,%20org.apache.lucene.search.Filter)">find</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#find(nl.inl.blacklab.search.TextPattern,%20java.lang.String)">find</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#find(nl.inl.blacklab.search.TextPattern,%20java.lang.String,%20org.apache.lucene.search.Filter)">find</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#forEachDocument(nl.inl.blacklab.search.Searcher.LuceneDocTask)">forEachDocument</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getAnalyzer()">getAnalyzer</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getBlackLabBuildTime()">getBlackLabBuildTime</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getCollator()">getCollator</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getConcAttrFI()">getConcAttrFI</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getConcPunctFI()">getConcPunctFI</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getConcWordFI()">getConcWordFI</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContent(org.apache.lucene.document.Document)">getContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContent(org.apache.lucene.document.Document,%20java.lang.String)">getContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContent(int)">getContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContent(int,%20java.lang.String)">getContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContent(int,%20java.lang.String,%20int,%20int)">getContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContentByCharPos(int,%20java.lang.String,%20int,%20int)">getContentByCharPos</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContentFromForwardIndex(int,%20java.lang.String,%20int,%20int)">getContentFromForwardIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContentStore(java.lang.String)">getContentStore</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getContentStoreDir(java.io.File,%20boolean)">getContentStoreDir</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultCollator()">getDefaultCollator</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultConcordanceType()">getDefaultConcordanceType</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultContextSize()">getDefaultContextSize</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultExecutionContext()">getDefaultExecutionContext</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultMaxHitsToCount()">getDefaultMaxHitsToCount</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultMaxHitsToRetrieve()">getDefaultMaxHitsToRetrieve</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultUnbalancedTagsStrategy()">getDefaultUnbalancedTagsStrategy</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getForwardIndex(java.lang.String)">getForwardIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getForwardIndices()">getForwardIndices</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getIndexAnalyzer()">getIndexAnalyzer</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getIndexStructure()">getIndexStructure</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getMainContentsFieldName()">getMainContentsFieldName</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getMakeConcordancesFromForwardIndex()">getMakeConcordancesFromForwardIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getSearchAnalyzer()">getSearchAnalyzer</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getTerms()">getTerms</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getTerms(java.lang.String)">getTerms</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#getWordsFromString(java.lang.String,%20int,%20int)">getWordsFromString</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#highlightContent(int,%20nl.inl.blacklab.search.Hits)">highlightContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#highlightContent(int,%20java.lang.String,%20nl.inl.blacklab.search.Hits)">highlightContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#highlightContent(int,%20java.lang.String,%20nl.inl.blacklab.search.Hits,%20int,%20int)">highlightContent</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#hitsSettings()">hitsSettings</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#isDefaultSearchCaseSensitive()">isDefaultSearchCaseSensitive</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#isDefaultSearchDiacriticsSensitive()">isDefaultSearchDiacriticsSensitive</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#isIndex(java.io.File)">isIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#makeConcordancesFromContentStore(int,%20java.lang.String,%20int[],%20int[],%20nl.inl.blacklab.highlight.XmlHighlighter)">makeConcordancesFromContentStore</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#open(java.io.File)">open</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#openForWriting(java.io.File,%20boolean)">openForWriting</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#openForWriting(java.io.File,%20boolean,%20java.io.File)">openForWriting</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#registerContentStore(java.lang.String,%20nl.inl.blacklab.externalstorage.ContentStore)">registerContentStore</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setCollator(java.text.Collator)">setCollator</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setConcordanceXmlProperties(java.lang.String,%20java.lang.String,%20java.util.Collection)">setConcordanceXmlProperties</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultCollator(java.text.Collator)">setDefaultCollator</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultConcordanceType(nl.inl.blacklab.search.ConcordanceType)">setDefaultConcordanceType</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultContextSize(int)">setDefaultContextSize</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultMaxHitsToCount(int)">setDefaultMaxHitsToCount</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultMaxHitsToRetrieve(int)">setDefaultMaxHitsToRetrieve</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultSearchSensitive(boolean)">setDefaultSearchSensitive</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultSearchSensitive(boolean,%20boolean)">setDefaultSearchSensitive</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setDefaultUnbalancedTagsStrategy(nl.inl.blacklab.highlight.XmlHighlighter.UnbalancedTagsStrategy)">setDefaultUnbalancedTagsStrategy</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setForwardIndexConcordanceParameters(java.lang.String,%20java.lang.String,%20java.util.Collection)">setForwardIndexConcordanceParameters</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#setMakeConcordancesFromForwardIndex(boolean)">setMakeConcordancesFromForwardIndex</a>, <a href="../../../../nl/inl/blacklab/search/Searcher.html#warmUpForwardIndices()">warmUpForwardIndices</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="MockSearcher()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MockSearcher</h4>
+<pre>public&nbsp;MockSearcher()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isEmpty()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEmpty</h4>
+<pre>public&nbsp;boolean&nbsp;isEmpty()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#isEmpty()">Searcher</a></code></strong></div>
+<div class="block">Is this a newly created, empty index?</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#isEmpty()">isEmpty</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>true if it is, false if not</dd></dl>
+</li>
+</ul>
+<a name="rollback()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>rollback</h4>
+<pre>public&nbsp;void&nbsp;rollback()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#rollback()">Searcher</a></code></strong></div>
+<div class="block">Call this to roll back any changes made to the index this session.
+ Calling close() will automatically commit any changes. If you call this
+ method, then call close(), no changes will be committed.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#rollback()">rollback</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="document(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>document</h4>
+<pre>public&nbsp;org.apache.lucene.document.Document&nbsp;document(int&nbsp;doc)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#document(int)">Searcher</a></code></strong></div>
+<div class="block">Retrieve a Lucene Document object from the index.
+
+ NOTE: you must check if the document isn't deleted using Search.isDeleted()
+ first! Lucene 4.0+ allows you to retrieve deleted documents, making you
+ responsible for checking whether documents are deleted or not.
+ (This doesn't apply to search results; searches should never produce deleted
+  documents. It does apply when you're e.g. iterating over all documents in the index)</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#document(int)">document</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>doc</code> - the document id</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Lucene Document</dd></dl>
+</li>
+</ul>
+<a name="isDeleted(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isDeleted</h4>
+<pre>public&nbsp;boolean&nbsp;isDeleted(int&nbsp;doc)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#isDeleted(int)">Searcher</a></code></strong></div>
+<div class="block">Checks if a document has been deleted from the index</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#isDeleted(int)">isDeleted</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>doc</code> - the document id</dd>
+<dt><span class="strong">Returns:</span></dt><dd>true iff it has been deleted</dd></dl>
+</li>
+</ul>
+<a name="maxDoc()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maxDoc</h4>
+<pre>public&nbsp;int&nbsp;maxDoc()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#maxDoc()">Searcher</a></code></strong></div>
+<div class="block">Returns one more than the highest document id</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#maxDoc()">maxDoc</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>one more than the highest document id</dd></dl>
+</li>
+</ul>
+<a name="findDocScores(org.apache.lucene.search.Query)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findDocScores</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;org.apache.lucene.search.Scorer&nbsp;findDocScores(org.apache.lucene.search.Query&nbsp;q)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#findDocScores(org.apache.lucene.search.Query)">Searcher</a></code></strong></div>
+<div class="block">Find matching documents and their scores for a pattern.
+
+ You can pass in both a SpanQuery or a regular Query.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#findDocScores(org.apache.lucene.search.Query)">findDocScores</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>object that can iterate over matching docs and provide their scores. NOTE: null can
+         be returned if there were no matches!</dd></dl>
+</li>
+</ul>
+<a name="findTopDocs(org.apache.lucene.search.Query, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findTopDocs</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;org.apache.lucene.search.TopDocs&nbsp;findTopDocs(org.apache.lucene.search.Query&nbsp;q,
+                                                      int&nbsp;n)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#findTopDocs(org.apache.lucene.search.Query,%20int)">Searcher</a></code></strong></div>
+<div class="block">Find the top-scoring documents.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#findTopDocs(org.apache.lucene.search.Query,%20int)">findTopDocs</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>q</code> - the query</dd><dd><code>n</code> - number of top documents to return</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the documents</dd></dl>
+</li>
+</ul>
+<a name="getCharacterOffsets(int, java.lang.String, int[], int[], boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCharacterOffsets</h4>
+<pre>public&nbsp;void&nbsp;getCharacterOffsets(int&nbsp;doc,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+                       int[]&nbsp;startsOfWords,
+                       int[]&nbsp;endsOfWords,
+                       boolean&nbsp;fillInDefaultsIfNotFound)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getCharacterOffsets(int,%20java.lang.String,%20int[],%20int[],%20boolean)">Searcher</a></code></strong></div>
+<div class="block">Get character positions from word positions.
+
+ Places character positions in the same arrays as the word positions were specified in.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getCharacterOffsets(int,%20java.lang.String,%20int[],%20int[],%20boolean)">getCharacterOffsets</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>doc</code> - the document from which to find character positions</dd><dd><code>fieldName</code> - the field from which to find character positions</dd><dd><code>startsOfWords</code> - word positions for which we want starting character positions (i.e. the position
+            of the first letter of that word)</dd><dd><code>endsOfWords</code> - word positions for which we want ending character positions (i.e. the position of
+            the last letter of that word)</dd><dd><code>fillInDefaultsIfNotFound</code> - if true, if any illegal word positions are specified (say, past the end of the
+            document), a sane default value is chosen (in this case, the last character of the
+            last word found). Otherwise, throws an exception.</dd></dl>
+</li>
+</ul>
+<a name="getIndexReader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIndexReader</h4>
+<pre>public&nbsp;org.apache.lucene.index.IndexReader&nbsp;getIndexReader()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getIndexReader()">Searcher</a></code></strong></div>
+<div class="block">Get the Lucene index reader we're using.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getIndexReader()">getIndexReader</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the Lucene index reader</dd></dl>
+</li>
+</ul>
+<a name="openForwardIndex(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openForwardIndex</h4>
+<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&nbsp;openForwardIndex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#openForwardIndex(java.lang.String)">openForwardIndex</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openContentStore(java.io.File, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openContentStore</h4>
+<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/externalstorage/ContentStore.html" title="class in nl.inl.blacklab.externalstorage">ContentStore</a>&nbsp;openContentStore(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexXmlDir,
+                            boolean&nbsp;create)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#openContentStore(java.io.File,%20boolean)">Searcher</a></code></strong></div>
+<div class="block">Factory method to create a directory content store.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#openContentStore(java.io.File,%20boolean)">openContentStore</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>indexXmlDir</code> - the content store directory</dd><dd><code>create</code> - if true, create a new content store even if one exists</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the content store</dd></dl>
+</li>
+</ul>
+<a name="getDefaultExecutionContext(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultExecutionContext</h4>
+<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;getDefaultExecutionContext(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultExecutionContext(java.lang.String)">Searcher</a></code></strong></div>
+<div class="block">Get the default initial query execution context.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getDefaultExecutionContext(java.lang.String)">getDefaultExecutionContext</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fieldName</code> - the field to search</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the query execution context</dd></dl>
+</li>
+</ul>
+<a name="getIndexName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIndexName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getIndexName()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getIndexName()">getIndexName</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openIndexWriter(java.io.File, boolean, org.apache.lucene.analysis.Analyzer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openIndexWriter</h4>
+<pre>public&nbsp;org.apache.lucene.index.IndexWriter&nbsp;openIndexWriter(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;indexDir,
+                                                  boolean&nbsp;create,
+                                                  org.apache.lucene.analysis.Analyzer&nbsp;useAnalyzer)
+                                                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                                           org.apache.lucene.index.CorruptIndexException,
+                                                           org.apache.lucene.store.LockObtainFailedException</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#openIndexWriter(java.io.File,%20boolean,%20org.apache.lucene.analysis.Analyzer)">openIndexWriter</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code>org.apache.lucene.index.CorruptIndexException</code></dd>
+<dd><code>org.apache.lucene.store.LockObtainFailedException</code></dd></dl>
+</li>
+</ul>
+<a name="getWriter()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWriter</h4>
+<pre>public&nbsp;org.apache.lucene.index.IndexWriter&nbsp;getWriter()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getWriter()">getWriter</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getIndexDirectory()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIndexDirectory</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getIndexDirectory()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getIndexDirectory()">getIndexDirectory</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="delete(org.apache.lucene.search.Query)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>delete</h4>
+<pre>public&nbsp;void&nbsp;delete(org.apache.lucene.search.Query&nbsp;q)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#delete(org.apache.lucene.search.Query)">Searcher</a></code></strong></div>
+<div class="block">Deletes documents matching a query from the BlackLab index.
+
+ This deletes the documents from the Lucene index, the forward indices and the content store(s).</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#delete(org.apache.lucene.search.Query)">delete</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>q</code> - the query</dd></dl>
+</li>
+</ul>
+<a name="queryDocuments(org.apache.lucene.search.Query)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>queryDocuments</h4>
+<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/perdocument/DocResults.html" title="class in nl.inl.blacklab.perdocument">DocResults</a>&nbsp;queryDocuments(org.apache.lucene.search.Query&nbsp;documentFilterQuery)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#queryDocuments(org.apache.lucene.search.Query)">Searcher</a></code></strong></div>
+<div class="block">Perform a document query only (no hits)</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#queryDocuments(org.apache.lucene.search.Query)">queryDocuments</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>documentFilterQuery</code> - the document-level query</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the matching documents</dd></dl>
+</li>
+</ul>
+<a name="termFrequencies(org.apache.lucene.search.Query, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>termFrequencies</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;termFrequencies(org.apache.lucene.search.Query&nbsp;documentFilterQuery,
+                                             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+                                             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
+                                             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;altName)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#termFrequencies(org.apache.lucene.search.Query,%20java.lang.String,%20java.lang.String,%20java.lang.String)">Searcher</a></code></strong></div>
+<div class="block">Determine the term frequencies in a set of documents (defined by the filter query)</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#termFrequencies(org.apache.lucene.search.Query,%20java.lang.String,%20java.lang.String,%20java.lang.String)">termFrequencies</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>documentFilterQuery</code> - what set of documents to get the term frequencies for</dd><dd><code>fieldName</code> - complex field name, i.e. contents</dd><dd><code>propName</code> - property name, i.e. word, lemma, pos, etc.</dd><dd><code>altName</code> - alternative name, i.e. s, i (case-sensitivity)</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the term frequency map</dd></dl>
+</li>
+</ul>
+<a name="collectDocuments(org.apache.lucene.search.Query, org.apache.lucene.search.Collector)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>collectDocuments</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;collectDocuments(org.apache.lucene.search.Query&nbsp;query,
+                               org.apache.lucene.search.Collector&nbsp;collector)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#collectDocuments(org.apache.lucene.search.Query,%20org.apache.lucene.search.Collector)">Searcher</a></code></strong></div>
+<div class="block">Perform a document query and collect the results through a Collector.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#collectDocuments(org.apache.lucene.search.Query,%20org.apache.lucene.search.Collector)">collectDocuments</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>query</code> - query to execute</dd><dd><code>collector</code> - object that receives each document hit</dd></dl>
+</li>
+</ul>
+<a name="getFieldTerms(java.lang.String, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFieldTerms</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getFieldTerms(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+                         int&nbsp;maxResults)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getFieldTerms(java.lang.String,%20int)">Searcher</a></code></strong></div>
+<div class="block">Return the list of terms that occur in a field.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getFieldTerms(java.lang.String,%20int)">getFieldTerms</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fieldName</code> - the field</dd><dd><code>maxResults</code> - maximum number to return (or HitsSettings.UNLIMITED (== -1) for no limit)</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the matching terms</dd></dl>
+</li>
+</ul>
+<a name="getIndexSearcher()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIndexSearcher</h4>
+<pre>public&nbsp;org.apache.lucene.search.IndexSearcher&nbsp;getIndexSearcher()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#getIndexSearcher()">getIndexSearcher</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setForwardIndex(java.lang.String, nl.inl.blacklab.forwardindex.ForwardIndex)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setForwardIndex</h4>
+<pre>public&nbsp;void&nbsp;setForwardIndex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldPropName,
+                   <a href="../../../../nl/inl/blacklab/forwardindex/ForwardIndex.html" title="class in nl.inl.blacklab.forwardindex">ForwardIndex</a>&nbsp;forwardIndex)</pre>
+</li>
+</ul>
+<a name="openContentStore(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openContentStore</h4>
+<pre>protected&nbsp;<a href="../../../../nl/inl/blacklab/externalstorage/ContentStore.html" title="class in nl.inl.blacklab.externalstorage">ContentStore</a>&nbsp;openContentStore(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#openContentStore(java.lang.String)">openContentStore</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="docIdSet()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>docIdSet</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;docIdSet()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html#docIdSet()">Searcher</a></code></strong></div>
+<div class="block">Get a set of all (non-deleted) Lucene document ids.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Searcher.html#docIdSet()">docIdSet</a></code>&nbsp;in class&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>set of ids</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/MockSearcher.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../nl/inl/blacklab/testutil/GetFieldValues.html" title="class in nl.inl.blacklab.testutil"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../nl/inl/blacklab/testutil/TokensPerMetaValue.html" title="class in nl.inl.blacklab.testutil"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?nl/inl/blacklab/testutil/MockSearcher.html" target="_top">Frames</a></li>
+<li><a href="MockSearcher.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_nl.inl.blacklab.search.Searcher">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_nl.inl.blacklab.search.Searcher">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</small></p>
+</body>
+</html>

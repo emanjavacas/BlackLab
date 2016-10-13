@@ -25,16 +25,16 @@
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  <strong class="jxr_keyword">import</strong> java.io.BufferedReader;
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>  <strong class="jxr_keyword">import</strong> java.io.InputStreamReader;
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_javadoccomment"> * Utilities for simple user input from stdin.</em>
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../nl/inl/util/ConsoleUtil.html">ConsoleUtil</a> {
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>  	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_javadoccomment">	 * Easily read from standard input</em>
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> BufferedReader stdinReader = <a href="../../../nl/inl/util/IoUtil.html">IoUtil</a>
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>  			.makeBuffered(<strong class="jxr_keyword">new</strong> InputStreamReader(System.in));
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <strong class="jxr_keyword">import</strong> java.nio.charset.Charset;
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment"> * Utilities for simple user input from stdin.</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../nl/inl/util/ConsoleUtil.html">ConsoleUtil</a> {
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment">	 * Easily read from standard input</em>
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> BufferedReader stdinReader = IoUtil.makeBuffered(<strong class="jxr_keyword">new</strong> InputStreamReader(System.in, Charset.defaultCharset()));
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>  	<strong class="jxr_keyword">private</strong> <a href="../../../nl/inl/util/ConsoleUtil.html">ConsoleUtil</a>() {
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>  	}

@@ -165,11 +165,17 @@
 <a class="jxr_linenumber" name="L157" href="#L157">157</a> 		<strong class="jxr_keyword">return</strong> n;
 <a class="jxr_linenumber" name="L158" href="#L158">158</a> 	}
 <a class="jxr_linenumber" name="L159" href="#L159">159</a> 
-<a class="jxr_linenumber" name="L160" href="#L160">160</a> 	@Override
-<a class="jxr_linenumber" name="L161" href="#L161">161</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
-<a class="jxr_linenumber" name="L162" href="#L162">162</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"OR("</span> + clausesToString(clauses, context) + <span class="jxr_string">")"</span>;
-<a class="jxr_linenumber" name="L163" href="#L163">163</a> 	}
-<a class="jxr_linenumber" name="L164" href="#L164">164</a> }
+<a class="jxr_linenumber" name="L160" href="#L160">160</a> 	@Deprecated
+<a class="jxr_linenumber" name="L161" href="#L161">161</a> 	@Override
+<a class="jxr_linenumber" name="L162" href="#L162">162</a> 	<strong class="jxr_keyword">public</strong> String toString(<a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context) {
+<a class="jxr_linenumber" name="L163" href="#L163">163</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"OR("</span> + clausesToString(clauses, context) + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L164" href="#L164">164</a> 	}
+<a class="jxr_linenumber" name="L165" href="#L165">165</a> 
+<a class="jxr_linenumber" name="L166" href="#L166">166</a> 	@Override
+<a class="jxr_linenumber" name="L167" href="#L167">167</a> 	<strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="L168" href="#L168">168</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"OR("</span> + clausesToString(clauses) + <span class="jxr_string">")"</span>;
+<a class="jxr_linenumber" name="L169" href="#L169">169</a> 	}
+<a class="jxr_linenumber" name="L170" href="#L170">170</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

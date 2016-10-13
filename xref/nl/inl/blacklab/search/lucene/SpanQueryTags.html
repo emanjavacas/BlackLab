@@ -59,7 +59,7 @@
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../nl/inl/blacklab/search/lucene/SpanQueryTags.html">SpanQueryTags</a>(<a href="../../../../../nl/inl/blacklab/search/QueryExecutionContext.html">QueryExecutionContext</a> context, String tagName) {
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  		<strong class="jxr_keyword">this</strong>.tagName = tagName;
-<a class="jxr_linenumber" name="L54" href="#L54">54</a>  		baseFieldName = context.fieldName;
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  		baseFieldName = context.fieldName();
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  		QueryExecutionContext startTagContext = context.withProperty(ComplexFieldUtil.START_TAG_PROP_NAME);
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  		String startTagFieldName = startTagContext.luceneField();
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>  		<strong class="jxr_keyword">this</strong>.clause = <strong class="jxr_keyword">new</strong> SpanTermQuery(<strong class="jxr_keyword">new</strong> Term(startTagFieldName, startTagContext.optDesensitize(tagName)));
@@ -111,27 +111,26 @@
 <a class="jxr_linenumber" name="L103" href="#L103">103</a> <em class="jxr_javadoccomment">	 * @param terms</em>
 <a class="jxr_linenumber" name="L104" href="#L104">104</a> <em class="jxr_javadoccomment">	 *            the set the terms should be added to</em>
 <a class="jxr_linenumber" name="L105" href="#L105">105</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L106" href="#L106">106</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span> })
-<a class="jxr_linenumber" name="L107" href="#L107">107</a> 	@Override
-<a class="jxr_linenumber" name="L108" href="#L108">108</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> extractTerms(Set terms) {
-<a class="jxr_linenumber" name="L109" href="#L109">109</a> 		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L110" href="#L110">110</a> 			<em class="jxr_comment">// FIXME: temporary extractTerms hack</em>
-<a class="jxr_linenumber" name="L111" href="#L111">111</a> 			Method methodExtractTerms = SpanQuery.<strong class="jxr_keyword">class</strong>.getDeclaredMethod(<span class="jxr_string">"extractTerms"</span>, Set.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L112" href="#L112">112</a> 			methodExtractTerms.setAccessible(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L113" href="#L113">113</a> 			methodExtractTerms.invoke(clause, terms);
-<a class="jxr_linenumber" name="L114" href="#L114">114</a> 		} <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="L115" href="#L115">115</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
-<a class="jxr_linenumber" name="L116" href="#L116">116</a> 		}
-<a class="jxr_linenumber" name="L117" href="#L117">117</a> 	}
-<a class="jxr_linenumber" name="L118" href="#L118">118</a> 
-<a class="jxr_linenumber" name="L119" href="#L119">119</a> 	@Override
-<a class="jxr_linenumber" name="L120" href="#L120">120</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> hashCode() {
-<a class="jxr_linenumber" name="L121" href="#L121">121</a> 		<strong class="jxr_keyword">int</strong> h = clause.hashCode();
-<a class="jxr_linenumber" name="L122" href="#L122">122</a> 		h ^= (h &lt;&lt; 10) | (h &gt;&gt;&gt; 23);
-<a class="jxr_linenumber" name="L123" href="#L123">123</a> 		h ^= Float.floatToRawIntBits(getBoost());
-<a class="jxr_linenumber" name="L124" href="#L124">124</a> 		<strong class="jxr_keyword">return</strong> h;
-<a class="jxr_linenumber" name="L125" href="#L125">125</a> 	}
-<a class="jxr_linenumber" name="L126" href="#L126">126</a> }
+<a class="jxr_linenumber" name="L106" href="#L106">106</a> 	@Override
+<a class="jxr_linenumber" name="L107" href="#L107">107</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> extractTerms(Set&lt;Term&gt; terms) {
+<a class="jxr_linenumber" name="L108" href="#L108">108</a> 		<strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L109" href="#L109">109</a> 			<em class="jxr_comment">// FIXME: temporary extractTerms hack</em>
+<a class="jxr_linenumber" name="L110" href="#L110">110</a> 			Method methodExtractTerms = SpanQuery.<strong class="jxr_keyword">class</strong>.getDeclaredMethod(<span class="jxr_string">"extractTerms"</span>, Set.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L111" href="#L111">111</a> 			methodExtractTerms.setAccessible(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L112" href="#L112">112</a> 			methodExtractTerms.invoke(clause, terms);
+<a class="jxr_linenumber" name="L113" href="#L113">113</a> 		} <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="L114" href="#L114">114</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
+<a class="jxr_linenumber" name="L115" href="#L115">115</a> 		}
+<a class="jxr_linenumber" name="L116" href="#L116">116</a> 	}
+<a class="jxr_linenumber" name="L117" href="#L117">117</a> 
+<a class="jxr_linenumber" name="L118" href="#L118">118</a> 	@Override
+<a class="jxr_linenumber" name="L119" href="#L119">119</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> hashCode() {
+<a class="jxr_linenumber" name="L120" href="#L120">120</a> 		<strong class="jxr_keyword">int</strong> h = clause.hashCode();
+<a class="jxr_linenumber" name="L121" href="#L121">121</a> 		h ^= (h &lt;&lt; 10) | (h &gt;&gt;&gt; 23);
+<a class="jxr_linenumber" name="L122" href="#L122">122</a> 		h ^= Float.floatToRawIntBits(getBoost());
+<a class="jxr_linenumber" name="L123" href="#L123">123</a> 		<strong class="jxr_keyword">return</strong> h;
+<a class="jxr_linenumber" name="L124" href="#L124">124</a> 	}
+<a class="jxr_linenumber" name="L125" href="#L125">125</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

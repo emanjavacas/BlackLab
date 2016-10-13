@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>StringUtil (BlackLab 1.3.3 API)</title>
+<title>StringUtil (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StringUtil (BlackLab 1.3.3 API)";
+        parent.document.title="StringUtil (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -236,7 +236,9 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/StringUtil.html#capitalizeFirst(java.lang.String)">capitalizeFirst</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</code>
-<div class="block">Convert the first character in a string to uppercase.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use StringUtils.capitalize() from commons-lang</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1094,7 +1096,9 @@ public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/S
 <ul class="blockList">
 <li class="blockList">
 <h4>capitalizeFirst</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;capitalizeFirst(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;capitalizeFirst(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use StringUtils.capitalize() from commons-lang</i></div>
 <div class="block">Convert the first character in a string to uppercase.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>str</code> - the string to be capitalized</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the capitalized string</dd></dl>

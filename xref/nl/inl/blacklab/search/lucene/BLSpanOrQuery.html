@@ -136,8 +136,8 @@
 <a class="jxr_linenumber" name="L128" href="#L128">128</a> 	}
 <a class="jxr_linenumber" name="L129" href="#L129">129</a> 
 <a class="jxr_linenumber" name="L130" href="#L130">130</a> 	@Override
-<a class="jxr_linenumber" name="L131" href="#L131">131</a> 	<strong class="jxr_keyword">public</strong> String toString(String field) {
-<a class="jxr_linenumber" name="L132" href="#L132">132</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">super</strong>.toString(field);
+<a class="jxr_linenumber" name="L131" href="#L131">131</a> 	<strong class="jxr_keyword">public</strong> String toString(String theField) {
+<a class="jxr_linenumber" name="L132" href="#L132">132</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">super</strong>.toString(theField);
 <a class="jxr_linenumber" name="L133" href="#L133">133</a> 	}
 <a class="jxr_linenumber" name="L134" href="#L134">134</a> 
 <a class="jxr_linenumber" name="L135" href="#L135">135</a> 	@Override
@@ -437,9 +437,9 @@
 <a class="jxr_linenumber" name="L429" href="#L429">429</a> 			}
 <a class="jxr_linenumber" name="L430" href="#L430">430</a> 
 <a class="jxr_linenumber" name="L431" href="#L431">431</a> 			@Override
-<a class="jxr_linenumber" name="L432" href="#L432">432</a> 			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> passHitQueryContextToClauses(<a href="../../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html">HitQueryContext</a> context) {
+<a class="jxr_linenumber" name="L432" href="#L432">432</a> 			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> passHitQueryContextToClauses(<a href="../../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html">HitQueryContext</a> theContext) {
 <a class="jxr_linenumber" name="L433" href="#L433">433</a> 				<strong class="jxr_keyword">for</strong> (BLSpans spans : subSpans) {
-<a class="jxr_linenumber" name="L434" href="#L434">434</a> 					spans.setHitQueryContext(context);
+<a class="jxr_linenumber" name="L434" href="#L434">434</a> 					spans.setHitQueryContext(theContext);
 <a class="jxr_linenumber" name="L435" href="#L435">435</a> 				}
 <a class="jxr_linenumber" name="L436" href="#L436">436</a> 			}
 <a class="jxr_linenumber" name="L437" href="#L437">437</a> 
@@ -450,84 +450,88 @@
 <a class="jxr_linenumber" name="L442" href="#L442">442</a> 				((BLSpans) topPositionSpans).getCapturedGroups(capturedGroups);
 <a class="jxr_linenumber" name="L443" href="#L443">443</a> 			}
 <a class="jxr_linenumber" name="L444" href="#L444">444</a> 
-<a class="jxr_linenumber" name="L445" href="#L445">445</a> 			@Override
-<a class="jxr_linenumber" name="L446" href="#L446">446</a> 			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> advanceStartPosition(<strong class="jxr_keyword">int</strong> target) <strong class="jxr_keyword">throws</strong> IOException {
-<a class="jxr_linenumber" name="L447" href="#L447">447</a> 				<em class="jxr_comment">// (JN: adapted from fillPositionQueue())</em>
-<a class="jxr_linenumber" name="L448" href="#L448">448</a> 
-<a class="jxr_linenumber" name="L449" href="#L449">449</a> 				byPositionQueue.clear(); <em class="jxr_comment">// start with empty position queue and re-add spans</em>
-<a class="jxr_linenumber" name="L450" href="#L450">450</a> 
-<a class="jxr_linenumber" name="L451" href="#L451">451</a> 				<em class="jxr_comment">// add all matching Spans at current doc to byPositionQueue</em>
-<a class="jxr_linenumber" name="L452" href="#L452">452</a> 				DisiWrapper&lt;Spans&gt; listAtCurrentDoc = byDocQueue.topList();
-<a class="jxr_linenumber" name="L453" href="#L453">453</a> 				<strong class="jxr_keyword">while</strong> (listAtCurrentDoc != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L454" href="#L454">454</a> 					Spans spansAtDoc = listAtCurrentDoc.iterator;
-<a class="jxr_linenumber" name="L455" href="#L455">455</a> 					<strong class="jxr_keyword">if</strong> (lastDocTwoPhaseMatched == listAtCurrentDoc.doc) { <em class="jxr_comment">// matched</em>
-<a class="jxr_linenumber" name="L456" href="#L456">456</a> 																			<em class="jxr_comment">// by</em>
-<a class="jxr_linenumber" name="L457" href="#L457">457</a> 																			<em class="jxr_comment">// DisjunctionDisiApproximation</em>
-<a class="jxr_linenumber" name="L458" href="#L458">458</a> 						<strong class="jxr_keyword">if</strong> (listAtCurrentDoc.twoPhaseView != <strong class="jxr_keyword">null</strong>) { <em class="jxr_comment">// matched</em>
-<a class="jxr_linenumber" name="L459" href="#L459">459</a> 																		<em class="jxr_comment">// by</em>
-<a class="jxr_linenumber" name="L460" href="#L460">460</a> 																		<em class="jxr_comment">// approximation</em>
-<a class="jxr_linenumber" name="L461" href="#L461">461</a> 							<strong class="jxr_keyword">if</strong> (listAtCurrentDoc.lastApproxNonMatchDoc == listAtCurrentDoc.doc) { <em class="jxr_comment">// matches()</em>
-<a class="jxr_linenumber" name="L462" href="#L462">462</a> 																									<em class="jxr_comment">// returned</em>
-<a class="jxr_linenumber" name="L463" href="#L463">463</a> 																									<em class="jxr_comment">// false</em>
-<a class="jxr_linenumber" name="L464" href="#L464">464</a> 								spansAtDoc = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="L465" href="#L465">465</a> 							} <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="L466" href="#L466">466</a> 								<strong class="jxr_keyword">if</strong> (listAtCurrentDoc.lastApproxMatchDoc != listAtCurrentDoc.doc) {
-<a class="jxr_linenumber" name="L467" href="#L467">467</a> 									<strong class="jxr_keyword">if</strong> (!listAtCurrentDoc.twoPhaseView
-<a class="jxr_linenumber" name="L468" href="#L468">468</a> 											.matches()) {
-<a class="jxr_linenumber" name="L469" href="#L469">469</a> 										spansAtDoc = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="L470" href="#L470">470</a> 									}
-<a class="jxr_linenumber" name="L471" href="#L471">471</a> 								}
-<a class="jxr_linenumber" name="L472" href="#L472">472</a> 							}
-<a class="jxr_linenumber" name="L473" href="#L473">473</a> 						}
-<a class="jxr_linenumber" name="L474" href="#L474">474</a> 					}
-<a class="jxr_linenumber" name="L475" href="#L475">475</a> 
-<a class="jxr_linenumber" name="L476" href="#L476">476</a> 					<strong class="jxr_keyword">if</strong> (spansAtDoc != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L477" href="#L477">477</a> 						assert spansAtDoc.docID() == listAtCurrentDoc.doc;
-<a class="jxr_linenumber" name="L478" href="#L478">478</a> 						<em class="jxr_comment">//JN assert spansAtDoc.startPosition() == -1;</em>
-<a class="jxr_linenumber" name="L479" href="#L479">479</a> 						BLSpans.advanceStartPosition(spansAtDoc, target);
-<a class="jxr_linenumber" name="L480" href="#L480">480</a> 						<strong class="jxr_keyword">if</strong> (spansAtDoc.startPosition() != NO_MORE_POSITIONS) <em class="jxr_comment">// JN WAS: assert spansAtDoc.startPosition() != NO_MORE_POSITIONS</em>
-<a class="jxr_linenumber" name="L481" href="#L481">481</a> 							byPositionQueue.add(spansAtDoc);
-<a class="jxr_linenumber" name="L482" href="#L482">482</a> 					}
-<a class="jxr_linenumber" name="L483" href="#L483">483</a> 					listAtCurrentDoc = listAtCurrentDoc.next;
-<a class="jxr_linenumber" name="L484" href="#L484">484</a> 				}
-<a class="jxr_linenumber" name="L485" href="#L485">485</a> 				<strong class="jxr_keyword">if</strong> (byPositionQueue.size() == 0)
-<a class="jxr_linenumber" name="L486" href="#L486">486</a> 					<strong class="jxr_keyword">return</strong> NO_MORE_POSITIONS;
-<a class="jxr_linenumber" name="L487" href="#L487">487</a> 
-<a class="jxr_linenumber" name="L488" href="#L488">488</a> 				topPositionSpans = byPositionQueue.top();
-<a class="jxr_linenumber" name="L489" href="#L489">489</a> 				<strong class="jxr_keyword">return</strong> topPositionSpans.startPosition();
-<a class="jxr_linenumber" name="L490" href="#L490">490</a> 			}
-<a class="jxr_linenumber" name="L491" href="#L491">491</a> 
-<a class="jxr_linenumber" name="L492" href="#L492">492</a> 		};
-<a class="jxr_linenumber" name="L493" href="#L493">493</a> 	}
-<a class="jxr_linenumber" name="L494" href="#L494">494</a> 
-<a class="jxr_linenumber" name="L495" href="#L495">495</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L496" href="#L496">496</a> <em class="jxr_javadoccomment">	 * Explicitly set the field for this query. Required because some queries</em>
-<a class="jxr_linenumber" name="L497" href="#L497">497</a> <em class="jxr_javadoccomment">	 * rewrite to 0-clause or queries, and we need to be able to call getField()</em>
-<a class="jxr_linenumber" name="L498" href="#L498">498</a> <em class="jxr_javadoccomment">	 * later.</em>
-<a class="jxr_linenumber" name="L499" href="#L499">499</a> <em class="jxr_javadoccomment">	 *</em>
-<a class="jxr_linenumber" name="L500" href="#L500">500</a> <em class="jxr_javadoccomment">	 * @param field</em>
-<a class="jxr_linenumber" name="L501" href="#L501">501</a> <em class="jxr_javadoccomment">	 *            the field for this query</em>
-<a class="jxr_linenumber" name="L502" href="#L502">502</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L503" href="#L503">503</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setField(String field) {
-<a class="jxr_linenumber" name="L504" href="#L504">504</a> 		<strong class="jxr_keyword">this</strong>.field = field;
-<a class="jxr_linenumber" name="L505" href="#L505">505</a> 	}
-<a class="jxr_linenumber" name="L506" href="#L506">506</a> 
-<a class="jxr_linenumber" name="L507" href="#L507">507</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L508" href="#L508">508</a> <em class="jxr_javadoccomment">	 * Convert a SpanOrQuery to a BLSpanOrQuery</em>
-<a class="jxr_linenumber" name="L509" href="#L509">509</a> <em class="jxr_javadoccomment">	 *</em>
-<a class="jxr_linenumber" name="L510" href="#L510">510</a> <em class="jxr_javadoccomment">	 * @param soq query to convert</em>
-<a class="jxr_linenumber" name="L511" href="#L511">511</a> <em class="jxr_javadoccomment">	 * @return the result</em>
-<a class="jxr_linenumber" name="L512" href="#L512">512</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L513" href="#L513">513</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../nl/inl/blacklab/search/lucene/BLSpanOrQuery.html">BLSpanOrQuery</a> from(SpanOrQuery soq) {
-<a class="jxr_linenumber" name="L514" href="#L514">514</a> 		BLSpanOrQuery blsoq = <strong class="jxr_keyword">new</strong> <a href="../../../../../nl/inl/blacklab/search/lucene/BLSpanOrQuery.html">BLSpanOrQuery</a>(soq.getClauses());
-<a class="jxr_linenumber" name="L515" href="#L515">515</a> 		blsoq.setBoost(soq.getBoost());
-<a class="jxr_linenumber" name="L516" href="#L516">516</a> 		<strong class="jxr_keyword">if</strong> (blsoq.getField() == <strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L517" href="#L517">517</a> 			blsoq.setField(soq.getField()); <em class="jxr_comment">// rewritten to or query without</em>
-<a class="jxr_linenumber" name="L518" href="#L518">518</a> 											<em class="jxr_comment">// clauses</em>
-<a class="jxr_linenumber" name="L519" href="#L519">519</a> 		<strong class="jxr_keyword">return</strong> blsoq;
-<a class="jxr_linenumber" name="L520" href="#L520">520</a> 	}
-<a class="jxr_linenumber" name="L521" href="#L521">521</a> 
-<a class="jxr_linenumber" name="L522" href="#L522">522</a> }
+<a class="jxr_linenumber" name="L445" href="#L445">445</a> 			<em class="jxr_comment">// NOTE 2016-07-01: the version below has a bug. Try searching for "marines" "had" "l.*" in the Brown corpus;</em>
+<a class="jxr_linenumber" name="L446" href="#L446">446</a> 			<em class="jxr_comment">//  you won't find anything, but searching for "marines" "had" "la.*" will. The version below will skip over</em>
+<a class="jxr_linenumber" name="L447" href="#L447">447</a> 			<em class="jxr_comment">//  some hits some of the time to cause this bug. For now, we're using the naive (slower) default implementation</em>
+<a class="jxr_linenumber" name="L448" href="#L448">448</a> 			<em class="jxr_comment">//  in BLSpans.</em>
+<a class="jxr_linenumber" name="L449" href="#L449">449</a> <em class="jxr_comment">//			@Override</em>
+<a class="jxr_linenumber" name="L450" href="#L450">450</a> <em class="jxr_comment">//			public int advanceStartPosition(int target) throws IOException {</em>
+<a class="jxr_linenumber" name="L451" href="#L451">451</a> <em class="jxr_comment">//				// (JN: adapted from fillPositionQueue())</em>
+<a class="jxr_linenumber" name="L452" href="#L452">452</a> <em class="jxr_comment">//</em>
+<a class="jxr_linenumber" name="L453" href="#L453">453</a> <em class="jxr_comment">//				byPositionQueue.clear(); // start with empty position queue and re-add spans</em>
+<a class="jxr_linenumber" name="L454" href="#L454">454</a> <em class="jxr_comment">//</em>
+<a class="jxr_linenumber" name="L455" href="#L455">455</a> <em class="jxr_comment">//				// add all matching Spans at current doc to byPositionQueue</em>
+<a class="jxr_linenumber" name="L456" href="#L456">456</a> <em class="jxr_comment">//				DisiWrapper&lt;Spans&gt; listAtCurrentDoc = byDocQueue.topList();</em>
+<a class="jxr_linenumber" name="L457" href="#L457">457</a> <em class="jxr_comment">//				while (listAtCurrentDoc != null) {</em>
+<a class="jxr_linenumber" name="L458" href="#L458">458</a> <em class="jxr_comment">//					Spans spansAtDoc = listAtCurrentDoc.iterator;</em>
+<a class="jxr_linenumber" name="L459" href="#L459">459</a> <em class="jxr_comment">//					if (lastDocTwoPhaseMatched == listAtCurrentDoc.doc) { // matched</em>
+<a class="jxr_linenumber" name="L460" href="#L460">460</a> <em class="jxr_comment">//																			// by</em>
+<a class="jxr_linenumber" name="L461" href="#L461">461</a> <em class="jxr_comment">//																			// DisjunctionDisiApproximation</em>
+<a class="jxr_linenumber" name="L462" href="#L462">462</a> <em class="jxr_comment">//						if (listAtCurrentDoc.twoPhaseView != null) { // matched</em>
+<a class="jxr_linenumber" name="L463" href="#L463">463</a> <em class="jxr_comment">//																		// by</em>
+<a class="jxr_linenumber" name="L464" href="#L464">464</a> <em class="jxr_comment">//																		// approximation</em>
+<a class="jxr_linenumber" name="L465" href="#L465">465</a> <em class="jxr_comment">//							if (listAtCurrentDoc.lastApproxNonMatchDoc == listAtCurrentDoc.doc) { // matches()</em>
+<a class="jxr_linenumber" name="L466" href="#L466">466</a> <em class="jxr_comment">//																									// returned</em>
+<a class="jxr_linenumber" name="L467" href="#L467">467</a> <em class="jxr_comment">//																									// false</em>
+<a class="jxr_linenumber" name="L468" href="#L468">468</a> <em class="jxr_comment">//								spansAtDoc = null;</em>
+<a class="jxr_linenumber" name="L469" href="#L469">469</a> <em class="jxr_comment">//							} else {</em>
+<a class="jxr_linenumber" name="L470" href="#L470">470</a> <em class="jxr_comment">//								if (listAtCurrentDoc.lastApproxMatchDoc != listAtCurrentDoc.doc) {</em>
+<a class="jxr_linenumber" name="L471" href="#L471">471</a> <em class="jxr_comment">//									if (!listAtCurrentDoc.twoPhaseView</em>
+<a class="jxr_linenumber" name="L472" href="#L472">472</a> <em class="jxr_comment">//											.matches()) {</em>
+<a class="jxr_linenumber" name="L473" href="#L473">473</a> <em class="jxr_comment">//										spansAtDoc = null;</em>
+<a class="jxr_linenumber" name="L474" href="#L474">474</a> <em class="jxr_comment">//									}</em>
+<a class="jxr_linenumber" name="L475" href="#L475">475</a> <em class="jxr_comment">//								}</em>
+<a class="jxr_linenumber" name="L476" href="#L476">476</a> <em class="jxr_comment">//							}</em>
+<a class="jxr_linenumber" name="L477" href="#L477">477</a> <em class="jxr_comment">//						}</em>
+<a class="jxr_linenumber" name="L478" href="#L478">478</a> <em class="jxr_comment">//					}</em>
+<a class="jxr_linenumber" name="L479" href="#L479">479</a> <em class="jxr_comment">//</em>
+<a class="jxr_linenumber" name="L480" href="#L480">480</a> <em class="jxr_comment">//					if (spansAtDoc != null) {</em>
+<a class="jxr_linenumber" name="L481" href="#L481">481</a> <em class="jxr_comment">//						assert spansAtDoc.docID() == listAtCurrentDoc.doc;</em>
+<a class="jxr_linenumber" name="L482" href="#L482">482</a> <em class="jxr_comment">//						//JN assert spansAtDoc.startPosition() == -1;</em>
+<a class="jxr_linenumber" name="L483" href="#L483">483</a> <em class="jxr_comment">//						BLSpans.advanceStartPosition(spansAtDoc, target);</em>
+<a class="jxr_linenumber" name="L484" href="#L484">484</a> <em class="jxr_comment">//						if (spansAtDoc.startPosition() != NO_MORE_POSITIONS) // JN WAS: assert spansAtDoc.startPosition() != NO_MORE_POSITIONS</em>
+<a class="jxr_linenumber" name="L485" href="#L485">485</a> <em class="jxr_comment">//							byPositionQueue.add(spansAtDoc);</em>
+<a class="jxr_linenumber" name="L486" href="#L486">486</a> <em class="jxr_comment">//					}</em>
+<a class="jxr_linenumber" name="L487" href="#L487">487</a> <em class="jxr_comment">//					listAtCurrentDoc = listAtCurrentDoc.next;</em>
+<a class="jxr_linenumber" name="L488" href="#L488">488</a> <em class="jxr_comment">//				}</em>
+<a class="jxr_linenumber" name="L489" href="#L489">489</a> <em class="jxr_comment">//				if (byPositionQueue.size() == 0)</em>
+<a class="jxr_linenumber" name="L490" href="#L490">490</a> <em class="jxr_comment">//					return NO_MORE_POSITIONS;</em>
+<a class="jxr_linenumber" name="L491" href="#L491">491</a> <em class="jxr_comment">//</em>
+<a class="jxr_linenumber" name="L492" href="#L492">492</a> <em class="jxr_comment">//				topPositionSpans = byPositionQueue.top();</em>
+<a class="jxr_linenumber" name="L493" href="#L493">493</a> <em class="jxr_comment">//				return topPositionSpans.startPosition();</em>
+<a class="jxr_linenumber" name="L494" href="#L494">494</a> <em class="jxr_comment">//			}</em>
+<a class="jxr_linenumber" name="L495" href="#L495">495</a> 
+<a class="jxr_linenumber" name="L496" href="#L496">496</a> 		};
+<a class="jxr_linenumber" name="L497" href="#L497">497</a> 	}
+<a class="jxr_linenumber" name="L498" href="#L498">498</a> 
+<a class="jxr_linenumber" name="L499" href="#L499">499</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L500" href="#L500">500</a> <em class="jxr_javadoccomment">	 * Explicitly set the field for this query. Required because some queries</em>
+<a class="jxr_linenumber" name="L501" href="#L501">501</a> <em class="jxr_javadoccomment">	 * rewrite to 0-clause or queries, and we need to be able to call getField()</em>
+<a class="jxr_linenumber" name="L502" href="#L502">502</a> <em class="jxr_javadoccomment">	 * later.</em>
+<a class="jxr_linenumber" name="L503" href="#L503">503</a> <em class="jxr_javadoccomment">	 *</em>
+<a class="jxr_linenumber" name="L504" href="#L504">504</a> <em class="jxr_javadoccomment">	 * @param field</em>
+<a class="jxr_linenumber" name="L505" href="#L505">505</a> <em class="jxr_javadoccomment">	 *            the field for this query</em>
+<a class="jxr_linenumber" name="L506" href="#L506">506</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L507" href="#L507">507</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setField(String field) {
+<a class="jxr_linenumber" name="L508" href="#L508">508</a> 		<strong class="jxr_keyword">this</strong>.field = field;
+<a class="jxr_linenumber" name="L509" href="#L509">509</a> 	}
+<a class="jxr_linenumber" name="L510" href="#L510">510</a> 
+<a class="jxr_linenumber" name="L511" href="#L511">511</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L512" href="#L512">512</a> <em class="jxr_javadoccomment">	 * Convert a SpanOrQuery to a BLSpanOrQuery</em>
+<a class="jxr_linenumber" name="L513" href="#L513">513</a> <em class="jxr_javadoccomment">	 *</em>
+<a class="jxr_linenumber" name="L514" href="#L514">514</a> <em class="jxr_javadoccomment">	 * @param soq query to convert</em>
+<a class="jxr_linenumber" name="L515" href="#L515">515</a> <em class="jxr_javadoccomment">	 * @return the result</em>
+<a class="jxr_linenumber" name="L516" href="#L516">516</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L517" href="#L517">517</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../nl/inl/blacklab/search/lucene/BLSpanOrQuery.html">BLSpanOrQuery</a> from(SpanOrQuery soq) {
+<a class="jxr_linenumber" name="L518" href="#L518">518</a> 		BLSpanOrQuery blsoq = <strong class="jxr_keyword">new</strong> <a href="../../../../../nl/inl/blacklab/search/lucene/BLSpanOrQuery.html">BLSpanOrQuery</a>(soq.getClauses());
+<a class="jxr_linenumber" name="L519" href="#L519">519</a> 		blsoq.setBoost(soq.getBoost());
+<a class="jxr_linenumber" name="L520" href="#L520">520</a> 		<strong class="jxr_keyword">if</strong> (blsoq.getField() == <strong class="jxr_keyword">null</strong>)
+<a class="jxr_linenumber" name="L521" href="#L521">521</a> 			blsoq.setField(soq.getField()); <em class="jxr_comment">// rewritten to or query without</em>
+<a class="jxr_linenumber" name="L522" href="#L522">522</a> 											<em class="jxr_comment">// clauses</em>
+<a class="jxr_linenumber" name="L523" href="#L523">523</a> 		<strong class="jxr_keyword">return</strong> blsoq;
+<a class="jxr_linenumber" name="L524" href="#L524">524</a> 	}
+<a class="jxr_linenumber" name="L525" href="#L525">525</a> 
+<a class="jxr_linenumber" name="L526" href="#L526">526</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016 <a href="http://www.inl.nl">Instituut voor Nederlandse Taal (INT)</a>. All rights reserved.</div>

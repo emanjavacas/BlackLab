@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Hits (BlackLab 1.3.3 API)</title>
+<title>Hits (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Hits (BlackLab 1.3.3 API)";
+        parent.document.title="Hits (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -36,7 +36,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../nl/inl/blacklab/search/HitsImpl.html" title="class in nl.inl.blacklab.search"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?nl/inl/blacklab/search/Hits.html" target="_top">Frames</a></li>
@@ -105,18 +105,17 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</dd>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;, <a href="../../../../nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a></dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search">HitsWindow</a></dd>
+<dd><a href="../../../../nl/inl/blacklab/search/HitsImpl.html" title="class in nl.inl.blacklab.search">HitsImpl</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public class <span class="strong">Hits</span>
-extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html?is-external=true" title="class or interface in java.util">AbstractList</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</pre>
-<div class="block">Represents a list of Hit objects. Also maintains information about the context (concordance)
- information stored in the Hit objects.</div>
+<pre>public abstract class <span class="strong">Hits</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html?is-external=true" title="class or interface in java.util">AbstractList</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;
+implements <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a>, <a href="../../../../nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a></pre>
 </li>
 </ul>
 </div>
@@ -136,103 +135,78 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#atomicReaderContextIndex">atomicReaderContextIndex</a></strong></code>
-<div class="block">What LeafReaderContext we're querying now.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.lucene.index.LeafReaderContext&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#atomicReaderContexts">atomicReaderContexts</a></strong></code>
-<div class="block">The LeafReaderContexts we should query in succession.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>,<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>[]&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#capturedGroups">capturedGroups</a></strong></code>
-<div class="block">The captured groups, if we have any.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#concordanceFieldName">concordanceFieldName</a></strong></code>
-<div class="block">The default field to use for retrieving concordance information.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#contextFieldsPropName">contextFieldsPropName</a></strong></code>
-<div class="block">If we have context information, this specifies the property (i.e.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#CONTEXTS_HIT_START_INDEX">CONTEXTS_HIT_START_INDEX</a></strong></code>
 <div class="block">In context arrays, what index after the bookkeeping units indicates the hit start?</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#CONTEXTS_LENGTH_INDEX">CONTEXTS_LENGTH_INDEX</a></strong></code>
 <div class="block">In context arrays, what index indicates the length of the context?</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#CONTEXTS_NUMBER_OF_BOOKKEEPING_INTS">CONTEXTS_NUMBER_OF_BOOKKEEPING_INTS</a></strong></code>
 <div class="block">In context arrays, how many bookkeeping ints are stored at the start?</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#CONTEXTS_RIGHT_START_INDEX">CONTEXTS_RIGHT_START_INDEX</a></strong></code>
 <div class="block">In context arrays, what index indicates the hit end (start of right part)?</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#defaultMaxHitsToCount">defaultMaxHitsToCount</a></strong></code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>moved to HitsSettings</i></div>
+</div>
+</td>
+</tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected int</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#currentDocBase">currentDocBase</a></strong></code>
-<div class="block">docBase of the segment we're currently in</div>
+<td class="colFirst"><code>protected static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#defaultMaxHitsToCountChanged">defaultMaxHitsToCountChanged</a></strong></code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../../nl/inl/blacklab/search/lucene/BLSpans.html" title="class in nl.inl.blacklab.search.lucene">BLSpans</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#currentSourceSpans">currentSourceSpans</a></strong></code>
-<div class="block">Our Spans object, which may not have been fully read yet.</div>
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#defaultMaxHitsToRetrieve">defaultMaxHitsToRetrieve</a></strong></code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>moved to HitsSettings</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#hits">hits</a></strong></code>
-<div class="block">The hits.</div>
+<td class="colFirst"><code>protected static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#defaultMaxHitsToRetrieveChanged">defaultMaxHitsToRetrieveChanged</a></strong></code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>,<a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#kwics">kwics</a></strong></code>
-<div class="block">The KWIC data, if it has been retrieved.</div>
+<td class="colFirst"><code>protected <a href="../../../../nl/inl/util/ThreadPriority.html" title="class in nl.inl.util">ThreadPriority</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#etiquette">etiquette</a></strong></code>
+<div class="block">Helper object for implementing query thread priority (making sure queries don't hog the CPU
+  for way too long).</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected static org.apache.log4j.Logger</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#logger">logger</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene">HitQueryContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#hitQueryContext">hitQueryContext</a></strong></code>
+<div class="block">Context of our query; mostly used to keep track of captured groups.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#searcher">searcher</a></strong></code>
-<div class="block">The searcher object.</div>
-</td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#searcher">searcher</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sourceSpansFullyRead">sourceSpansFullyRead</a></strong></code>
-<div class="block">Did we completely read our Spans object?</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected org.apache.lucene.search.spans.SpanQuery</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#spanQuery">spanQuery</a></strong></code>
-<div class="block">Our SpanQuery, for getting the next Spans when the current one's done.</div>
+<td class="colFirst"><code>protected <a href="../../../../nl/inl/blacklab/search/HitsSettings.html" title="class in nl.inl.blacklab.search">HitsSettings</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#settings">settings</a></strong></code>
+<div class="block">Settings for retrieving hits, sorting/grouping on context and making concordances.</div>
 </td>
 </tr>
 </table>
@@ -257,53 +231,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Hits)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</code>
-<div class="block">Construct a Hits object from an existing Hits object.</div>
-</td>
+<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher)</code>
-<div class="block">Construct an empty Hits object</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher,%20java.util.List)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;&nbsp;hits)</code>
-<div class="block">Make a wrapper Hits object for a list of Hit objects.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher,%20org.apache.lucene.search.spans.SpanQuery)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    org.apache.lucene.search.spans.SpanQuery&nbsp;sourceQuery)</code>
-<div class="block">Construct an empty Hits object</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher,%20java.lang.String)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName)</code>
-<div class="block">Construct an empty Hits object</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher,%20java.lang.String,%20java.util.List)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldName,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;&nbsp;hits)</code>
-<div class="block">Make a wrapper Hits object for a list of Hit objects.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher,%20java.lang.String,%20org.apache.lucene.search.spans.SpanQuery)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName,
-    org.apache.lucene.search.spans.SpanQuery&nbsp;sourceQuery)</code>
-<div class="block">Construct an empty Hits object</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#Hits(nl.inl.blacklab.search.Searcher,%20java.lang.String,%20org.apache.lucene.search.spans.Spans)">Hits</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName,
-    org.apache.lucene.search.spans.Spans&nbsp;source)</code>
+    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldName)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>supply a SpanQuery to a Hits object instead</i></div>
+<div class="block"><i>if you need a different concordance field, change it using settings().setConcordanceField().</i></div>
 </div>
 </td>
 </tr>
@@ -323,93 +257,139 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#clearConcordances()">clearConcordances</a></strong>()</code>
-<div class="block">Clear any cached concordances so new ones will be created on next call to getConcordance().</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>client should not need this, should be triggered by settings changes</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#copySettingsFrom(nl.inl.blacklab.search.Hits)">copySettingsFrom</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</code>&nbsp;</td>
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#copy()">copy</a></strong>()</code>
+<div class="block">Return a copy of this Hits object.</div>
+</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>int</code></td>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#copySettingsFrom(nl.inl.blacklab.search.Hits)">copySettingsFrom</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</code>
+<div class="block">Copy the settings from another Hits object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#countSoFarDocsCounted()">countSoFarDocsCounted</a></strong>()</code>
 <div class="block">Return the number of documents counted so far.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#countSoFarDocsRetrieved()">countSoFarDocsRetrieved</a></strong>()</code>
 <div class="block">Return the number of documents retrieved so far.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#countSoFarHitsCounted()">countSoFarHitsCounted</a></strong>()</code>
 <div class="block">Return the number of hits counted so far.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#countSoFarHitsRetrieved()">countSoFarHitsRetrieved</a></strong>()</code>
 <div class="block">Return the number of hits retrieved so far.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#doneFetchingHits()">doneFetchingHits</a></strong>()</code>
 <div class="block">Check if we're done retrieving/counting hits.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#emptyList(nl.inl.blacklab.search.Searcher)">emptyList</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher)</code>
+<div class="block">Construct an empty Hits object.</div>
+</td>
+</tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#findContext(java.util.List)">findContext</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;fieldProps)</code>
 <div class="block">Retrieve context words for the hits.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#fromList(nl.inl.blacklab.search.Searcher,%20java.util.List)">fromList</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;&nbsp;docHits)</code>
+<div class="block">Make a wrapper Hits object for a list of Hit objects.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#fromSpanQuery(nl.inl.blacklab.search.Searcher,%20org.apache.lucene.search.spans.SpanQuery)">fromSpanQuery</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+             org.apache.lucene.search.spans.SpanQuery&nbsp;query)</code>
+<div class="block">Construct a Hits object from a SpanQuery.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#fromSpans(nl.inl.blacklab.search.Searcher,%20java.lang.String,%20org.apache.lucene.search.spans.Spans)">fromSpans</a></strong>(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName,
+         org.apache.lucene.search.spans.Spans&nbsp;source)</code>
+<div class="block">Construct a Hits object from a Spans.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#get(int)">get</a></strong>(int&nbsp;i)</code>
 <div class="block">Return the specified hit.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a></code></td>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getByOriginalOrder(int)">getByOriginalOrder</a></strong>(int&nbsp;i)</code>
 <div class="block">Return the specified hit number, based on the order they
  were originally found (not the sorted order).</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>&gt;</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getCapturedGroupMap(nl.inl.blacklab.search.Hit)">getCapturedGroupMap</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit)</code>
 <div class="block">Get the captured group information in map form.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getCapturedGroupNames()">getCapturedGroupNames</a></strong>()</code>
 <div class="block">Get the captured group name information.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>[]</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>[]</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getCapturedGroups(nl.inl.blacklab.search.Hit)">getCapturedGroups</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit)</code>
 <div class="block">Get the captured group information for this hit, if any.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getCollocations()">getCollocations</a></strong>()</code>
 <div class="block">Count occurrences of context words around hit.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a></code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getCollocations(java.lang.String,%20nl.inl.blacklab.search.QueryExecutionContext)">getCollocations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
                <a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;ctx)</code>
 <div class="block">Count occurrences of context words around hit.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getConcAttrFI()">getConcAttrFI</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().concAttrProps()</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -419,14 +399,14 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getConcordance(nl.inl.blacklab.search.Hit,%20int)">getConcordance</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
               int&nbsp;contextSize)</code>
 <div class="block">Get a concordance with a custom context size.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getConcordance(java.lang.String,%20nl.inl.blacklab.search.Hit,%20int)">getConcordance</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
               <a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
               int&nbsp;contextSize)</code>
@@ -436,19 +416,37 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getConcordanceFieldName()">getConcordanceFieldName</a></strong>()</code>
-<div class="block">Returns the field to use for retrieving concordances.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().concordanceField()</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search">ConcordanceType</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getConcordanceType()">getConcordanceType</a></strong>()</code>
-<div class="block">Are we making concordances using the forward index (true) or using
- the content store (false)? Forward index is more efficient but returns
- concordances that don't include XML tags.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().concordanceType()</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getConcPunctFI()">getConcPunctFI</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().concPunctProp()</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getConcWordFI()">getConcWordFI</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().concWordProp()</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getContextFieldPropName()">getContextFieldPropName</a></strong>()</code>
 <div class="block">Get the field our current concordances were retrieved from</div>
 </td>
@@ -456,24 +454,38 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getContextSize()">getContextSize</a></strong>()</code>
-<div class="block">Returns the context size.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().contextSize()</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getDefaultMaxHitsToCount()">getDefaultMaxHitsToCount</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getDefaultMaxHitsToCount()">getDefaultMaxHitsToCount</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use Searcher.getDefaultMaxHitsToCount()</i></div>
+</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getDefaultMaxHitsToRetrieve()">getDefaultMaxHitsToRetrieve</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getDefaultMaxHitsToRetrieve()">getDefaultMaxHitsToRetrieve</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use Searcher.getDefaultMaxHitsToRetrieve()</i></div>
+</div>
+</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>int[]</code></td>
+<td class="colFirst"><code>abstract int[]</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getHitContext(int)">getHitContext</a></strong>(int&nbsp;hitNumber)</code>
 <div class="block">Return the context(s) for the specified hit number</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene">HitQueryContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getHitQueryContext()">getHitQueryContext</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getHits()">getHits</a></strong>()</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
@@ -481,162 +493,196 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 </div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getHitsInDoc(int)">getHitsInDoc</a></strong>(int&nbsp;docid)</code>
 <div class="block">Convenience method to get all hits in a single doc from a larger hitset.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getIterator(boolean)">getIterator</a></strong>(boolean&nbsp;originalOrder)</code>
 <div class="block">Return an iterator over these hits that produces the
  hits in their original order.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getKwic(nl.inl.blacklab.search.Hit)">getKwic</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h)</code>
 <div class="block">Return the KWIC for the specified hit.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getKwic(nl.inl.blacklab.search.Hit,%20int)">getKwic</a></strong>(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
        int&nbsp;contextSize)</code>
 <div class="block">Get a KWIC with a custom context size.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getKwic(java.lang.String,%20nl.inl.blacklab.search.Hit,%20int)">getKwic</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
        <a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
        int&nbsp;contextSize)</code>
 <div class="block">Retrieve a single KWIC (KeyWord In Context).</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getMaxHitsToCount()">getMaxHitsToCount</a></strong>()</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getMaxHitsToRetrieve()">getMaxHitsToRetrieve</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getMaxHitsToCount()">getMaxHitsToCount</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().maxHitsToCount()</i></div>
+</div>
+</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getMaxHitsToRetrieve()">getMaxHitsToRetrieve</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().maxHitsToRetrieve()</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/util/ThreadPriority.Level.html" title="enum in nl.inl.util">ThreadPriority.Level</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getPriorityLevel()">getPriorityLevel</a></strong>()</code>
 <div class="block">Get the thread priority level for this Hits object.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#getSearcher()">getSearcher</a></strong>()</code>
 <div class="block">Returns the searcher object.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/grouping/HitGroups.html" title="class in nl.inl.blacklab.search.grouping">HitGroups</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#groupedBy(nl.inl.blacklab.search.grouping.HitProperty)">groupedBy</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;criteria)</code>
 <div class="block">Group these hits by a criterium (or several criteria).</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#hasCapturedGroups()">hasCapturedGroups</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#hitsInOriginalOrder()">hitsInOriginalOrder</a></strong>()</code>
 <div class="block">Iterate over the hits in the original (pre-sort) order.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#iterator()">iterator</a></strong>()</code>
 <div class="block">Return an iterator over these hits.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>abstract boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#maxHitsCounted()">maxHitsCounted</a></strong>()</code>
 <div class="block">Did we stop counting hits because we reached the maximum?</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#maxHitsRetrieved()">maxHitsRetrieved</a></strong>()</code>
 <div class="block">Did we stop retrieving hits because we reached the maximum?</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#numberOfDocs()">numberOfDocs</a></strong>()</code>
 <div class="block">Return the number of documents in the hits we've retrieved.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/perdocument/DocResults.html" title="class in nl.inl.blacklab.perdocument">DocResults</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#perDocResults()">perDocResults</a></strong>()</code>
 <div class="block">Return a per-document view of these hits.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setConcordanceField(java.lang.String)">setConcordanceField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldName)</code>
-<div class="block">Sets the field to use for retrieving concordances.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().setConcordanceField()</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setConcordanceType(nl.inl.blacklab.search.ConcordanceType)">setConcordanceType</a></strong>(<a href="../../../../nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search">ConcordanceType</a>&nbsp;type)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().setConcordanceType()</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setConcordanceType(nl.inl.blacklab.search.ConcordanceType)">setConcordanceType</a></strong>(<a href="../../../../nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search">ConcordanceType</a>&nbsp;type)</code>
-<div class="block">Do we want to retrieve concordances from the forward index or from the
- content store? Forward index is more efficient but doesn't exactly reproduces the
- original XML.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setContextField(java.util.List)">setContextField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;contextField)</code>
 <div class="block">Set the field properties to retrieve context from</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setContextSize(int)">setContextSize</a></strong>(int&nbsp;contextSize)</code>
-<div class="block">Sets the desired context size.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setDefaultMaxHitsToCount(int)">setDefaultMaxHitsToCount</a></strong>(int&nbsp;n)</code>
-<div class="block">Set the default maximum number of hits to count</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().setContextSize()</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setDefaultMaxHitsToRetrieve(int)">setDefaultMaxHitsToRetrieve</a></strong>(int&nbsp;n)</code>
-<div class="block">Set the default maximum number of hits to retrieve</div>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setDefaultMaxHitsToCount(int)">setDefaultMaxHitsToCount</a></strong>(int&nbsp;n)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use Searcher.setDefaultMaxHitsToCount()</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setDefaultMaxHitsToRetrieve(int)">setDefaultMaxHitsToRetrieve</a></strong>(int&nbsp;n)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use Searcher.setDefaultMaxHitsToRetrieve()</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setForwardIndexConcordanceParameters(java.lang.String,%20java.lang.String,%20java.util.Collection)">setForwardIndexConcordanceParameters</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wordFI,
                                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;punctFI,
                                     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attrFI)</code>
-<div class="block">Indicate how to use the forward indices to build concordances.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().setConcordanceProperties()</i></div>
+</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setHitQueryContext(nl.inl.blacklab.search.lucene.HitQueryContext)">setHitQueryContext</a></strong>(<a href="../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene">HitQueryContext</a>&nbsp;hitQueryContext)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setMaxHitsCounted(boolean)">setMaxHitsCounted</a></strong>(boolean&nbsp;maxHitsCounted)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setMaxHitsRetrieved(boolean)">setMaxHitsRetrieved</a></strong>(boolean&nbsp;maxHitsRetrieved)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setMaxHitsToCount(int)">setMaxHitsToCount</a></strong>(int&nbsp;n)</code>
-<div class="block">Set the maximum number of hits to count</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().maxHitsToCount()</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#setMaxHitsToRetrieve(int)">setMaxHitsToRetrieve</a></strong>(int&nbsp;n)</code>
-<div class="block">Set the maximum number of hits to retrieve</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use settings().maxHitsToRetrieve()</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -646,13 +692,17 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
+<td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/HitsSettings.html" title="class in nl.inl.blacklab.search">HitsSettings</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#settings()">settings</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#size()">size</a></strong>()</code>
 <div class="block">Return the number of hits available.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sizeAtLeast(int)">sizeAtLeast</a></strong>(int&nbsp;lowerBound)</code>
 <div class="block">Determines if there are at least a certain number of hits
 
@@ -661,58 +711,64 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
  of the result set (such as for paging).</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty...)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>...&nbsp;sortProp)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>use single HitProperty version, possibly with HitPropertyMultiple</i></div>
+<div class="block"><i>use sortedBy()</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use sortedBy()</i></div>
 </div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp)</code>
-<div class="block">Sort the list of hits.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty[],%20boolean)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>[]&nbsp;sortProp,
     boolean&nbsp;reverseSort)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>use single HitProperty version, possibly with HitPropertyMultiple</i></div>
+<div class="block"><i>use sortedBy()</i></div>
 </div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty,%20boolean)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
-    boolean&nbsp;reverseSort)</code>
-<div class="block">Sort the list of hits.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty,%20boolean,%20boolean)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
-    boolean&nbsp;reverseSort,
-    boolean&nbsp;sensitive)</code>
-<div class="block">Sort the list of hits.</div>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty,%20boolean)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
+    boolean&nbsp;reverseSort)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use sortedBy()</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sort(nl.inl.blacklab.search.grouping.HitProperty,%20boolean,%20boolean)">sort</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
+    boolean&nbsp;reverseSort,
+    boolean&nbsp;sensitive)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use sortedBy()</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sortedBy(nl.inl.blacklab.search.grouping.HitProperty)">sortedBy</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp)</code>
 <div class="block">Return a new Hits object with these hits sorted by the given property.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sortedBy(nl.inl.blacklab.search.grouping.HitProperty,%20boolean)">sortedBy</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
         boolean&nbsp;reverseSort)</code>
 <div class="block">Return a new Hits object with these hits sorted by the given property.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#sortedBy(nl.inl.blacklab.search.grouping.HitProperty,%20boolean,%20boolean)">sortedBy</a></strong>(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
         boolean&nbsp;reverseSort,
@@ -720,7 +776,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <div class="block">Return a new Hits object with these hits sorted by the given property.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#subList(int,%20int)">subList</a></strong>(int&nbsp;fromIndex,
        int&nbsp;toIndex)</code>
@@ -729,7 +785,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 </div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#tooManyHits()">tooManyHits</a></strong>()</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
@@ -737,19 +793,19 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 </div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="altColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#totalNumberOfDocs()">totalNumberOfDocs</a></strong>()</code>
 <div class="block">Return the total number of documents in all hits.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>int</code></td>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract int</code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#totalSize()">totalSize</a></strong>()</code>
 <div class="block">Return the total number of hits.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search">HitsWindow</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../nl/inl/blacklab/search/Hits.html#window(int,%20int)">window</a></strong>(int&nbsp;first,
       int&nbsp;windowSize)</code>
@@ -799,35 +855,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="logger">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>logger</h4>
-<pre>protected static final&nbsp;org.apache.log4j.Logger logger</pre>
-</li>
-</ul>
-<a name="hits">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>hits</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt; hits</pre>
-<div class="block">The hits.</div>
-</li>
-</ul>
-<a name="capturedGroups">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>capturedGroups</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>,<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>[]&gt; capturedGroups</pre>
-<div class="block">The captured groups, if we have any.</div>
-</li>
-</ul>
 <a name="CONTEXTS_NUMBER_OF_BOOKKEEPING_INTS">
 <!--   -->
 </a>
@@ -872,16 +899,50 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#nl.inl.blacklab.search.Hits.CONTEXTS_LENGTH_INDEX">Constant Field Values</a></dd></dl>
 </li>
 </ul>
-<a name="kwics">
+<a name="defaultMaxHitsToRetrieve">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>kwics</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>,<a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a>&gt; kwics</pre>
-<div class="block">The KWIC data, if it has been retrieved.
-
- NOTE: this will always be null if not all the hits have been retrieved.</div>
+<h4>defaultMaxHitsToRetrieve</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+protected static&nbsp;int defaultMaxHitsToRetrieve</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>moved to HitsSettings</i></div>
+<div class="block">Stop retrieving hits after this number.</div>
+</li>
+</ul>
+<a name="defaultMaxHitsToRetrieveChanged">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>defaultMaxHitsToRetrieveChanged</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+protected static&nbsp;boolean defaultMaxHitsToRetrieveChanged</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="defaultMaxHitsToCount">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>defaultMaxHitsToCount</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+protected static&nbsp;int defaultMaxHitsToCount</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>moved to HitsSettings</i></div>
+<div class="block">Stop counting hits after this number.</div>
+</li>
+</ul>
+<a name="defaultMaxHitsToCountChanged">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>defaultMaxHitsToCountChanged</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+protected static&nbsp;boolean defaultMaxHitsToCountChanged</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="searcher">
@@ -891,88 +952,37 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <li class="blockList">
 <h4>searcher</h4>
 <pre>protected&nbsp;<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a> searcher</pre>
-<div class="block">The searcher object.</div>
 </li>
 </ul>
-<a name="contextFieldsPropName">
+<a name="settings">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>contextFieldsPropName</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; contextFieldsPropName</pre>
-<div class="block">If we have context information, this specifies the property (i.e. word, lemma, pos) the context came from.
- Otherwise, it is null.</div>
+<h4>settings</h4>
+<pre>protected&nbsp;<a href="../../../../nl/inl/blacklab/search/HitsSettings.html" title="class in nl.inl.blacklab.search">HitsSettings</a> settings</pre>
+<div class="block">Settings for retrieving hits, sorting/grouping on context and making concordances.</div>
 </li>
 </ul>
-<a name="concordanceFieldName">
+<a name="hitQueryContext">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>concordanceFieldName</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> concordanceFieldName</pre>
-<div class="block">The default field to use for retrieving concordance information.</div>
+<h4>hitQueryContext</h4>
+<pre>protected&nbsp;<a href="../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene">HitQueryContext</a> hitQueryContext</pre>
+<div class="block">Context of our query; mostly used to keep track of captured groups.</div>
 </li>
 </ul>
-<a name="spanQuery">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>spanQuery</h4>
-<pre>protected&nbsp;org.apache.lucene.search.spans.SpanQuery spanQuery</pre>
-<div class="block">Our SpanQuery, for getting the next Spans when the current one's done.</div>
-</li>
-</ul>
-<a name="atomicReaderContexts">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>atomicReaderContexts</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.lucene.index.LeafReaderContext&gt; atomicReaderContexts</pre>
-<div class="block">The LeafReaderContexts we should query in succession.</div>
-</li>
-</ul>
-<a name="atomicReaderContextIndex">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>atomicReaderContextIndex</h4>
-<pre>protected&nbsp;int atomicReaderContextIndex</pre>
-<div class="block">What LeafReaderContext we're querying now.</div>
-</li>
-</ul>
-<a name="currentDocBase">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>currentDocBase</h4>
-<pre>protected&nbsp;int currentDocBase</pre>
-<div class="block">docBase of the segment we're currently in</div>
-</li>
-</ul>
-<a name="currentSourceSpans">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>currentSourceSpans</h4>
-<pre>protected&nbsp;<a href="../../../../nl/inl/blacklab/search/lucene/BLSpans.html" title="class in nl.inl.blacklab.search.lucene">BLSpans</a> currentSourceSpans</pre>
-<div class="block">Our Spans object, which may not have been fully read yet.</div>
-</li>
-</ul>
-<a name="sourceSpansFullyRead">
+<a name="etiquette">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>sourceSpansFullyRead</h4>
-<pre>protected&nbsp;boolean sourceSpansFullyRead</pre>
-<div class="block">Did we completely read our Spans object?</div>
+<h4>etiquette</h4>
+<pre>protected&nbsp;<a href="../../../../nl/inl/util/ThreadPriority.html" title="class in nl.inl.util">ThreadPriority</a> etiquette</pre>
+<div class="block">Helper object for implementing query thread priority (making sure queries don't hog the CPU
+  for way too long).</div>
 </li>
 </ul>
 </li>
@@ -983,20 +993,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="Hits(nl.inl.blacklab.search.Hits)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Hits</h4>
-<pre>public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</pre>
-<div class="block">Construct a Hits object from an existing Hits object.
-
- The same hits list is reused. Context and sort order are
- not copied. All other fields are.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>copyFrom</code> - the Hits object to copy</dd></dl>
-</li>
-</ul>
 <a name="Hits(nl.inl.blacklab.search.Searcher)">
 <!--   -->
 </a>
@@ -1004,98 +1000,19 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList
 <li class="blockList">
 <h4>Hits</h4>
 <pre>public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher)</pre>
-<div class="block">Construct an empty Hits object</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd></dl>
-</li>
-</ul>
-<a name="Hits(nl.inl.blacklab.search.Searcher, java.util.List)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Hits</h4>
-<pre>public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;&nbsp;hits)</pre>
-<div class="block">Make a wrapper Hits object for a list of Hit objects.
-
- Does not copy the list, but reuses it.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>hits</code> - the list of hits to wrap</dd></dl>
-</li>
-</ul>
-<a name="Hits(nl.inl.blacklab.search.Searcher, java.lang.String, java.util.List)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Hits</h4>
-<pre>public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldName,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;&nbsp;hits)</pre>
-<div class="block">Make a wrapper Hits object for a list of Hit objects.
-
- Does not copy the list, but reuses it.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>concordanceFieldName</code> - field to use by default when finding concordances</dd><dd><code>hits</code> - the list of hits to wrap</dd></dl>
 </li>
 </ul>
 <a name="Hits(nl.inl.blacklab.search.Searcher, java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Hits</h4>
-<pre>public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName)</pre>
-<div class="block">Construct an empty Hits object</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>concordanceFieldPropName</code> - field to use by default when finding concordances</dd></dl>
-</li>
-</ul>
-<a name="Hits(nl.inl.blacklab.search.Searcher, java.lang.String, org.apache.lucene.search.spans.Spans)">
-<!--   -->
-</a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>Hits</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName,
-               org.apache.lucene.search.spans.Spans&nbsp;source)</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>supply a SpanQuery to a Hits object instead</i></div>
-<div class="block">Construct an empty Hits object.
-
- If possible, don't use this constructor, use the one that takes
- a SpanQuery, as it's more efficient.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>concordanceFieldPropName</code> - field to use by default when finding concordances</dd><dd><code>source</code> - where to retrieve the Hit objects from</dd></dl>
-</li>
-</ul>
-<a name="Hits(nl.inl.blacklab.search.Searcher, java.lang.String, org.apache.lucene.search.spans.SpanQuery)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Hits</h4>
-<pre>public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName,
-    org.apache.lucene.search.spans.SpanQuery&nbsp;sourceQuery)
-     throws org.apache.lucene.search.BooleanQuery.TooManyClauses</pre>
-<div class="block">Construct an empty Hits object</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>concordanceFieldPropName</code> - field to use by default when finding concordances</dd><dd><code>sourceQuery</code> - the query to execute to get the hits</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code>org.apache.lucene.search.BooleanQuery.TooManyClauses</code> - if the query is overly broad (expands to too many terms)</dd></dl>
-</li>
-</ul>
-<a name="Hits(nl.inl.blacklab.search.Searcher, org.apache.lucene.search.spans.SpanQuery)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>Hits</h4>
-<pre>public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
-    org.apache.lucene.search.spans.SpanQuery&nbsp;sourceQuery)
-     throws org.apache.lucene.search.BooleanQuery.TooManyClauses</pre>
-<div class="block">Construct an empty Hits object</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>sourceQuery</code> - the query to execute to get the hits</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code>org.apache.lucene.search.BooleanQuery.TooManyClauses</code> - if the query is overly broad (expands to too many terms)</dd></dl>
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldName)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>if you need a different concordance field, change it using settings().setConcordanceField().</i></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - searcher object</dd><dd><code>concordanceFieldName</code> - concordance field to use</dd></dl>
 </li>
 </ul>
 </li>
@@ -1106,6 +1023,113 @@ public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" titl
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="getDefaultMaxHitsToRetrieve()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultMaxHitsToRetrieve</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public static&nbsp;int&nbsp;getDefaultMaxHitsToRetrieve()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use Searcher.getDefaultMaxHitsToRetrieve()</i></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the default maximum number of hits to retrieve.</dd></dl>
+</li>
+</ul>
+<a name="setDefaultMaxHitsToRetrieve(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultMaxHitsToRetrieve</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public static&nbsp;void&nbsp;setDefaultMaxHitsToRetrieve(int&nbsp;n)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use Searcher.setDefaultMaxHitsToRetrieve()</i></div>
+<div class="block">Set the default maximum number of hits to retrieve</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - the number of hits, or HitsSettings.UNLIMITED for no limit</dd></dl>
+</li>
+</ul>
+<a name="getDefaultMaxHitsToCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultMaxHitsToCount</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public static&nbsp;int&nbsp;getDefaultMaxHitsToCount()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use Searcher.getDefaultMaxHitsToCount()</i></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the default maximum number of hits to count.</dd></dl>
+</li>
+</ul>
+<a name="setDefaultMaxHitsToCount(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultMaxHitsToCount</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public static&nbsp;void&nbsp;setDefaultMaxHitsToCount(int&nbsp;n)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use Searcher.setDefaultMaxHitsToCount()</i></div>
+<div class="block">Set the default maximum number of hits to count</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - the number of hits, or HitsSettings.UNLIMITED for no limit</dd></dl>
+</li>
+</ul>
+<a name="emptyList(nl.inl.blacklab.search.Searcher)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>emptyList</h4>
+<pre>public static&nbsp;<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;emptyList(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher)</pre>
+<div class="block">Construct an empty Hits object.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd>
+<dt><span class="strong">Returns:</span></dt><dd>hits found</dd></dl>
+</li>
+</ul>
+<a name="fromList(nl.inl.blacklab.search.Searcher, java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fromList</h4>
+<pre>public static&nbsp;<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;fromList(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&gt;&nbsp;docHits)</pre>
+<div class="block">Make a wrapper Hits object for a list of Hit objects.
+
+ Does not copy the list, but reuses it.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>docHits</code> - the list of hits to wrap</dd>
+<dt><span class="strong">Returns:</span></dt><dd>hits found</dd></dl>
+</li>
+</ul>
+<a name="fromSpanQuery(nl.inl.blacklab.search.Searcher, org.apache.lucene.search.spans.SpanQuery)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fromSpanQuery</h4>
+<pre>public static&nbsp;<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;fromSpanQuery(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+                 org.apache.lucene.search.spans.SpanQuery&nbsp;query)</pre>
+<div class="block">Construct a Hits object from a SpanQuery.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>query</code> - the query to execute to get the hits</dd>
+<dt><span class="strong">Returns:</span></dt><dd>hits found</dd></dl>
+</li>
+</ul>
+<a name="fromSpans(nl.inl.blacklab.search.Searcher, java.lang.String, org.apache.lucene.search.spans.Spans)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fromSpans</h4>
+<pre>public static&nbsp;<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;fromSpans(<a href="../../../../nl/inl/blacklab/search/Searcher.html" title="class in nl.inl.blacklab.search">Searcher</a>&nbsp;searcher,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldPropName,
+             org.apache.lucene.search.spans.Spans&nbsp;source)</pre>
+<div class="block">Construct a Hits object from a Spans.
+
+ Used for testing. Don't use this in applications, but construct a Hits object from a
+ SpanQuery, as it's more efficient.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>searcher</code> - the searcher object</dd><dd><code>concordanceFieldPropName</code> - field to use by default when finding concordances</dd><dd><code>source</code> - where to retrieve the Hit objects from</dd>
+<dt><span class="strong">Returns:</span></dt><dd>hits found</dd></dl>
+</li>
+</ul>
 <a name="setPriorityLevel(nl.inl.util.ThreadPriority.Level)">
 <!--   -->
 </a>
@@ -1116,7 +1140,10 @@ public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" titl
 <div class="block">Set the thread priority level for this Hits object.
 
  Allows us to set a query to low-priority, or to (almost) pause it.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>level</code> - the desired priority level</dd></dl>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Prioritizable.html#setPriorityLevel(nl.inl.util.ThreadPriority.Level)">setPriorityLevel</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>level</code> - the desired priority level</dd></dl>
 </li>
 </ul>
 <a name="getPriorityLevel()">
@@ -1129,7 +1156,23 @@ public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" titl
 <div class="block">Get the thread priority level for this Hits object.
 
  Can be normal, low-priority, or (almost) paused.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the current priority level</dd></dl>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../nl/inl/blacklab/search/Prioritizable.html#getPriorityLevel()">getPriorityLevel</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../nl/inl/blacklab/search/Prioritizable.html" title="interface in nl.inl.blacklab.search">Prioritizable</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the current priority level</dd></dl>
+</li>
+</ul>
+<a name="copy()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copy</h4>
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copy()</pre>
+<div class="block">Return a copy of this Hits object.
+
+ NOTE: Why not use clone()/Cloneable? See http://www.artima.com/intv/bloch13.html</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>a copy of this Hits object</dd></dl>
 </li>
 </ul>
 <a name="copySettingsFrom(nl.inl.blacklab.search.Hits)">
@@ -1139,6 +1182,54 @@ public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" titl
 <li class="blockList">
 <h4>copySettingsFrom</h4>
 <pre>public&nbsp;void&nbsp;copySettingsFrom(<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;copyFrom)</pre>
+<div class="block">Copy the settings from another Hits object.
+
+ NOTE: this should be phased out, and copy() or adapters should be used.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>copyFrom</code> - where to copy settings from</dd></dl>
+</li>
+</ul>
+<a name="setMaxHitsCounted(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxHitsCounted</h4>
+<pre>public abstract&nbsp;void&nbsp;setMaxHitsCounted(boolean&nbsp;maxHitsCounted)</pre>
+</li>
+</ul>
+<a name="setMaxHitsRetrieved(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxHitsRetrieved</h4>
+<pre>protected abstract&nbsp;void&nbsp;setMaxHitsRetrieved(boolean&nbsp;maxHitsRetrieved)</pre>
+</li>
+</ul>
+<a name="getConcordanceFieldName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConcordanceFieldName</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getConcordanceFieldName()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().concordanceField()</i></div>
+<div class="block">Returns the field to use for retrieving concordances.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the field name</dd></dl>
+</li>
+</ul>
+<a name="setConcordanceField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConcordanceField</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;setConcordanceField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldName)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().setConcordanceField()</i></div>
+<div class="block">Sets the field to use for retrieving concordances.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>concordanceFieldName</code> - the field name</dd></dl>
 </li>
 </ul>
 <a name="getContextSize()">
@@ -1147,7 +1238,9 @@ public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>getContextSize</h4>
-<pre>public&nbsp;int&nbsp;getContextSize()</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;int&nbsp;getContextSize()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().contextSize()</i></div>
 <div class="block">Returns the context size.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>context size (number of words to fetch around hits)</dd></dl>
 </li>
@@ -1158,7 +1251,9 @@ public&nbsp;Hits(<a href="../../../../nl/inl/blacklab/search/Searcher.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>setContextSize</h4>
-<pre>public&nbsp;void&nbsp;setContextSize(int&nbsp;contextSize)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;setContextSize(int&nbsp;contextSize)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().setContextSize()</i></div>
 <div class="block">Sets the desired context size.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>contextSize</code> - the context size (number of words to fetch around hits)</dd></dl>
 </li>
@@ -1182,7 +1277,7 @@ public&nbsp;boolean&nbsp;tooManyHits()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>maxHitsRetrieved</h4>
-<pre>public&nbsp;boolean&nbsp;maxHitsRetrieved()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;maxHitsRetrieved()</pre>
 <div class="block">Did we stop retrieving hits because we reached the maximum?</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>true if we reached the maximum and stopped retrieving hits</dd></dl>
 </li>
@@ -1193,7 +1288,7 @@ public&nbsp;boolean&nbsp;tooManyHits()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>maxHitsCounted</h4>
-<pre>public&nbsp;boolean&nbsp;maxHitsCounted()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;maxHitsCounted()</pre>
 <div class="block">Did we stop counting hits because we reached the maximum?</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>true if we reached the maximum and stopped counting hits</dd></dl>
 </li>
@@ -1220,7 +1315,7 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>[]&nbsp;sortProp,
                    boolean&nbsp;reverseSort)</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use single HitProperty version, possibly with HitPropertyMultiple</i></div>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use sortedBy()</i></div>
 <div class="block">Sort the list of hits.
 
  Note that if the thread is interrupted during this, sort may return
@@ -1238,7 +1333,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <h4>sort</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>...&nbsp;sortProp)</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use single HitProperty version, possibly with HitPropertyMultiple</i></div>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use sortedBy()</i></div>
 <div class="block">Sort the list of hits.
 
  Note that if the thread is interrupted during this, sort may return
@@ -1254,7 +1349,9 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>sort</h4>
-<pre>public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use sortedBy()</i></div>
 <div class="block">Sort the list of hits.
 
  Note that if the thread is interrupted during this, sort may return
@@ -1270,8 +1367,10 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>sort</h4>
-<pre>public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
-        boolean&nbsp;reverseSort)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
+                   boolean&nbsp;reverseSort)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use sortedBy()</i></div>
 <div class="block">Sort the list of hits.
 
  Note that if the thread is interrupted during this, sort may return
@@ -1290,9 +1389,11 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>sort</h4>
-<pre>public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
-        boolean&nbsp;reverseSort,
-        boolean&nbsp;sensitive)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public abstract&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/HitProperty.html" title="class in nl.inl.blacklab.search.grouping">HitProperty</a>&nbsp;sortProp,
+                   boolean&nbsp;reverseSort,
+                   boolean&nbsp;sensitive)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use sortedBy()</i></div>
 <div class="block">Sort the list of hits.
 
  Note that if the thread is interrupted during this, sort may return
@@ -1382,7 +1483,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>sizeAtLeast</h4>
-<pre>public&nbsp;boolean&nbsp;sizeAtLeast(int&nbsp;lowerBound)</pre>
+<pre>public abstract&nbsp;boolean&nbsp;sizeAtLeast(int&nbsp;lowerBound)</pre>
 <div class="block">Determines if there are at least a certain number of hits
 
  This may be used if we don't want to process all hits (which
@@ -1401,7 +1502,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;size()</pre>
+<pre>public abstract&nbsp;int&nbsp;size()</pre>
 <div class="block">Return the number of hits available.
 
  Note that this method applies to the hits retrieved, which may
@@ -1424,7 +1525,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>totalSize</h4>
-<pre>public&nbsp;int&nbsp;totalSize()</pre>
+<pre>public abstract&nbsp;int&nbsp;totalSize()</pre>
 <div class="block">Return the total number of hits.
 
  NOTE: Depending on maxHitsToRetrieve, hit retrieval may stop
@@ -1441,7 +1542,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>numberOfDocs</h4>
-<pre>public&nbsp;int&nbsp;numberOfDocs()</pre>
+<pre>public abstract&nbsp;int&nbsp;numberOfDocs()</pre>
 <div class="block">Return the number of documents in the hits we've retrieved.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the number of documents.</dd></dl>
 </li>
@@ -1452,7 +1553,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>totalNumberOfDocs</h4>
-<pre>public&nbsp;int&nbsp;totalNumberOfDocs()</pre>
+<pre>public abstract&nbsp;int&nbsp;totalNumberOfDocs()</pre>
 <div class="block">Return the total number of documents in all hits.
  This counts documents even in hits that are not stored, only counted.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the total number of documents.</dd></dl>
@@ -1464,7 +1565,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>countSoFarHitsCounted</h4>
-<pre>public&nbsp;int&nbsp;countSoFarHitsCounted()</pre>
+<pre>public abstract&nbsp;int&nbsp;countSoFarHitsCounted()</pre>
 <div class="block">Return the number of hits counted so far.
 
  If you're retrieving hit in a background thread, call this
@@ -1478,7 +1579,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>countSoFarHitsRetrieved</h4>
-<pre>public&nbsp;int&nbsp;countSoFarHitsRetrieved()</pre>
+<pre>public abstract&nbsp;int&nbsp;countSoFarHitsRetrieved()</pre>
 <div class="block">Return the number of hits retrieved so far.
 
  If you're retrieving hits in a background thread, call this
@@ -1492,7 +1593,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>countSoFarDocsCounted</h4>
-<pre>public&nbsp;int&nbsp;countSoFarDocsCounted()</pre>
+<pre>public abstract&nbsp;int&nbsp;countSoFarDocsCounted()</pre>
 <div class="block">Return the number of documents counted so far.
 
  If you're retrieving hit in a background thread, call this
@@ -1506,7 +1607,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>countSoFarDocsRetrieved</h4>
-<pre>public&nbsp;int&nbsp;countSoFarDocsRetrieved()</pre>
+<pre>public abstract&nbsp;int&nbsp;countSoFarDocsRetrieved()</pre>
 <div class="block">Return the number of documents retrieved so far.
 
  If you're retrieving hits in a background thread, call this
@@ -1520,7 +1621,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>doneFetchingHits</h4>
-<pre>public&nbsp;boolean&nbsp;doneFetchingHits()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;doneFetchingHits()</pre>
 <div class="block">Check if we're done retrieving/counting hits.
 
  If you're retrieving hits in a background thread, call this
@@ -1582,7 +1683,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getByOriginalOrder</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;getByOriginalOrder(int&nbsp;i)</pre>
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;getByOriginalOrder(int&nbsp;i)</pre>
 <div class="block">Return the specified hit number, based on the order they
  were originally found (not the sorted order).</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - index of the desired hit</dd>
@@ -1595,7 +1696,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;get(int&nbsp;i)</pre>
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;get(int&nbsp;i)</pre>
 <div class="block">Return the specified hit.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
@@ -1646,7 +1747,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getConcordance</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a>&nbsp;getConcordance(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a>&nbsp;getConcordance(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
                          <a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
                          int&nbsp;contextSize)</pre>
 <div class="block">Retrieve a single concordance. Only use if you need a larger snippet around a single
@@ -1663,7 +1764,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getKwic</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a>&nbsp;getKwic(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a>&nbsp;getKwic(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
            <a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit,
            int&nbsp;contextSize)</pre>
 <div class="block">Retrieve a single KWIC (KeyWord In Context). Only use if you need a larger
@@ -1681,7 +1782,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getConcordance</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a>&nbsp;getConcordance(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Concordance.html" title="class in nl.inl.blacklab.search">Concordance</a>&nbsp;getConcordance(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
                          int&nbsp;contextSize)</pre>
 <div class="block">Get a concordance with a custom context size.
 
@@ -1703,7 +1804,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getKwic</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a>&nbsp;getKwic(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Kwic.html" title="class in nl.inl.blacklab.search">Kwic</a>&nbsp;getKwic(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;h,
            int&nbsp;contextSize)</pre>
 <div class="block">Get a KWIC with a custom context size.
 
@@ -1725,7 +1826,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>findContext</h4>
-<pre>public&nbsp;void&nbsp;findContext(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;fieldProps)</pre>
+<pre>public abstract&nbsp;void&nbsp;findContext(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;fieldProps)</pre>
 <div class="block">Retrieve context words for the hits.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>fieldProps</code> - the field and properties to use for the context</dd></dl>
 </li>
@@ -1736,7 +1837,9 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>clearConcordances</h4>
-<pre>public&nbsp;void&nbsp;clearConcordances()</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public abstract&nbsp;void&nbsp;clearConcordances()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>client should not need this, should be triggered by settings changes</i></div>
 <div class="block">Clear any cached concordances so new ones will be created on next call to getConcordance().</div>
 </li>
 </ul>
@@ -1760,7 +1863,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getCollocations</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a>&nbsp;getCollocations(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/TermFrequencyList.html" title="class in nl.inl.blacklab.search">TermFrequencyList</a>&nbsp;getCollocations(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propName,
                                 <a href="../../../../nl/inl/blacklab/search/QueryExecutionContext.html" title="class in nl.inl.blacklab.search">QueryExecutionContext</a>&nbsp;ctx)</pre>
 <div class="block">Count occurrences of context words around hit.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>propName</code> - the property to use for the collocations, or null if default</dd><dd><code>ctx</code> - query execution context, containing the sensitivity settings</dd>
@@ -1773,7 +1876,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>hasCapturedGroups</h4>
-<pre>public&nbsp;boolean&nbsp;hasCapturedGroups()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;hasCapturedGroups()</pre>
 </li>
 </ul>
 <a name="getCapturedGroups(nl.inl.blacklab.search.Hit)">
@@ -1782,7 +1885,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getCapturedGroups</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>[]&nbsp;getCapturedGroups(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit)</pre>
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>[]&nbsp;getCapturedGroups(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit)</pre>
 <div class="block">Get the captured group information for this hit, if any.
 
  The names of the captured groups can be obtained through
@@ -1808,7 +1911,7 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <ul class="blockList">
 <li class="blockList">
 <h4>getCapturedGroupMap</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>&gt;&nbsp;getCapturedGroupMap(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit)</pre>
+<pre>public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../nl/inl/blacklab/search/Span.html" title="class in nl.inl.blacklab.search">Span</a>&gt;&nbsp;getCapturedGroupMap(<a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search">Hit</a>&nbsp;hit)</pre>
 <div class="block">Get the captured group information in map form.
 
  Relatively slow; use getCapturedGroups() and getCapturedGroupNames()
@@ -1828,35 +1931,13 @@ public&nbsp;void&nbsp;sort(<a href="../../../../nl/inl/blacklab/search/grouping/
 <dl><dt><span class="strong">Returns:</span></dt><dd>the searcher object.</dd></dl>
 </li>
 </ul>
-<a name="getConcordanceFieldName()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getConcordanceFieldName</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getConcordanceFieldName()</pre>
-<div class="block">Returns the field to use for retrieving concordances.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the field name</dd></dl>
-</li>
-</ul>
-<a name="setConcordanceField(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setConcordanceField</h4>
-<pre>public&nbsp;void&nbsp;setConcordanceField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;concordanceFieldName)</pre>
-<div class="block">Sets the field to use for retrieving concordances.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>concordanceFieldName</code> - the field name</dd></dl>
-</li>
-</ul>
 <a name="getContextFieldPropName()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getContextFieldPropName</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getContextFieldPropName()</pre>
+<pre>public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getContextFieldPropName()</pre>
 <div class="block">Get the field our current concordances were retrieved from</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the field name</dd></dl>
 </li>
@@ -1911,51 +1992,9 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>setContextField</h4>
-<pre>public&nbsp;void&nbsp;setContextField(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;contextField)</pre>
+<pre>public abstract&nbsp;void&nbsp;setContextField(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;contextField)</pre>
 <div class="block">Set the field properties to retrieve context from</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>contextField</code> - the field properties</dd></dl>
-</li>
-</ul>
-<a name="getDefaultMaxHitsToRetrieve()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getDefaultMaxHitsToRetrieve</h4>
-<pre>public static&nbsp;int&nbsp;getDefaultMaxHitsToRetrieve()</pre>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the default maximum number of hits to retrieve.</dd></dl>
-</li>
-</ul>
-<a name="setDefaultMaxHitsToRetrieve(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setDefaultMaxHitsToRetrieve</h4>
-<pre>public static&nbsp;void&nbsp;setDefaultMaxHitsToRetrieve(int&nbsp;n)</pre>
-<div class="block">Set the default maximum number of hits to retrieve</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - the number of hits, or -1 for no limit</dd></dl>
-</li>
-</ul>
-<a name="getDefaultMaxHitsToCount()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getDefaultMaxHitsToCount</h4>
-<pre>public static&nbsp;int&nbsp;getDefaultMaxHitsToCount()</pre>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the default maximum number of hits to count.</dd></dl>
-</li>
-</ul>
-<a name="setDefaultMaxHitsToCount(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setDefaultMaxHitsToCount</h4>
-<pre>public static&nbsp;void&nbsp;setDefaultMaxHitsToCount(int&nbsp;n)</pre>
-<div class="block">Set the default maximum number of hits to count</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - the number of hits, or -1 for no limit</dd></dl>
 </li>
 </ul>
 <a name="getMaxHitsToRetrieve()">
@@ -1964,7 +2003,9 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getMaxHitsToRetrieve</h4>
-<pre>public&nbsp;int&nbsp;getMaxHitsToRetrieve()</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;int&nbsp;getMaxHitsToRetrieve()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().maxHitsToRetrieve()</i></div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the maximum number of hits to retrieve.</dd></dl>
 </li>
 </ul>
@@ -1974,7 +2015,9 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>setMaxHitsToRetrieve</h4>
-<pre>public&nbsp;void&nbsp;setMaxHitsToRetrieve(int&nbsp;n)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;setMaxHitsToRetrieve(int&nbsp;n)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().maxHitsToRetrieve()</i></div>
 <div class="block">Set the maximum number of hits to retrieve</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - the number of hits, or -1 for no limit</dd></dl>
 </li>
@@ -1985,7 +2028,9 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getMaxHitsToCount</h4>
-<pre>public&nbsp;int&nbsp;getMaxHitsToCount()</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;int&nbsp;getMaxHitsToCount()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().maxHitsToCount()</i></div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the maximum number of hits to count.</dd></dl>
 </li>
 </ul>
@@ -1995,9 +2040,20 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>setMaxHitsToCount</h4>
-<pre>public&nbsp;void&nbsp;setMaxHitsToCount(int&nbsp;n)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;setMaxHitsToCount(int&nbsp;n)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().maxHitsToCount()</i></div>
 <div class="block">Set the maximum number of hits to count</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - the number of hits, or -1 for no limit</dd></dl>
+</li>
+</ul>
+<a name="settings()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>settings</h4>
+<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/HitsSettings.html" title="class in nl.inl.blacklab.search">HitsSettings</a>&nbsp;settings()</pre>
 </li>
 </ul>
 <a name="getHitsInDoc(int)">
@@ -2006,7 +2062,7 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getHitsInDoc</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;getHitsInDoc(int&nbsp;docid)</pre>
+<pre>public abstract&nbsp;<a href="../../../../nl/inl/blacklab/search/Hits.html" title="class in nl.inl.blacklab.search">Hits</a>&nbsp;getHitsInDoc(int&nbsp;docid)</pre>
 <div class="block">Convenience method to get all hits in a single doc from a larger hitset.
 
  Don't use this for grouping or per-document results as it's relatively inefficient.</div>
@@ -2020,7 +2076,7 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getHitContext</h4>
-<pre>public&nbsp;int[]&nbsp;getHitContext(int&nbsp;hitNumber)</pre>
+<pre>public abstract&nbsp;int[]&nbsp;getHitContext(int&nbsp;hitNumber)</pre>
 <div class="block">Return the context(s) for the specified hit number</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>hitNumber</code> - which hit we want the context(s) for</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the context(s)</dd></dl>
@@ -2032,9 +2088,11 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>setForwardIndexConcordanceParameters</h4>
-<pre>public&nbsp;void&nbsp;setForwardIndexConcordanceParameters(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wordFI,
-                                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;punctFI,
-                                        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attrFI)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;setForwardIndexConcordanceParameters(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wordFI,
+                                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;punctFI,
+                                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attrFI)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().setConcordanceProperties()</i></div>
 <div class="block">Indicate how to use the forward indices to build concordances.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>wordFI</code> - FI to use as the text content of the &lt;w/&gt; tags (default "word"; null for no text content)</dd><dd><code>punctFI</code> - FI to use as the text content between &lt;w/&gt; tags (default "punct"; null for just a space)</dd><dd><code>attrFI</code> - FIs to use as the attributes of the &lt;w/&gt; tags (null for all other FIs)</dd></dl>
 </li>
@@ -2045,7 +2103,9 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getConcordanceType</h4>
-<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search">ConcordanceType</a>&nbsp;getConcordanceType()</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="../../../../nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search">ConcordanceType</a>&nbsp;getConcordanceType()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().concordanceType()</i></div>
 <div class="block">Are we making concordances using the forward index (true) or using
  the content store (false)? Forward index is more efficient but returns
  concordances that don't include XML tags.</div>
@@ -2055,16 +2115,72 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <a name="setConcordanceType(nl.inl.blacklab.search.ConcordanceType)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setConcordanceType</h4>
-<pre>public&nbsp;void&nbsp;setConcordanceType(<a href="../../../../nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search">ConcordanceType</a>&nbsp;type)</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;setConcordanceType(<a href="../../../../nl/inl/blacklab/search/ConcordanceType.html" title="enum in nl.inl.blacklab.search">ConcordanceType</a>&nbsp;type)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().setConcordanceType()</i></div>
 <div class="block">Do we want to retrieve concordances from the forward index or from the
  content store? Forward index is more efficient but doesn't exactly reproduces the
  original XML.
 
  The default type can be set by calling Searcher.setDefaultConcordanceType().</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>type</code> - the type of concordances to make</dd></dl>
+</li>
+</ul>
+<a name="getConcWordFI()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConcWordFI</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getConcWordFI()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().concWordProp()</i></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the property to use as words in concordances</dd></dl>
+</li>
+</ul>
+<a name="getConcPunctFI()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConcPunctFI</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getConcPunctFI()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().concPunctProp()</i></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the property to use as punctuation in concordances</dd></dl>
+</li>
+</ul>
+<a name="getConcAttrFI()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConcAttrFI</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getConcAttrFI()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>use settings().concAttrProps()</i></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the property to use as extra attributes in concordances</dd></dl>
+</li>
+</ul>
+<a name="getHitQueryContext()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHitQueryContext</h4>
+<pre>public&nbsp;<a href="../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene">HitQueryContext</a>&nbsp;getHitQueryContext()</pre>
+</li>
+</ul>
+<a name="setHitQueryContext(nl.inl.blacklab.search.lucene.HitQueryContext)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setHitQueryContext</h4>
+<pre>protected&nbsp;void&nbsp;setHitQueryContext(<a href="../../../../nl/inl/blacklab/search/lucene/HitQueryContext.html" title="class in nl.inl.blacklab.search.lucene">HitQueryContext</a>&nbsp;hitQueryContext)</pre>
 </li>
 </ul>
 </li>
@@ -2094,7 +2210,7 @@ public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.htm
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../nl/inl/blacklab/search/Hit.html" title="class in nl.inl.blacklab.search"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../nl/inl/blacklab/search/HitsWindow.html" title="class in nl.inl.blacklab.search"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../nl/inl/blacklab/search/HitsImpl.html" title="class in nl.inl.blacklab.search"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?nl/inl/blacklab/search/Hits.html" target="_top">Frames</a></li>

@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>FileUtil (BlackLab 1.3.3 API)</title>
+<title>FileUtil (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="FileUtil (BlackLab 1.3.3 API)";
+        parent.document.title="FileUtil (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -177,58 +177,33 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#detectBomEncoding(java.io.BufferedInputStream,%20java.lang.String)">detectBomEncoding</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/BufferedInputStream.html?is-external=true" title="class or interface in java.io">BufferedInputStream</a>&nbsp;inputStream,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultEncoding)</code>
-<div class="block">Detect the Unicode encoding of an input stream by looking for a BOM at the current position.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#findOnClasspath(java.lang.String)">findOnClasspath</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fn)</code>
-<div class="block">Find a file on the classpath.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#getDefaultEncoding()">getDefaultEncoding</a></strong>()</code>
-<div class="block">Get the default encoding for opening files.</div>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#addNumberToExistingFileName(java.io.File)">addNumberToExistingFileName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>
+<div class="block">Add a parenthesized number to a file name to get a file name that doesn't exist yet.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static long</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#getTreeSize(java.io.File)">getTreeSize</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;root)</code>
-<div class="block">Get the size of a file or a directory tree</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#globToRegex(java.lang.String)">globToRegex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;glob)</code>
 <div class="block">Convert a simple file glob expression (containing * and/or ?) to a regular expression.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>[]</code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#listFilesSorted(java.io.File)">listFilesSorted</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir)</code>
 <div class="block">Returns files in a directory, sorted.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#openForAppend(java.io.File)">openForAppend</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>
-<div class="block">Opens a file for appending.</div>
-</td>
-</tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#openForAppend(java.io.File,%20java.lang.String)">openForAppend</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encoding)</code>
-<div class="block">Opens a file for appending.</div>
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io">BufferedReader</a></code></td>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#openForReading(java.io.File)">openForReading</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>
+<div class="block">Opens a file for reading, with the default encoding.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io">BufferedReader</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#openForReading(java.io.File)">openForReading</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#openForReading(java.io.File,%20java.nio.charset.Charset)">openForReading</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html?is-external=true" title="class or interface in java.nio.charset">Charset</a>&nbsp;encoding)</code>
 <div class="block">Opens a file for reading, with the default encoding.</div>
 </td>
 </tr>
@@ -247,31 +222,32 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a></code></td>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#openForWriting(java.io.File,%20java.nio.charset.Charset)">openForWriting</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html?is-external=true" title="class or interface in java.nio.charset">Charset</a>&nbsp;encoding)</code>
+<div class="block">Opens a file for writing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a></code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#openForWriting(java.io.File,%20java.lang.String)">openForWriting</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encoding)</code>
 <div class="block">Opens a file for writing.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#processTree(java.io.File,%20nl.inl.util.FileUtil.FileTask)">processTree</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;root,
            <a href="../../../nl/inl/util/FileUtil.FileTask.html" title="class in nl.inl.util">FileUtil.FileTask</a>&nbsp;task)</code>
 <div class="block">Perform an operation on all files in a tree.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#processTree(java.io.File,%20java.lang.String,%20boolean,%20nl.inl.util.FileUtil.FileTask)">processTree</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;glob,
            boolean&nbsp;recurseSubdirs,
            <a href="../../../nl/inl/util/FileUtil.FileTask.html" title="class in nl.inl.util">FileUtil.FileTask</a>&nbsp;task)</code>
 <div class="block">Perform an operation on some files in a tree.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#readFile(java.io.File)">readFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>
-<div class="block">Read an entire file into a String</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -282,36 +258,16 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#readLines(java.io.File,%20java.lang.String)">readLines</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;inputFile,
-         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encoding)</code>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#readLines(java.io.File,%20java.nio.charset.Charset)">readLines</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;inputFile,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html?is-external=true" title="class or interface in java.nio.charset">Charset</a>&nbsp;encoding)</code>
 <div class="block">Read a file into a list of lines</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#sanitizeFilename(java.lang.String)">sanitizeFilename</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename)</code>
-<div class="block">Replaces illegal characters (/, \, :, *, ?, ", <, > and |) in a filename with an underscore.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#sanitizeFilename(java.lang.String,%20java.lang.String)">sanitizeFilename</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename,
-                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;invalidChar)</code>
-<div class="block">Replaces illegal characters (\t, \r, \n, /, \, :, *, ?, ", <, > and |) in a filename with the specified
- character.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#setDefaultEncoding(java.lang.String)">setDefaultEncoding</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultEncoding)</code>
-<div class="block">Set the default encoding for opening files.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#writeFile(java.io.File,%20java.lang.String)">writeFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
-         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;data)</code>
-<div class="block">Write a String to a file.</div>
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../nl/inl/util/FileUtil.html#readLines(java.io.File,%20java.lang.String)">readLines</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;inputFile,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encoding)</code>
+<div class="block">Read a file into a list of lines</div>
 </td>
 </tr>
 </table>
@@ -372,28 +328,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getDefaultEncoding()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getDefaultEncoding</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDefaultEncoding()</pre>
-<div class="block">Get the default encoding for opening files.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the default encoding</dd></dl>
-</li>
-</ul>
-<a name="setDefaultEncoding(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setDefaultEncoding</h4>
-<pre>public static&nbsp;void&nbsp;setDefaultEncoding(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultEncoding)</pre>
-<div class="block">Set the default encoding for opening files.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>defaultEncoding</code> - the default encoding</dd></dl>
-</li>
-</ul>
 <a name="openForWriting(java.io.File)">
 <!--   -->
 </a>
@@ -423,29 +357,15 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>write interface into the file</dd></dl>
 </li>
 </ul>
-<a name="openForAppend(java.io.File)">
+<a name="openForWriting(java.io.File, java.nio.charset.Charset)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>openForAppend</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a>&nbsp;openForAppend(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</pre>
-<div class="block">Opens a file for appending.
-
- Wraps the Writer in a BufferedWriter and PrintWriter for efficient and convenient access.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>file</code> - the file to open</dd>
-<dt><span class="strong">Returns:</span></dt><dd>write interface into the file</dd></dl>
-</li>
-</ul>
-<a name="openForAppend(java.io.File, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>openForAppend</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a>&nbsp;openForAppend(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
-                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encoding)</pre>
-<div class="block">Opens a file for appending.
+<h4>openForWriting</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a>&nbsp;openForWriting(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
+                         <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html?is-external=true" title="class or interface in java.nio.charset">Charset</a>&nbsp;encoding)</pre>
+<div class="block">Opens a file for writing.
 
  Wraps the Writer in a BufferedWriter and PrintWriter for efficient and convenient access.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>file</code> - the file to open</dd><dd><code>encoding</code> - the encoding to use, e.g. "utf-8"</dd>
@@ -481,6 +401,21 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>read interface into the file</dd></dl>
 </li>
 </ul>
+<a name="openForReading(java.io.File, java.nio.charset.Charset)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openForReading</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io">BufferedReader</a>&nbsp;openForReading(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
+                            <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html?is-external=true" title="class or interface in java.nio.charset">Charset</a>&nbsp;encoding)</pre>
+<div class="block">Opens a file for reading, with the default encoding.
+
+ Wraps the Reader in a BufferedReader for efficient and convenient access.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>file</code> - the file to open</dd><dd><code>encoding</code> - the encoding to use, e.g. "utf-8"</dd>
+<dt><span class="strong">Returns:</span></dt><dd>read interface into the file</dd></dl>
+</li>
+</ul>
 <a name="readLines(java.io.File)">
 <!--   -->
 </a>
@@ -506,50 +441,17 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>list of lines</dd></dl>
 </li>
 </ul>
-<a name="sanitizeFilename(java.lang.String)">
+<a name="readLines(java.io.File, java.nio.charset.Charset)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>sanitizeFilename</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sanitizeFilename(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename)</pre>
-<div class="block">Replaces illegal characters (/, \, :, *, ?, ", <, > and |) in a filename with an underscore.
-
- NOTE: this is not intended for security use, just to make sure filenames aren't
- invalid! For security with untrusted input, allow only a conservative set of characters
- (i.e. [a-zA-Z0-9_\-\.], and forbid "." and "..").</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - the filename to sanitize</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the sanitized filename</dd></dl>
-</li>
-</ul>
-<a name="sanitizeFilename(java.lang.String, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>sanitizeFilename</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sanitizeFilename(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename,
-                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;invalidChar)</pre>
-<div class="block">Replaces illegal characters (\t, \r, \n, /, \, :, *, ?, ", <, > and |) in a filename with the specified
- character.
-
- NOTE: this is not intended for security use, just to make sure filenames aren't
- invalid! For security with untrusted input, allow only a conservative set of characters
- (i.e. [a-zA-Z0-9_\-\.], and forbid "." and "..").</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - the filename to sanitize</dd><dd><code>invalidChar</code> - the replacement character</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the sanitized filename</dd></dl>
-</li>
-</ul>
-<a name="getTreeSize(java.io.File)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getTreeSize</h4>
-<pre>public static&nbsp;long&nbsp;getTreeSize(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;root)</pre>
-<div class="block">Get the size of a file or a directory tree</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>root</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd>size of the file or directory tree</dd></dl>
+<h4>readLines</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;readLines(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;inputFile,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html?is-external=true" title="class or interface in java.nio.charset">Charset</a>&nbsp;encoding)</pre>
+<div class="block">Read a file into a list of lines</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>inputFile</code> - the file to read</dd><dd><code>encoding</code> - the encoding to use, e.g. "utf-8"</dd>
+<dt><span class="strong">Returns:</span></dt><dd>list of lines</dd></dl>
 </li>
 </ul>
 <a name="processTree(java.io.File, nl.inl.util.FileUtil.FileTask)">
@@ -584,6 +486,18 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>dir</code> - the directory to start in</dd><dd><code>glob</code> - which files to process (e.g. "*.xml")</dd><dd><code>recurseSubdirs</code> - whether or not to process subdirectories</dd><dd><code>task</code> - the task to execute for every file</dd></dl>
 </li>
 </ul>
+<a name="addNumberToExistingFileName(java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addNumberToExistingFileName</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;addNumberToExistingFileName(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</pre>
+<div class="block">Add a parenthesized number to a file name to get a file name that doesn't exist yet.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>file</code> - the file that exists already</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a file with a number added that doesn't exist yet</dd></dl>
+</li>
+</ul>
 <a name="listFilesSorted(java.io.File)">
 <!--   -->
 </a>
@@ -601,7 +515,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <a name="globToRegex(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>globToRegex</h4>
 <pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;globToRegex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;glob)</pre>
@@ -610,69 +524,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
  Example: "log*.txt" becomes "^log.\*\.txt$"</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>glob</code> - the file glob expression</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the regular expression</dd></dl>
-</li>
-</ul>
-<a name="findOnClasspath(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>findOnClasspath</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;findOnClasspath(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fn)</pre>
-<div class="block">Find a file on the classpath.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fn</code> - name of the file we're looking for</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the file if found, null otherwise</dd></dl>
-</li>
-</ul>
-<a name="detectBomEncoding(java.io.BufferedInputStream, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>detectBomEncoding</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;detectBomEncoding(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/BufferedInputStream.html?is-external=true" title="class or interface in java.io">BufferedInputStream</a>&nbsp;inputStream,
-                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultEncoding)
-                                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Detect the Unicode encoding of an input stream by looking for a BOM at the current position.
-
- If no BOM is found, the specified default encoding is returned and
- the position of the stream is unchanged.
-
- If a BOM is found, it is interpreted and the corresponding encoding
- is returned. The stream will remain positioned after the BOM.
-
- This method uses InputStream.mark(), which must be supported by the given stream
- (BufferedInputStream supports this).
-
- Only works for UTF-8 and UTF16 (LE/BE) for now.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>inputStream</code> - the input stream</dd><dd><code>defaultEncoding</code> - encoding to return if no BOM found</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the encoding</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
-</li>
-</ul>
-<a name="readFile(java.io.File)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>readFile</h4>
-<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;readFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</pre>
-<div class="block">Read an entire file into a String</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>file</code> - the file to read</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the file's contents</dd></dl>
-</li>
-</ul>
-<a name="writeFile(java.io.File, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>writeFile</h4>
-<pre>public static&nbsp;void&nbsp;writeFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;data)</pre>
-<div class="block">Write a String to a file.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>file</code> - the file to write</dd><dd><code>data</code> - what to write to the file</dd></dl>
 </li>
 </ul>
 </li>

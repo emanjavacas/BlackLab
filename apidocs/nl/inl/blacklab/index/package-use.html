@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Package nl.inl.blacklab.index (BlackLab 1.3.3 API)</title>
+<title>Uses of Package nl.inl.blacklab.index (BlackLab 1.6.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Package nl.inl.blacklab.index (BlackLab 1.3.3 API)";
+        parent.document.title="Uses of Package nl.inl.blacklab.index (BlackLab 1.6.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -75,54 +75,21 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="#nl.inl.blacklab.example">nl.inl.blacklab.example</a></td>
-<td class="colLast">
-<div class="block">A very simple example indexer and searcher.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="#nl.inl.blacklab.index">nl.inl.blacklab.index</a></td>
 <td class="colLast">
 <div class="block">Classes related to indexing.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#nl.inl.blacklab.indexers">nl.inl.blacklab.indexers</a></td>
 <td class="colLast">
 <div class="block">DocIndexer classes for several input formats.</div>
 </td>
 </tr>
-</tbody>
-</table>
-</li>
-<li class="blockList"><a name="nl.inl.blacklab.example">
-<!--   -->
-</a>
-<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
-<caption><span>Classes in <a href="../../../../nl/inl/blacklab/index/package-summary.html">nl.inl.blacklab.index</a> used by <a href="../../../../nl/inl/blacklab/example/package-summary.html">nl.inl.blacklab.example</a></span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colOne" scope="col">Class and Description</th>
-</tr>
-<tbody>
 <tr class="altColor">
-<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/DocIndexer.html#nl.inl.blacklab.example">DocIndexer</a>
-<div class="block">Indexes a file.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/DocIndexerAbstract.html#nl.inl.blacklab.example">DocIndexerAbstract</a>
-<div class="block">Abstract base class for a DocIndexer processing XML files.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/DocIndexerXmlHandlers.html#nl.inl.blacklab.example">DocIndexerXmlHandlers</a>
-<div class="block">Abstract base class for a DocIndexer processing XML files using the hookable
- SAX parser.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/Indexer.html#nl.inl.blacklab.example">Indexer</a>
-<div class="block">Tool for indexing.</div>
+<td class="colFirst"><a href="#nl.inl.blacklab.tools.indexexample">nl.inl.blacklab.tools.indexexample</a></td>
+<td class="colLast">
+<div class="block">A very simple example indexer and searcher.</div>
 </td>
 </tr>
 </tbody>
@@ -159,27 +126,33 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/DocumentFormatException.html#nl.inl.blacklab.index">DocumentFormatException</a>
+<div class="block">An unknown document format was specified, or there
+ was some other problem with the document format.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/HookableSaxHandler.ContentCapturingHandler.html#nl.inl.blacklab.index">HookableSaxHandler.ContentCapturingHandler</a>
 <div class="block">A SAX parser hook handler that captures the element's character content
  for processing in the endElement() method.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/HookableSaxHandler.ElementHandler.html#nl.inl.blacklab.index">HookableSaxHandler.ElementHandler</a>
 <div class="block">Represents a handler for when a SAX path condition matches</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/Indexer.html#nl.inl.blacklab.index">Indexer</a>
 <div class="block">Tool for indexing.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/IndexListener.html#nl.inl.blacklab.index">IndexListener</a>
 <div class="block">Used to report progress while indexing, so we can give feedback to the user.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/InputFormatException.html#nl.inl.blacklab.index">InputFormatException</a>&nbsp;</td>
 </tr>
 </tbody>
@@ -219,6 +192,39 @@
 </tr>
 <tr class="altColor">
 <td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/Indexer.html#nl.inl.blacklab.indexers">Indexer</a>
+<div class="block">Tool for indexing.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="nl.inl.blacklab.tools.indexexample">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../nl/inl/blacklab/index/package-summary.html">nl.inl.blacklab.index</a> used by <a href="../../../../nl/inl/blacklab/tools/indexexample/package-summary.html">nl.inl.blacklab.tools.indexexample</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/DocIndexer.html#nl.inl.blacklab.tools.indexexample">DocIndexer</a>
+<div class="block">Indexes a file.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/DocIndexerAbstract.html#nl.inl.blacklab.tools.indexexample">DocIndexerAbstract</a>
+<div class="block">Abstract base class for a DocIndexer processing XML files.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/DocIndexerXmlHandlers.html#nl.inl.blacklab.tools.indexexample">DocIndexerXmlHandlers</a>
+<div class="block">Abstract base class for a DocIndexer processing XML files using the hookable
+ SAX parser.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../nl/inl/blacklab/index/class-use/Indexer.html#nl.inl.blacklab.tools.indexexample">Indexer</a>
 <div class="block">Tool for indexing.</div>
 </td>
 </tr>
