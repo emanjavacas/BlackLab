@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * A collection of String-related utility methods and regular expression patterns.
@@ -238,6 +238,8 @@ public class StringUtil {
 	 * @return the escaped string
 	 */
 	public static String escapeXmlChars(String source) {
+		if (source == null)
+			source = "";
 		int estResultLength = source.length() * 5 / 4; // reasonable estimate of max. space needed
 		StringBuilder sb = new StringBuilder(estResultLength);
 		int start = 0;

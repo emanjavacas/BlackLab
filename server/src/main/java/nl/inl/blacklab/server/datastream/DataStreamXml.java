@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import nl.inl.util.StringUtil;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
  * Class to stream out XML data.
@@ -26,7 +26,7 @@ public class DataStreamXml extends DataStream {
 	}
 
 	private DataStream attr(String key, String value) {
-		return print(" ").print(key).print("=\"").print(StringUtil.escapeXmlChars(value)).print("\"");
+		return print(" ").print(key).print("=\"").print(StringEscapeUtils.escapeXml10(value)).print("\"");
 	}
 
 	private DataStream endOpenEl() {
@@ -44,10 +44,15 @@ public class DataStreamXml extends DataStream {
 	}
 
 	@Override
+	public void outputProlog() {
+		print("<?xml version=\"1.0\" encoding=\"utf-8\" ?>").newline();
+	}
+
+	@Override
 	public DataStream startDocument(String rootEl) {
 		if (rootEl == null)
 			return this;
-		print("<?xml version=\"1.0\" encoding=\"utf-8\" ?>").newline();
+		outputProlog();
 		startOpenEl(rootEl);
 		return endOpenEl();
 	}
@@ -76,7 +81,17 @@ public class DataStreamXml extends DataStream {
 	}
 
 	@Override
+	public DataStream item(String name, Object value) {
+		return indent().startCompact().startItem(name).value(value).endItem().endCompact().newline();
+	}
+
+	@Override
 	public DataStream item(String name, int value) {
+		return indent().startCompact().startItem(name).value(value).endItem().endCompact().newline();
+	}
+
+	@Override
+	public DataStream item(String name, long value) {
 		return indent().startCompact().startItem(name).value(value).endItem().endCompact().newline();
 	}
 
@@ -116,7 +131,17 @@ public class DataStreamXml extends DataStream {
 	}
 
 	@Override
+	public DataStream entry(String key, Object value) {
+		return indent().startCompact().startEntry(key).value(value).endEntry().endCompact().newline();
+	}
+
+	@Override
 	public DataStream entry(String key, int value) {
+		return indent().startCompact().startEntry(key).value(value).endEntry().endCompact().newline();
+	}
+
+	@Override
+	public DataStream entry(String key, long value) {
 		return indent().startCompact().startEntry(key).value(value).endEntry().endCompact().newline();
 	}
 
@@ -141,44 +166,44 @@ public class DataStreamXml extends DataStream {
 	}
 
 	@Override
+	public DataStream attrEntry(String elementName, String attrName, String key, Object value) {
+		return indent().startCompact().startAttrEntry(elementName, attrName, key).value(value).endAttrEntry().endCompact().newline();
+	}
+
+	@Override
+	public DataStream attrEntry(String elementName, String attrName, String key, long value) {
+		return indent().startCompact().startAttrEntry(elementName, attrName, key).value(value).endAttrEntry().endCompact().newline();
+	}
+
+	@Override
 	public DataStream attrEntry(String elementName, String attrName, String key, String value) {
-		return indent().startCompact()
-			.startAttrEntry(elementName, attrName, key).value(value).endAttrEntry()
-			.endCompact().newline();
+		return indent().startCompact().startAttrEntry(elementName, attrName, key).value(value).endAttrEntry().endCompact().newline();
 	}
 
 	@Override
 	public DataStream attrEntry(String elementName, String attrName, String key, int value) {
-		return indent().startCompact()
-				.startAttrEntry(elementName, attrName, key).value(value).endAttrEntry()
-				.endCompact().newline();
+		return indent().startCompact().startAttrEntry(elementName, attrName, key).value(value).endAttrEntry().endCompact().newline();
 	}
 
 	@Override
 	public DataStream attrEntry(String elementName, String attrName, String key, double value) {
-		return indent().startCompact()
-				.startAttrEntry(elementName, attrName, key).value(value).endAttrEntry()
-				.endCompact().newline();
+		return indent().startCompact().startAttrEntry(elementName, attrName, key).value(value).endAttrEntry().endCompact().newline();
 	}
 
 	@Override
 	public DataStream attrEntry(String elementName, String attrName, String key, boolean value) {
-		return indent().startCompact()
-				.startAttrEntry(elementName, attrName, key).value(value).endAttrEntry()
-				.endCompact().newline();
+		return indent().startCompact().startAttrEntry(elementName, attrName, key).value(value).endAttrEntry().endCompact().newline();
 	}
 
 	@Override
-	public DataStream startAttrEntry(String elementName, String attrName,
-			String key) {
+	public DataStream startAttrEntry(String elementName, String attrName, String key) {
 		startOpenEl(elementName);
 		attr(attrName, key);
 		return endOpenEl();
 	}
 
 	@Override
-	public DataStream startAttrEntry(String elementName, String attrName,
-			int key) {
+	public DataStream startAttrEntry(String elementName, String attrName, int key) {
 		return startEntry(Integer.toString(key));
 	}
 
@@ -196,16 +221,16 @@ public class DataStreamXml extends DataStream {
 			int vIndex = i * valuesPerWord;
 			int j = 0;
 			indent();
-			print(StringUtil.escapeXmlChars(values.get(vIndex)));
+			print(StringEscapeUtils.escapeXml10(values.get(vIndex)));
 			print("<w");
 			for (int k = 1; k < names.size() - 1; k++) {
 				String name = names.get(k);
 				String value = values.get(vIndex + 1 + j);
-				print(" ").print(name).print("=\"").print(StringUtil.escapeXmlChars(value)).print("\"");
+				print(" ").print(name).print("=\"").print(StringEscapeUtils.escapeXml10(value)).print("\"");
 				j++;
 			}
 			print(">");
-			print(StringUtil.escapeXmlChars(values.get(vIndex + 1 + j)));
+			print(StringEscapeUtils.escapeXml10(values.get(vIndex + 1 + j)));
 			print("</w>");
 			newline();
 		}
@@ -218,7 +243,7 @@ public class DataStreamXml extends DataStream {
 		if (value == null)
 			print("(null)");
 		else
-			print(StringUtil.escapeXmlChars(value));
+			print(StringEscapeUtils.escapeXml10(value));
 		return newline();
 	}
 
